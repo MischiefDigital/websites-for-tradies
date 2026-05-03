@@ -133,7 +133,7 @@
     @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     /* 4. Hero */
-    .hero { min-height: 100vh; background: var(--black); display: flex; align-items: center; text-align: center; padding: 96px 0; }
+    .hero { min-height: 100vh; background: var(--black) url('Images/Hero Image - Tradie.png') center center / cover no-repeat; display: flex; align-items: center; text-align: center; padding: 96px 0; }
     .hero::before {
       content: "WFT";
       position: absolute;
@@ -149,7 +149,7 @@
     .hero-photo {
       position: absolute;
       inset: 0;
-      background: radial-gradient(circle at 80% 25%, rgba(245,194,0,.12), transparent 28%), linear-gradient(90deg, rgba(13,13,13,.9), rgba(13,13,13,.92));
+      background: radial-gradient(circle at 80% 25%, rgba(245,194,0,.12), transparent 28%), linear-gradient(180deg, rgba(13,13,13,.55) 0%, rgba(13,13,13,.45) 50%, rgba(13,13,13,.75) 100%);
       pointer-events: none;
     }
     .placeholder-label {
