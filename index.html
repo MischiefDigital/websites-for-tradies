@@ -228,7 +228,7 @@
     .badge { min-width: 60px; display: inline-flex; align-items: center; justify-content: center; background: var(--black); color: var(--yellow); font-size: 10px; font-weight: 800; text-transform: uppercase; border-radius: 4px; padding: 6px 8px; line-height: 1; }
     .stack-name { font-size: 15px; font-weight: 700; line-height: 1.35; margin: 0 0 4px; }
     .stack-detail { margin: 0; color: #555; font-size: 13px; line-height: 1.6; }
-    .value { color: var(--green); font-size: 13px; font-weight: 700; text-align: right; white-space: nowrap; }
+    .value { color: var(--green); font-size: 13px; font-weight: 700; text-align: right; white-space: nowrap; text-decoration: line-through; }
     .summary-box { margin-top: 24px; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
     .summary-row { display: flex; justify-content: space-between; gap: 20px; padding: 8px 0; color: #555; font-size: 14px; }
     .summary-row strong { color: var(--black); font-size: 26px; font-weight: 900; }
@@ -303,7 +303,26 @@
     .final-risk { margin-top: 18px; color: rgba(0,0,0,.4); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
     .ps { max-width: 540px; margin: 36px auto 0; color: rgba(0,0,0,.55); font-size: 14px; line-height: 1.7; }
 
-    /* 16. Footer */
+    /* 16. Contact Form */
+    .contact { background: var(--charcoal); color: var(--white); }
+    .contact-layout { display: grid; grid-template-columns: 1fr 1fr; gap: 64px; align-items: start; max-width: 960px; margin: 0 auto; }
+    .contact-copy p { color: rgba(255,255,255,.65); font-size: 15px; line-height: 1.8; margin: 0 0 16px; }
+    .contact-copy ul { list-style: none; padding: 0; margin: 0 0 24px; }
+    .contact-copy ul li { color: rgba(255,255,255,.75); font-size: 14px; padding: 6px 0; }
+    .contact-copy ul li::before { content: "✓ "; color: var(--yellow); font-weight: 900; }
+    .lead-form { background: var(--black); border-radius: 12px; padding: 32px 28px; }
+    .lead-form h3 { margin: 0 0 6px; font-size: 18px; font-weight: 900; }
+    .lead-form .form-sub { color: rgba(255,255,255,.5); font-size: 13px; margin: 0 0 24px; }
+    .form-group { margin-bottom: 16px; }
+    .form-group label { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: .07em; color: rgba(255,255,255,.55); margin-bottom: 7px; }
+    .form-group input, .form-group select { width: 100%; padding: 13px 14px; background: var(--charcoal); border: 1px solid var(--slate); border-radius: 7px; color: var(--white); font-family: var(--font); font-size: 14px; outline: none; transition: border-color .15s; }
+    .form-group input:focus, .form-group select:focus { border-color: var(--yellow); }
+    .form-group select option { background: var(--charcoal); }
+    .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+    .form-privacy { color: rgba(255,255,255,.3); font-size: 11px; text-align: center; margin-top: 12px; line-height: 1.5; }
+    @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; gap: 36px; } .form-row { grid-template-columns: 1fr; } }
+
+    /* 17. Footer */
     .footer { background: var(--black); border-top: 1px solid var(--slate); padding: 32px 24px; text-align: center; }
     .footer .wft-logo { justify-content: center; margin-bottom: 14px; }
     .footer-text { color: rgba(255,255,255,.25); font-size: 12px; line-height: 1.8; }
@@ -478,7 +497,7 @@
           <div class="was">Total value NZ$4,620</div><div class="price">NZ$1,997</div><div class="sub">One-time · No lock-in · .nz domain included</div>
           <ul class="checklist"><li><span>✓</span>5+ page tradie website</li><li><span>✓</span>Copywriting included</li><li><span>✓</span>Local SEO foundation</li><li><span>✓</span>.nz domain + 12 months hosting</li><li><span>✓</span>Google Business Profile setup</li><li><span>✓</span>Jobs In 90 Guarantee</li></ul>
           <div class="guarantee-box"><strong>Jobs In 90 Guarantee:</strong> If your site doesn't generate at least one genuine job enquiry within 90 days, we rebuild free and keep going until it does.</div>
-          <a href="#final" class="btn full">BOOK MY KICKOFF CALL →</a>
+          <a href="#contact" class="btn full">BOOK MY KICKOFF CALL →</a>
           <div class="urgency">⚠ 3 LAUNCH SPOTS REMAINING THIS MONTH</div>
         </aside>
       </div>
@@ -518,7 +537,7 @@
   <!-- 13. GUARANTEE SECTION -->
   <section class="guarantee">
     <div class="container guarantee-layout">
-      <div class="guarantee-copy"><p class="eyebrow dark">THE WFT GUARANTEE</p><h2 class="section-title">We put our money where our mouth is. <span class="accent-dark">No one else does.</span></h2><p>Every other web agency in New Zealand will build you a site, take your money, and wish you luck. No timeline commitment. No results commitment. No skin in the game whatsoever.</p><p>WFT is different. We're only in business if you get results. So we put two guarantees in writing — because that's what confidence looks like.</p><a href="#final" class="btn large">CLAIM MY GUARANTEED WEBSITE →</a></div>
+      <div class="guarantee-copy"><p class="eyebrow dark">THE WFT GUARANTEE</p><h2 class="section-title">We put our money where our mouth is. <span class="accent-dark">No one else does.</span></h2><p>Every other web agency in New Zealand will build you a site, take your money, and wish you luck. No timeline commitment. No results commitment. No skin in the game whatsoever.</p><p>WFT is different. We're only in business if you get results. So we put two guarantees in writing — because that's what confidence looks like.</p><a href="#contact" class="btn large">CLAIM MY GUARANTEED WEBSITE →</a></div>
       <div class="guarantee-panel"><div class="panel-eyebrow">TWO GUARANTEES. ZERO EXCEPTIONS.</div><div class="guarantee-block">Guarantee 1 — The 7-Day Launch Pledge: "Your website will be live within 7 working days of your kickoff call. If we miss that deadline without giving you 48 hours notice, we refund NZ$200 off your invoice. No questions. No excuses."</div><div class="guarantee-block">Guarantee 2 — The Jobs In 90 Promise: "If your site doesn't generate at least one genuine job enquiry within 90 days of going live, we'll rebuild it for free and keep working on it until it does."</div><div class="conditions">Conditions: Client provides photos and approves copy within 5 working days of draft. Client requests Google reviews from 3+ past customers post-launch. Site must be live for the full 90 days.</div></div>
     </div>
   </section>
@@ -541,10 +560,81 @@
 
   <!-- 15. FINAL CTA SECTION -->
   <section id="final" class="final-cta">
-    <div class="final-content"><p class="eyebrow">DON'T WAIT. YOUR COMPETITOR WON'T.</p><h2>STOP BEING INVISIBLE. START GETTING JOBS.</h2><p class="final-sub">Your website. Done for you. Live in 7 working days. NZ$1,997 flat — copy included, SEO included, guarantee included. No lock-in. No jargon. No homework.</p><a href="#offer" class="btn black" style="padding:22px 56px;font-size:1.2rem;border-radius:8px;">BOOK MY KICKOFF CALL →</a><div class="final-risk">NZ$1,997 · 7 WORKING DAYS · JOBS IN 90 GUARANTEE · YOU OWN THE SITE</div><p class="ps">P.S. — The first 10 Kiwi tradies to sign up get NZ$300 off, bringing the total to NZ$1,697. We're at 7 of 10. Once those spots are gone, the offer is gone. If you've read this far, you already know you need a website. The only question is whether someone in your area gets there first.</p></div>
+    <div class="final-content"><p class="eyebrow">DON'T WAIT. YOUR COMPETITOR WON'T.</p><h2>STOP BEING INVISIBLE. START GETTING JOBS.</h2><p class="final-sub">Your website. Done for you. Live in 7 working days. NZ$1,997 flat — copy included, SEO included, guarantee included. No lock-in. No jargon. No homework.</p><a href="#contact" class="btn black" style="padding:22px 56px;font-size:1.2rem;border-radius:8px;">BOOK MY KICKOFF CALL →</a><div class="final-risk">NZ$1,997 · 7 WORKING DAYS · JOBS IN 90 GUARANTEE · YOU OWN THE SITE</div><p class="ps">P.S. — The first 10 Kiwi tradies to sign up get NZ$300 off, bringing the total to NZ$1,697. We're at 7 of 10. Once those spots are gone, the offer is gone. If you've read this far, you already know you need a website. The only question is whether someone in your area gets there first.</p></div>
   </section>
 
-  <!-- 16. FOOTER -->
+  <!-- 16. CONTACT FORM -->
+  <section id="contact" class="contact">
+    <div class="container">
+      <div class="contact-layout">
+        <div class="contact-copy">
+          <p class="eyebrow dark">BOOK YOUR KICKOFF CALL</p>
+          <h2 class="section-title">Takes 60 seconds.<span class="accent-dark"> We call you.</span></h2>
+          <p>Fill in your details and we'll call you within one business day to get the ball rolling. No hard sell — just a quick chat about your trade, your area, and what you want your website to do.</p>
+          <ul>
+            <li>Live in 7 working days</li>
+            <li>NZ$1,997 flat — no surprises</li>
+            <li>Jobs In 90 Guarantee</li>
+            <li>You own the site outright</li>
+          </ul>
+          <p style="color:rgba(255,255,255,.4);font-size:13px;">⚠ 3 launch spots remaining this month at the NZ$300 discount.</p>
+        </div>
+        <div class="lead-form">
+          <h3>Get your website started</h3>
+          <p class="form-sub">We'll call you within one business day.</p>
+          <form action="https://formspree.io/f/xbdwbgog" method="POST">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="fname">First name *</label>
+                <input type="text" id="fname" name="first_name" required placeholder="Dave" />
+              </div>
+              <div class="form-group">
+                <label for="lname">Last name *</label>
+                <input type="text" id="lname" name="last_name" required placeholder="Smith" />
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone number *</label>
+              <input type="tel" id="phone" name="phone" required placeholder="021 000 0000" />
+            </div>
+            <div class="form-group">
+              <label for="trade">Your trade *</label>
+              <select id="trade" name="trade" required>
+                <option value="" disabled selected>Select your trade…</option>
+                <option>Electrician</option>
+                <option>Plumber</option>
+                <option>Builder / Carpenter</option>
+                <option>Painter / Decorator</option>
+                <option>Roofer</option>
+                <option>Drainlayer</option>
+                <option>Gasfitter</option>
+                <option>Tiler</option>
+                <option>Landscaper</option>
+                <option>Other trade</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="suburb">Your suburb / area *</label>
+              <input type="text" id="suburb" name="suburb" required placeholder="e.g. Papakura, Auckland" />
+            </div>
+            <div class="form-group">
+              <label for="calltime">Best time to call</label>
+              <select id="calltime" name="best_time_to_call">
+                <option value="" disabled selected>Any time is fine</option>
+                <option>Morning (8am–12pm)</option>
+                <option>Afternoon (12pm–5pm)</option>
+                <option>Evening (5pm–7pm)</option>
+              </select>
+            </div>
+            <button type="submit" class="btn full" style="margin-top:8px;">BOOK MY KICKOFF CALL →</button>
+            <p class="form-privacy">We'll only use your details to call you about your website. No spam, ever.</p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 17. FOOTER -->
   <footer class="footer">
     <a href="#top" class="wft-logo small" aria-label="WFT Websites for Tradies">
       <svg viewBox="0 0 80 80" role="img"><rect width="80" height="80" rx="18" fill="#0D0D0D"/><path d="M49 15H29c-8 0-14 6-14 14v22c0 8 6 14 14 14h22c8 0 14-6 14-14V38" stroke="#FFFFFF" stroke-width="9" fill="none" stroke-linecap="round" stroke-linejoin="round"/><path d="M55 37v28" stroke="#FFFFFF" stroke-width="9" stroke-linecap="round"/><circle cx="60" cy="22" r="10" fill="#F5C200"/></svg>
