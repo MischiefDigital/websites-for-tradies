@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "websitesfortradies.co.nz" }],
+      "destination": "https://www.websitesfortradies.co.nz/$1",
+      "permanent": true
+    }
+  ]
+}
