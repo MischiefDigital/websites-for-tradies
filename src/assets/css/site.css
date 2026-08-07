@@ -3,6 +3,30 @@
    Brand: WFT Black #0D0D0D · Job Alert Yellow #F5C200
    ========================================================= */
 
+/* Inter, self-hosted (SIL Open Font License 1.1).
+   Was loaded from Google Fonts, which cost two extra third-party connections
+   (DNS + TLS to fonts.googleapis.com and fonts.gstatic.com) before any text
+   could render. These are variable files covering the full 100-900 axis, so
+   both weights and both subsets cost two requests total.
+   latin-ext is only fetched when a character in its range appears — which is
+   what covers Māori macrons (ā ē ī ō ū). Regenerate with tools/README.md. */
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/inter-latin.woff2') format('woff2');
+  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+@font-face {
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 100 900;
+  font-display: swap;
+  src: url('/assets/fonts/inter-latin-ext.woff2') format('woff2');
+  unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+}
+
 :root {
   --black: #0D0D0D;
   --yellow: #F5C200;
@@ -124,7 +148,13 @@ section { position: relative; padding: 96px 0; overflow: hidden; }
 @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
 /* 4. Hero */
-.hero { min-height: 100vh; background: var(--black) url('/Images/hero-tradie.webp') center center / cover no-repeat; display: flex; align-items: center; text-align: center; padding: 96px 0; }
+/* Mobile-first hero art: 900w (25KB) on phones, full 1672w (262KB) only when
+   the viewport can actually use it. The hero is the LCP element, so this is
+   the single biggest mobile LCP lever on the page. */
+.hero { min-height: 100vh; background: var(--black) url('/Images/hero-tradie-900.webp') center center / cover no-repeat; display: flex; align-items: center; text-align: center; padding: 96px 0; }
+@media (min-width: 769px) {
+  .hero { background-image: url('/Images/hero-tradie.webp'); }
+}
 .hero::before {
   content: "WFT";
   position: absolute;

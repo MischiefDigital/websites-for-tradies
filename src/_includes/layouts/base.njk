@@ -5,12 +5,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="{{ description }}" />
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" />
   {% block headExtra %}{% endblock %}
   <title>{{ title }}</title>
   <link rel="stylesheet" href="/assets/css/site.css" />
+  {# Self-hosted Inter. Preloaded because it is discovered inside the stylesheet,
+     which would otherwise delay it by a full round trip. #}
+  <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />
 
   {# Open Graph — used by Facebook, LinkedIn, Slack and most AI tools' link previews #}
   <meta property="og:type" content="{{ ogType | default('website') }}" />
