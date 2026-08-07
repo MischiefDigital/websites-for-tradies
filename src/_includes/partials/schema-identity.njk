@@ -1,0 +1,89 @@
+{#
+  Site-wide entity graph. Emitted on every page so Google and AI engines see a
+  consistent Organization + LocalBusiness for WFT no matter which URL they land
+  on. Page-specific nodes (Service, FAQPage, Article) go in each page's own
+  {% block schema %} as a separate ld+json script — that is valid and avoids
+  fragile JSON stitching.
+#}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Organization",
+      "@id": "{{ site.url }}/#organization",
+      "name": "{{ site.name }}",
+      "legalName": "{{ site.legalName }}",
+      "alternateName": "WFT",
+      "url": "{{ site.url }}/",
+      "email": "{{ site.email }}",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}{{ site.logo }}",
+        "width": 512,
+        "height": 512
+      },
+      "image": "{{ site.url }}{{ site.ogImage }}",
+      "description": "WFT builds done-for-you websites for New Zealand tradies. One flat price of {{ site.priceDisplay }}, live in {{ site.buildDays }}, backed by the Jobs In {{ site.guaranteeDays }} guarantee.",
+      "areaServed": { "@type": "Country", "name": "New Zealand" }{% if site.sameAs.length %},
+      "sameAs": [{% for u in site.sameAs %}"{{ u }}"{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
+    },
+    {
+      "@type": "ProfessionalService",
+      "@id": "{{ site.url }}/#business",
+      "name": "{{ site.name }}",
+      "url": "{{ site.url }}/",
+      "email": "{{ site.email }}",
+      "parentOrganization": { "@id": "{{ site.url }}/#organization" },
+      "image": "{{ site.url }}{{ site.ogImage }}",
+      "logo": "{{ site.url }}{{ site.logo }}",
+      "description": "New Zealand web design service building websites exclusively for tradespeople. Copywriting, local SEO and Google Business Profile setup included, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee.",
+      "priceRange": "{{ site.priceDisplay }}",
+      "currenciesAccepted": "{{ site.currency }}",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "{{ site.addressLocality }}",
+        "addressCountry": "{{ site.addressCountry }}"
+      },
+      "areaServed": [
+        { "@type": "Country", "name": "New Zealand" }{% for a in site.areasServed %},
+        { "@type": "City", "name": "{{ a }}" }{% endfor %}
+      ],
+      "knowsAbout": [
+        "Tradie website design",
+        "Local SEO for tradespeople",
+        "Google Business Profile optimisation",
+        "Website copywriting for trade businesses"
+      ]{% if site.telephone %},
+      "telephone": "{{ site.telephone }}"{% endif %}{% if site.sameAs.length %},
+      "sameAs": [{% for u in site.sameAs %}"{{ u }}"{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": "{{ site.name }}",
+      "inLanguage": "en-NZ",
+      "publisher": { "@id": "{{ site.url }}/#organization" }
+    }{% if breadcrumbs %},
+    {
+      "@type": "BreadcrumbList",
+      "@id": "{{ site.url }}{{ page.url }}#breadcrumbs",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "{{ site.url }}/"
+        }{% for crumb in breadcrumbs %},
+        {
+          "@type": "ListItem",
+          "position": {{ loop.index + 1 }},
+          "name": "{{ crumb.name }}"{% if crumb.url %},
+          "item": "{{ site.url }}{{ crumb.url }}"{% endif %}
+        }{% endfor %}
+      ]
+    }{% endif %}
+  ]
+}
+</script>

@@ -14,29 +14,29 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
     "@context": "https://schema.org",
     "@graph": [
       {
-        "@type": "ProfessionalService",
-        "@id": "{{ site.url }}/#business",
-        "name": "WFT — Websites for Tradies",
-        "url": "{{ site.url }}/",
-        "email": "{{ site.email }}",
-        "description": "WFT builds websites for NZ tradies that get them jobs. Fast, professional websites with copywriting included, local SEO, and a Jobs In 90 guarantee.",
-        "areaServed": { "@type": "Country", "name": "New Zealand" },
-        "priceRange": "{{ site.priceDisplay }}"
-      },
-      {
         "@type": "Service",
+        "@id": "{{ site.url }}/#service",
         "name": "Tradie Website Package",
+        "serviceType": "Website design for trade businesses",
         "provider": { "@id": "{{ site.url }}/#business" },
-        "description": "A complete 5+ page tradie website including copywriting, local SEO, .nz domain, 12 months hosting, and Google Business Profile setup. Live in 7 working days.",
+        "description": "A complete 5+ page tradie website including copywriting, local SEO, a .nz domain, hosting and SSL setup, and Google Business Profile setup. Live in {{ site.buildDays }}.",
         "areaServed": { "@type": "Country", "name": "New Zealand" },
+        "audience": {
+          "@type": "BusinessAudience",
+          "name": "New Zealand tradespeople and trade businesses"
+        },
         "offers": {
           "@type": "Offer",
           "price": "{{ site.price }}",
-          "priceCurrency": "{{ site.currency }}"
+          "priceCurrency": "{{ site.currency }}",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ site.url }}/#offer",
+          "seller": { "@id": "{{ site.url }}/#organization" }
         }
       },
       {
         "@type": "FAQPage",
+        "@id": "{{ site.url }}/#faq",
         "mainEntity": [
           {
             "@type": "Question",

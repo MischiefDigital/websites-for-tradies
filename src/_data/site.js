@@ -1,6 +1,7 @@
 module.exports = {
   name: "WFT — Websites for Tradies",
   shortName: "WFT",
+  legalName: "WFT — Websites for Tradies",
   tagline: "WEBSITES THAT GET JOBS",
   url: "https://www.websitesfortradies.co.nz",
   email: "info@websitesfortradies.co.nz",
@@ -18,4 +19,35 @@ module.exports = {
   planPriceDisplay: "NZ$249/month",
 
   formEndpoint: "https://formspree.io/f/xbdwbgog",
+
+  // Brand assets, used by OG tags and schema
+  logo: "/assets/icons/icon-512.png",
+  ogImage: "/assets/og-image.png",
+
+  // Service-area business: based in Wellington, serving NZ-wide.
+  // No street address published — that is correct for an SAB.
+  addressLocality: "Wellington",
+  addressCountry: "NZ",
+
+  // Regions named in content and mirrored in the Google Business Profile
+  // service area. Keep these two in sync.
+  areasServed: [
+    "Wellington",
+    "Auckland",
+    "Christchurch",
+    "Hamilton",
+    "Tauranga",
+    "Dunedin",
+  ],
+
+  // TODO (Blair): add the real profile URLs once they exist. These feed
+  // schema sameAs, which is how Google and AI engines confirm WFT is a real
+  // entity rather than a lone domain. Google Business Profile, LinkedIn
+  // company page and Facebook page all belong here.
+  // Leave empty rather than guessing — a wrong sameAs is worse than none.
+  sameAs: [],
+
+  // TODO (Blair): business phone. Once set it must match the Google Business
+  // Profile and every directory citation byte for byte.
+  telephone: null,
 };
