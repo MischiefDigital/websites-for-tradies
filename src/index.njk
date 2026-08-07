@@ -39,37 +39,12 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
       {
         "@type": "FAQPage",
         "@id": "{{ site.url }}/#faq",
-        "mainEntity": [
+        "mainEntity": [{% for item in faq %}
           {
             "@type": "Question",
-            "name": "I'm not tech-savvy at all. Will I have to do much?",
-            "acceptedAnswer": { "@type": "Answer", "text": "Nope. Your entire to-do list: (1) a 30-minute kickoff call, (2) send through some photos of your work. We handle everything else — writing, designing, setting up Google, hosting. You approve the final site. That's it. Most clients say it was the easiest thing they've done for their business." }
-          },
-          {
-            "@type": "Question",
-            "name": "What if I already have a website?",
-            "acceptedAnswer": { "@type": "Answer", "text": "If your current site isn't bringing in enquiries, isn't mobile-friendly, or just looks dated — we rebuild it completely. Same offer, same price, same guarantee. Live in 7 working days." }
-          },
-          {
-            "@type": "Question",
-            "name": "What exactly is the \"Jobs In 90\" guarantee?",
-            "acceptedAnswer": { "@type": "Answer", "text": "If your new website doesn't generate at least one genuine job enquiry within 90 days of going live, we rebuild from scratch for free and keep going until you do. Conditions: provide photos, approve copy promptly, ask past customers for Google reviews. That's it." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why is WFT so much cheaper than other NZ agencies?",
-            "acceptedAnswer": { "@type": "Answer", "text": "We only build websites for tradies. We've built this system specifically for your industry — we're not starting from scratch every time. No bloated CBD office overhead. The savings go straight to you." }
-          },
-          {
-            "@type": "Question",
-            "name": "Why does the .nz domain matter?",
-            "acceptedAnswer": { "@type": "Answer", "text": "InternetNZ research shows 74% of Kiwi consumers trust .nz domains more than .com. It's a small thing that makes a real difference to whether someone picks up the phone. It's included in your price." }
-          },
-          {
-            "@type": "Question",
-            "name": "What happens after the 12 months of hosting?",
-            "acceptedAnswer": { "@type": "Answer", "text": "You can host anywhere — you own the site outright. We offer ongoing NZ hosting and maintenance at a fair flat rate if you want to stay, but there's zero obligation." }
-          }
+            "name": {{ item.q | dump | safe }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+          }{% if not loop.last %},{% endif %}{% endfor %}
         ]
       }
     ]
@@ -278,13 +253,11 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
     <div class="container faq-inner">
       <p class="eyebrow light">COMMON QUESTIONS</p>
       <h2 class="section-title dark-text">Common questions about tradie websites. <span class="accent-light">No waffle.</span></h2>
+      <p class="faq-summary">In one sentence: <strong>WFT builds websites for New Zealand tradies for a flat {{ site.priceDisplay }}, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee.</strong> You own the site and the domain outright, there is no lock-in contract, and if the site doesn't bring in a genuine job enquiry within {{ site.guaranteeDays }} days we rebuild it free.</p>
       <div class="accordion">
-        <div class="accordion-item"><button class="accordion-button">I'm not tech-savvy at all. Will I have to do much?<span class="arrow">+</span></button><div class="accordion-answer">Nope. Your entire to-do list: (1) a 30-minute kickoff call, (2) send through some photos of your work. We handle everything else — writing, designing, setting up Google, hosting. You approve the final site. That's it. Most clients say it was the easiest thing they've done for their business.</div></div>
-        <div class="accordion-item"><button class="accordion-button">What if I already have a website?<span class="arrow">+</span></button><div class="accordion-answer">If your current site isn't bringing in enquiries, isn't mobile-friendly, or just looks dated — we rebuild it completely. Same offer, same price, same guarantee. Live in 7 working days.</div></div>
-        <div class="accordion-item"><button class="accordion-button">What exactly is the "Jobs In 90" guarantee?<span class="arrow">+</span></button><div class="accordion-answer">If your new website doesn't generate at least one genuine job enquiry within 90 days of going live, we rebuild from scratch for free and keep going until you do. Conditions: provide photos and approve copy within 5 working days, stay on the Get Found Plan for the 90-day period (a site that isn't actively managed can't be guaranteed to rank), and ask past customers for Google reviews. That's it.</div></div>
-        <div class="accordion-item"><button class="accordion-button">How can you offer a guarantee no one else does?<span class="arrow">+</span></button><div class="accordion-answer">We only build for tradies, so we're not reinventing the wheel every job — that focus lets us move in 7 days and stand behind the result. Every other agency takes your money and wishes you luck. We only win if you get jobs. That's why the guarantee exists, and why no one else offers it.</div></div>
-        <div class="accordion-item"><button class="accordion-button">Why does the .nz domain matter?<span class="arrow">+</span></button><div class="accordion-answer">InternetNZ research shows 74% of Kiwi consumers trust .nz domains more than .com. It's a small thing that makes a real difference to whether someone picks up the phone. It's included in your price.</div></div>
-        <div class="accordion-item"><button class="accordion-button">Do I have to take the monthly plan?<span class="arrow">+</span></button><div class="accordion-answer">Your site is yours outright — you can host it anywhere. But the Get Found Plan is what keeps you ranking, managed and reviewed, and it's required to keep your Jobs In 90 Guarantee active. Most founding tradies stay on it because that's where the jobs actually come from. No lock-in — cancel any time.</div></div>
+        {%- for item in faq %}
+        <div class="accordion-item"><button class="accordion-button">{{ item.q }}<span class="arrow">+</span></button><div class="accordion-answer">{{ item.a }}</div></div>
+        {%- endfor %}
       </div>
     </div>
   </section>
