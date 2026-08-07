@@ -12,8 +12,36 @@ const { execSync } = require("node:child_process");
  * case rather than substitute a guess: no lastmod is fine, a wrong one is not.
  */
 const gitDateCache = new Map();
+
+/**
+ * In a shallow clone every file looks like it was added in the boundary
+ * commit, so per-file dates all collapse to the deploy date — the exact wrong
+ * answer we are trying to avoid, just wearing a nicer hat. Detect it once and
+ * skip lastmod entirely in that case.
+ */
+let repoIsShallow = null;
+function isShallowRepo() {
+  if (repoIsShallow !== null) return repoIsShallow;
+  try {
+    const out = execSync("git rev-parse --is-shallow-repository", {
+      encoding: "utf8",
+      stdio: ["ignore", "pipe", "ignore"],
+    }).trim();
+    repoIsShallow = out === "true";
+  } catch {
+    repoIsShallow = true; // no git at all — treat dates as untrustworthy
+  }
+  if (repoIsShallow) {
+    console.warn(
+      "[wft] Shallow clone or no git history: omitting sitemap <lastmod>. " +
+        "Dates would otherwise be identical across all pages and misleading."
+    );
+  }
+  return repoIsShallow;
+}
+
 function gitLastModified(inputPath) {
-  if (!inputPath) return null;
+  if (!inputPath || isShallowRepo()) return null;
   if (gitDateCache.has(inputPath)) return gitDateCache.get(inputPath);
   let result = null;
   try {
