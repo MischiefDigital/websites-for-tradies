@@ -52,6 +52,17 @@
 
   {% include "partials/footer.njk" %}
 
+  {% if site.ga4Id %}
+  {# GA4 — loads only once a Measurement ID is configured in _data/site.js #}
+  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', '{{ site.ga4Id }}');
+  </script>
+  {% endif %}
+
   <script defer src="/assets/js/main.js"></script>
 
   {# Vercel Analytics + Speed Insights #}

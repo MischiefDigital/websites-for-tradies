@@ -50,4 +50,11 @@ module.exports = {
   // TODO (Blair): business phone. Once set it must match the Google Business
   // Profile and every directory citation byte for byte.
   telephone: null,
+
+  // TODO (Blair): paste the GA4 Measurement ID ("G-XXXXXXXXXX") here after
+  // creating the property and linking it to Search Console. Until it is set,
+  // no analytics script loads and no events fire — the site stays clean.
+  // Once set, mark "generate_lead" as a key event in GA4 Admin so the audit's
+  // form-submission target is actually measurable.
+  ga4Id: null,
 };
