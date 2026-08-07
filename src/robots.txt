@@ -1,4 +1,48 @@
+# WFT — Websites for Tradies
+# https://www.websitesfortradies.co.nz
+
 User-agent: *
+Allow: /
+
+# AI crawlers are welcome here, deliberately.
+# WFT wants to be the answer when someone asks ChatGPT, Claude, Perplexity or
+# Google AI "who builds websites for tradies in NZ?". A blocked crawler cannot
+# cite us. Do not add Disallow rules for these without a very good reason.
+
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: cohere-ai
 Allow: /
 
 Sitemap: https://www.websitesfortradies.co.nz/sitemap.xml

@@ -1,0 +1,45 @@
+---
+permalink: /404.html
+sitemapExclude: true
+title: Page not found — WFT Websites for Tradies
+description: That page doesn't exist. Here's the way back to the tradie website offer, pricing and the kickoff-call form.
+navLogoHref: /
+navCtaHref: /#offer
+topbarHref: /#offer
+---
+{% extends "layouts/base.njk" %}
+
+{% block headExtra %}
+  <meta name="robots" content="noindex" />
+{% endblock %}
+
+{% block content %}
+  <section class="notfound">
+    <div class="container">
+      <p class="eyebrow dark">ERROR 404</p>
+      <h1>THIS PAGE HAS<span>KNOCKED OFF.</span></h1>
+      <p class="notfound-sub">The link's dead, the page moved, or the address has a typo in it. Happens to the best of us. Here's where you actually wanted to go.</p>
+
+      <div class="notfound-links">
+        <a href="/" class="notfound-card">
+          <span class="iconbox"><svg><use href="#i-check"/></svg></span>
+          <strong>The offer</strong>
+          <span>What you get for {{ site.priceDisplay }}, live in {{ site.buildDays }}.</span>
+        </a>
+        <a href="/#offer" class="notfound-card">
+          <span class="iconbox"><svg><use href="#i-doc"/></svg></span>
+          <strong>What's included</strong>
+          <span>The full package, every bonus, and the total value.</span>
+        </a>
+        <a href="/#contact" class="notfound-card">
+          <span class="iconbox"><svg><use href="#i-phone"/></svg></span>
+          <strong>Book a kickoff call</strong>
+          <span>60 seconds to fill in. We call you within one business day.</span>
+        </a>
+      </div>
+
+      <a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a>
+      <p class="notfound-help">Still stuck? Email <a href="mailto:{{ site.email }}">{{ site.email }}</a> and we'll point you the right way.</p>
+    </div>
+  </section>
+{% endblock %}
