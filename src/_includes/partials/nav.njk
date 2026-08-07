@@ -1,0 +1,8 @@
+<nav class="nav" aria-label="Primary navigation">
+  <div class="container nav-inner">
+    <a href="{{ navLogoHref | default('#top') }}" class="wft-logo" aria-label="WFT Websites for Tradies">
+      {% include "partials/logo.njk" %}
+    </a>
+    <a class="btn nav-cta" href="{{ navCtaHref | default('#offer') }}">GET STARTED →</a>
+  </div>
+</nav>
