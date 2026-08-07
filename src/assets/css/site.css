@@ -325,6 +325,34 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .footer { background: var(--black); border-top: 1px solid var(--slate); padding: 32px 24px; text-align: center; }
 .footer .wft-logo { justify-content: center; margin-bottom: 14px; }
 .footer-text { color: rgba(255,255,255,.25); font-size: 12px; line-height: 1.8; }
+.footer-text a { color: rgba(255,255,255,.45); text-decoration: underline; text-underline-offset: 2px; }
+.footer-text a:hover { color: var(--yellow); }
+
+/* 19. Long-form content pages (legal, guides, 404) */
+.page-head { background: var(--black); padding: 72px 0 56px; border-bottom: 1px solid var(--slate); }
+.page-head .container { max-width: 760px; }
+.page-head h1 { font-size: clamp(2rem, 5.5vw, 3.2rem); text-transform: none; letter-spacing: -.03em; }
+.page-head .page-intro { color: rgba(255,255,255,.6); font-size: 1.05rem; line-height: 1.75; margin: 20px 0 0; }
+.page-head .updated { color: var(--grey); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; margin: 20px 0 0; }
+
+.prose { background: var(--white); color: var(--black); padding: 72px 0 88px; }
+.prose .container { max-width: 760px; }
+.prose h2 { margin: 48px 0 16px; font-size: 1.4rem; font-weight: 900; letter-spacing: -.02em; line-height: 1.25; }
+.prose h2:first-child { margin-top: 0; }
+.prose h3 { margin: 32px 0 12px; font-size: 1.05rem; font-weight: 800; }
+.prose p { color: #444; font-size: 1rem; line-height: 1.8; margin: 0 0 18px; }
+.prose ul, .prose ol { color: #444; font-size: 1rem; line-height: 1.8; margin: 0 0 18px; padding-left: 22px; }
+.prose li { margin-bottom: 8px; }
+.prose strong { color: var(--black); font-weight: 700; }
+.prose a { color: var(--amber-dark); text-decoration: underline; text-underline-offset: 2px; }
+.prose a:hover { color: var(--black); }
+.prose hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0; }
+.prose .callout { background: var(--off); border-left: 3px solid var(--yellow); border-radius: 0 8px 8px 0; padding: 20px 22px; margin: 0 0 24px; }
+.prose .callout p:last-child { margin-bottom: 0; }
+.prose .callout p { font-size: .95rem; }
+.prose table { min-width: 0; background: transparent; }
+.prose th { font-size: 11px; padding: 12px 14px; }
+.prose td { font-size: .95rem; padding: 12px 14px; }
 
 @media (max-width: 768px) {
   .container { width: min(100% - 32px, 720px); }

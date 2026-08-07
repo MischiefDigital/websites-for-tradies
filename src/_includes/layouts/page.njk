@@ -1,0 +1,18 @@
+{% extends "layouts/base.njk" %}
+
+{% block content %}
+  <header class="page-head">
+    <div class="container">
+      <p class="eyebrow dark">{{ eyebrow }}</p>
+      <h1>{{ heading | default(title) }}</h1>
+      {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
+      {% if updated %}<p class="updated">Last updated: {{ updated }}</p>{% endif %}
+    </div>
+  </header>
+
+  <section class="prose">
+    <div class="container">
+      {% block prose %}{% endblock %}
+    </div>
+  </section>
+{% endblock %}
