@@ -4,7 +4,7 @@
   "private": true,
   "description": "WFT — Websites for Tradies. NZ tradie website design, live in 7 working days.",
   "scripts": {
-    "build": "eleventy",
+    "build": "npm run clean && eleventy",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch",
     "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\""

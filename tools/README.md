@@ -36,6 +36,11 @@ switches at 769px and `src/index.njk` preloads the matching one.
 | `hero-tradie-900.webp` | 900×507 | 25 KB | ≤768px |
 | `hero-tradie.webp` | 1672×941 | 262 KB | ≥769px |
 
+The original 1.88 MB PNG master lives in `tools/source-images/`, deliberately
+outside `src/` — anything under `src/Images/` is copied straight into the
+deploy, and that PNG was shipping to every visitor despite nothing referencing
+it. Keep masters here, keep only what the site serves in `src/`.
+
 Regenerate the mobile variant from the full-size source:
 
 ```bash
