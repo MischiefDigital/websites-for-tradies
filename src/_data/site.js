@@ -82,10 +82,8 @@ module.exports = {
   // move as much as an SEO one. Renders nothing while null.
   bingVerification: "A744F55148D70B55B9E3E1097785071A",
 
-  // TODO (Blair): paste the GA4 Measurement ID ("G-XXXXXXXXXX") here after
-  // creating the property and linking it to Search Console. Until it is set,
-  // no analytics script loads and no events fire — the site stays clean.
-  // Once set, mark "generate_lead" as a key event in GA4 Admin so the audit's
-  // form-submission target is actually measurable.
-  ga4Id: null,
+  // GA4 Measurement ID. Live 8 Aug 2026.
+  // Note: GA4 sets first-party cookies (_ga, _ga_*). The privacy policy
+  // describes them — if this is ever removed or swapped, update /privacy too.
+  ga4Id: "G-XW4H1LWMYX",
 };

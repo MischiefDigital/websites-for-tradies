@@ -18,10 +18,12 @@ plus what's been done since.
 | 4 | Bing Webmaster Tools verified | ✅ 8 Aug | Meta tag. GSC import doesn't work for Domain properties |
 | 5 | Bing sitemap submitted | ✅ 8 Aug | |
 | 6 | IndexNow configured | ✅ 8 Aug | `npm run indexnow` after any content deploy |
-| 7 | **GA4 property created** | ⬜ **Blair** | Then paste the Measurement ID into `src/_data/site.js` → `ga4Id` |
-| 8 | **GA4 linked to Search Console** | ⬜ **Blair** | GA4 Admin → Product links |
-| 9 | **`generate_lead` marked as key event** | ⬜ **Blair** | GA4 Admin → Events. The code already fires it |
-| 10 | **Google Business Profile created** | ⬜ **Blair** | See `google-business-profile-setup.md` — highest priority open item |
+| 7 | GA4 property created and live | ✅ 8 Aug | `G-XW4H1LWMYX`. Verified firing, cookies `_ga` + `_ga_XW4H1LWMYX` |
+| 7b | **Data retention set to 14 months** | ⬜ **Blair** | Admin → Data Settings. Defaults to 2 months and discards older data permanently |
+| 8 | **GA4 linked to Search Console** | ⬜ **Blair** | Admin → Product links. May need a URL-prefix GSC property — the linker often won't offer Domain properties |
+| 9 | **`generate_lead` marked as key event** | ⬜ **Blair** | Admin → Key events → New key event → type `generate_lead`. Can be created before it ever fires |
+| 9b | **Google Signals left OFF** | ⬜ **Blair** | Confirm it's off. The privacy policy states it is |
+| 10 | Google Business Profile submitted | ✅ 8 Aug | Awaiting postcard verification, 5–12 days |
 | 11 | **Uptime monitor** | ⬜ **Blair** | UptimeRobot free tier. A dead site during the founding push is unrecoverable |
 | 12 | **PageSpeed Insights run** | ⬜ **Blair** | pagespeed.web.dev — couldn't run locally, Google's API is rate-limited |
 
