@@ -3,3 +3,11 @@ _site/
 .DS_Store
 *.log
 .vercel
+
+# Claude Code. launch.json IS tracked — it is how the dev server gets started,
+# so it belongs to the project rather than to one machine. These two do not:
+# settings.local.json holds per-machine permission grants, and worktrees/ holds
+# throwaway checkouts from other sessions (2MB of stale pre-Eleventy site files
+# that would otherwise turn up in every search of this repo).
+.claude/settings.local.json
+.claude/worktrees/
