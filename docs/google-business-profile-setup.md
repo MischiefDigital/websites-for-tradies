@@ -75,6 +75,32 @@ diluted in ranking, and the site can always say "NZ-wide" in the description.
 
 ---
 
+## 4b. Hours and phone
+
+```
+Phone:  027 424 1214
+Hours:  Monday–Friday, 7:00am – 7:00pm
+        Saturday, Sunday — closed
+```
+
+**These must match the website.** The site's `LocalBusiness` schema publishes
+the same 07:00–19:00 weekday hours, and Google cross-references profile against
+site. If you change one, change both — the site's copy comes from
+`openingHours` in `src/_data/site.js`.
+
+Why 7am–7pm rather than 9–5: tradies ring before they start and after they
+knock off. Standard business hours would show "Closed" at exactly the moment
+this audience is free to think about it.
+
+**Turn messaging on** regardless, so out-of-hours contact has a path that
+doesn't depend on you picking up.
+
+**Set special hours for public holidays.** Google prompts you before each one.
+Profiles showing "Open" on Christmas Day get reported by users, and Google acts
+on those reports.
+
+---
+
 ## 5. Description
 
 750-character limit. This one is 718 — paste as-is.
@@ -175,6 +201,8 @@ a personal account, then answer from the business account:
 - [ ] Name is exactly `WFT - Websites for Tradies`, no keywords added
 - [ ] Address hidden, service area set
 - [ ] Primary category is Website designer
+- [ ] Phone `027 424 1214`, formatted exactly as the NAP block
+- [ ] Hours set to Mon–Fri 7:00am–7:00pm, matching the site schema
 - [ ] All five services added with descriptions
 - [ ] Description pasted (718 chars, under the 750 limit)
 - [ ] Website link includes the UTM tags

@@ -54,7 +54,15 @@
         "Local SEO for tradespeople",
         "Google Business Profile optimisation",
         "Website copywriting for trade businesses"
-      ]{% if site.telephone %},
+      ]{% if site.openingHours %},
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [{% for d in site.openingHours.days %}"{{ d }}"{% if not loop.last %}, {% endif %}{% endfor %}],
+          "opens": "{{ site.openingHours.opens }}",
+          "closes": "{{ site.openingHours.closes }}"
+        }
+      ]{% endif %}{% if site.telephone %},
       "telephone": "{{ site.telephone }}"{% endif %}{% if site.sameAs.length %},
       "sameAs": [{% for u in site.sameAs %}"{{ u }}"{% if not loop.last %}, {% endif %}{% endfor %}]{% endif %}
     },

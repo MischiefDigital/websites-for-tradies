@@ -64,6 +64,17 @@ module.exports = {
   telephoneDisplay: "027 424 1214",
   telephoneLink: "+64274241214",
 
+  // Phone hours. Confirmed 8 Aug 2026 — deliberately wider than 9-5 because
+  // tradies ring before they start and after they knock off.
+  // These MUST match the Google Business Profile hours. Google cross-references
+  // the two, and users can report a profile whose hours are wrong.
+  openingHours: {
+    days: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+    opens: "07:00",
+    closes: "19:00",
+    display: "7am–7pm weekdays",
+  },
+
   // Bing Webmaster Tools verification code (the value from the msvalidate.01
   // meta tag). Bing's "Import from Google Search Console" cannot see Domain
   // properties — only URL-prefix ones — so this site verifies manually.

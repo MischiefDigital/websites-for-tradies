@@ -384,6 +384,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .contact-direct a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--slate); border-radius: 8px; background: var(--charcoal); color: var(--yellow); font-size: 16px; font-weight: 800; text-decoration: none; letter-spacing: .01em; transition: border-color .15s ease; }
 .contact-direct a:hover { border-color: var(--yellow); }
 .contact-direct a::before { content: "📞"; font-size: 14px; }
+.contact-hours { color: rgba(255,255,255,.45); font-size: 13px; }
 .lead-form { background: var(--black); border-radius: 12px; padding: 32px 28px; }
 .lead-form h3 { margin: 0 0 6px; font-size: 18px; font-weight: 900; }
 .lead-form .form-sub { color: rgba(255,255,255,.5); font-size: 13px; margin: 0 0 24px; }
@@ -409,6 +410,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 /* Padded to clear the 24px WCAG minimum tap target without looking like buttons */
 .footer-contact a { display: inline-flex; align-items: center; min-height: 32px; padding: 4px 0; color: var(--yellow); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
 .footer-sep { color: rgba(255,255,255,.25); font-size: 13px; }
+.footer-hours { margin: 4px 0 0; color: rgba(255,255,255,.35); font-size: 12px; }
 .footer-heading { margin: 0 0 14px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--white); }
 .footer-col ul { list-style: none; margin: 0; padding: 0; }
 .footer-col li { margin-bottom: 10px; }
