@@ -104,6 +104,13 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("gitLastmod", gitLastModified);
   eleventyConfig.addFilter("assetHash", assetHash);
 
+  // Eleventy reports inputPath as "./src/foo.njk"; pageDates.json is keyed on
+  // the repo-relative "src/foo.njk" that git itself uses. One filter, so the
+  // two never drift apart in a template.
+  eleventyConfig.addFilter("dateKey", (inputPath) =>
+    String(inputPath || "").replace(/^\.\//, "").replace(/\\/g, "/")
+  );
+
   /**
    * Front-matter dates, handled once so pages don't have to think about it.
    *
