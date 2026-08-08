@@ -64,13 +64,37 @@
   {% include "partials/footer.njk" %}
 
   {% if site.ga4Id %}
-  {# GA4 — loads only once a Measurement ID is configured in _data/site.js #}
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}"></script>
+  {# GA4 — loads only once a Measurement ID is configured in _data/site.js.
+     The gtag library costs ~207ms of main-thread work, which PageSpeed showed
+     landing at 2.4s — right where the hero should be painting. So the queue is
+     set up immediately but the library itself is fetched after load, or on the
+     first real interaction, whichever comes first.
+     Events fired before the library arrives are not lost: gtag() pushes into
+     dataLayer, and the library drains that queue once it initialises. #}
   <script>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
     gtag('config', '{{ site.ga4Id }}');
+    (function () {
+      var loaded = false;
+      function loadGtag() {
+        if (loaded) return;
+        loaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id={{ site.ga4Id }}';
+        document.head.appendChild(s);
+      }
+      // Whichever comes first: page fully loaded, or the visitor does something.
+      // The interaction listeners matter for anyone who engages before load —
+      // without them a fast scroller could act before analytics exists.
+      ['pointerdown', 'keydown', 'scroll', 'touchstart'].forEach(function (evt) {
+        addEventListener(evt, loadGtag, { once: true, passive: true });
+      });
+      if (document.readyState === 'complete') loadGtag();
+      else addEventListener('load', loadGtag, { once: true });
+    })();
   </script>
   {% endif %}
 
