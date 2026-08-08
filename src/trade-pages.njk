@@ -1,0 +1,132 @@
+---
+pagination:
+  data: trades
+  size: 1
+  alias: t
+  # Without this Eleventy adds ONLY the first paginated page to collections,
+  # so the sitemap would list one trade page and silently omit the rest.
+  addAllPagesToCollections: true
+permalink: "/websites-for-{{ t.slug }}/"
+updated: 2026-08-08
+eleventyComputed:
+  title: "{{ t.title }}"
+  description: "{{ t.description }}"
+  eyebrow: "FOR {{ t.plural | upper }}"
+  heading: "{{ t.heading }}"
+  intro: "{{ t.intro }}"
+  breadcrumbName: "Websites for {{ t.plural }}"
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "{{ site.url }}/websites-for-{{ t.slug }}/#service",
+        "name": "Website design for {{ t.plural }}",
+        "serviceType": "Website design for {{ t.plural }} in New Zealand",
+        "provider": { "@id": "{{ site.url }}/#business" },
+        "description": {{ t.description | dump | safe }},
+        "areaServed": { "@type": "Country", "name": "New Zealand" },
+        "audience": {
+          "@type": "BusinessAudience",
+          "name": "New Zealand {{ t.plural }}"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "{{ site.price }}",
+          "priceCurrency": "{{ site.currency }}",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ site.url }}/websites-for-{{ t.slug }}/",
+          "seller": { "@id": "{{ site.url }}/#organization" }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "{{ site.url }}/websites-for-{{ t.slug }}/#faq",
+        "mainEntity": [{% for item in t.faqs %}
+          {
+            "@type": "Question",
+            "name": {{ item.q | dump | safe }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>{{ site.priceDisplay }} flat, live in {{ site.buildDays }}.</strong> Copywriting, local SEO, .nz domain and Google Business Profile setup included — with the Jobs In {{ site.guaranteeDays }} Guarantee. If it doesn't bring you a genuine job enquiry in {{ site.guaranteeDays }} days, we rebuild it free.</p>
+</div>
+
+<h2>How your customers actually search</h2>
+<p>{{ t.howTheySearch }}</p>
+
+<h2>What's costing {{ t.plural }} work right now</h2>
+{%- for p in t.painPoints %}
+<h3>{{ p.title }}</h3>
+<p>{{ p.body }}</p>
+{%- endfor %}
+
+<h2>The pages a {{ t.slang }}'s website needs</h2>
+<p>Your build is five or more pages. For {{ t.plural }}, these are the ones that earn their place:</p>
+<div class="table-wrap">
+  <table>
+    <thead><tr><th>Page</th><th>Why it's there</th></tr></thead>
+    <tbody>
+      {%- for pg in t.pagesYouNeed %}
+      <tr><td><strong>{{ pg.name }}</strong></td><td>{{ pg.why }}</td></tr>
+      {%- endfor %}
+    </tbody>
+  </table>
+</div>
+
+<h2>The trust signals we put front and centre</h2>
+<p>These are what a {{ t.slang }} has that an amateur doesn't. Most {{ t.plural }}' websites hide them in the footer:</p>
+<ul>
+  {%- for s in t.trustSignals %}
+  <li>{{ s }}</li>
+  {%- endfor %}
+</ul>
+
+<h2>The kind of copy we'd write for you</h2>
+<p>You don't write a word of this. We interview you for 30 minutes and write the lot. For a {{ t.slang }}, the homepage headline tends to land somewhere like:</p>
+<div class="sample-copy">
+  <p class="sample-headline">{{ t.exampleHeadline }}</p>
+  <p class="sample-sub">{{ t.exampleSub }}</p>
+</div>
+<p>Yours will be specific to your business, your area and the work you actually want more of — not this, with your name dropped in.</p>
+
+<h2>Questions from {{ t.plural }}</h2>
+{%- for item in t.faqs %}
+<h3>{{ item.q }}</h3>
+<p>{{ item.a }}</p>
+{%- endfor %}
+<p>More on the <a href="/faq/">general FAQ</a>, and the full terms of both guarantees on the <a href="/guarantee/">guarantee page</a>.</p>
+
+<hr />
+
+<h2>What it costs</h2>
+<p><strong>{{ site.priceDisplay }}</strong>, one time. That covers the build, all copywriting, the local SEO foundation, your .nz domain, {{ site.hostingIncluded }}, and Google Business Profile setup. The first ten founding clients pay {{ site.foundingPriceDisplay }}.</p>
+<p>Full breakdown, including what it costs to do this another way, on the <a href="/pricing/">pricing page</a>.</p>
+
+<h2>Ready to go?</h2>
+<p>Book a kickoff call. Thirty minutes, and we'll tell you honestly whether a website will move the needle for a {{ t.slang }} in your area — including if the answer is no.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+
+<hr />
+
+<h2>We also build for</h2>
+<ul class="trade-links">
+  {%- for other in trades %}{% if other.slug != t.slug %}
+  <li><a href="/websites-for-{{ other.slug }}/">Websites for {{ other.plural }}</a></li>
+  {%- endif %}{% endfor %}
+</ul>
+<p>Not on the list? We build for every trade — <a href="/#contact">tell us yours</a>.</p>
+{% endblock %}

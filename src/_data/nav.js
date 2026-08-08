@@ -28,6 +28,15 @@ module.exports = {
       ],
     },
     {
+      heading: "By trade",
+      links: [
+        { text: "Electricians", url: "/websites-for-electricians/" },
+        { text: "Plumbers", url: "/websites-for-plumbers/" },
+        { text: "Builders", url: "/websites-for-builders/" },
+        { text: "Painters", url: "/websites-for-painters/" },
+      ],
+    },
+    {
       heading: "Company",
       links: [
         { text: "About WFT", url: "/about/" },

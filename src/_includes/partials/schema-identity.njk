@@ -65,7 +65,7 @@
       "name": "{{ site.name }}",
       "inLanguage": "en-NZ",
       "publisher": { "@id": "{{ site.url }}/#organization" }
-    }{% if breadcrumbs %},
+    }{% if breadcrumbs or breadcrumbName %},
     {
       "@type": "BreadcrumbList",
       "@id": "{{ site.url }}{{ page.url }}#breadcrumbs",
@@ -75,13 +75,19 @@
           "position": 1,
           "name": "Home",
           "item": "{{ site.url }}/"
-        }{% for crumb in breadcrumbs %},
+        }{% if breadcrumbName %},
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "{{ breadcrumbName }}",
+          "item": "{{ site.url }}{{ page.url }}"
+        }{% else %}{% for crumb in breadcrumbs %},
         {
           "@type": "ListItem",
           "position": {{ loop.index + 1 }},
           "name": "{{ crumb.name }}"{% if crumb.url %},
           "item": "{{ site.url }}{{ crumb.url }}"{% endif %}
-        }{% endfor %}
+        }{% endfor %}{% endif %}
       ]
     }{% endif %}
   ]
