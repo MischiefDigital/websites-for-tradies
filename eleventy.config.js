@@ -104,6 +104,41 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addFilter("gitLastmod", gitLastModified);
   eleventyConfig.addFilter("assetHash", assetHash);
 
+  /**
+   * Front-matter dates, handled once so pages don't have to think about it.
+   *
+   * YAML parses an unquoted `2026-08-08` into a Date object, not a string.
+   * Printing that raw gives "Sat Aug 08 2026 12:00:00 GMT+1200 (New Zealand
+   * Standard Time)" in the page, which is how it shipped before this.
+   *
+   * Both filters read UTC parts deliberately: YAML anchors a bare date to UTC
+   * midnight, so using local parts would shift the day backwards for any build
+   * running west of Greenwich.
+   */
+  const MONTHS = ["January", "February", "March", "April", "May", "June",
+    "July", "August", "September", "October", "November", "December"];
+
+  function dateParts(value) {
+    if (!value) return null;
+    if (value instanceof Date && !isNaN(value)) {
+      return { y: value.getUTCFullYear(), m: value.getUTCMonth() + 1, d: value.getUTCDate() };
+    }
+    const m = String(value).match(/^(\d{4})-(\d{2})-(\d{2})/);
+    return m ? { y: +m[1], m: +m[2], d: +m[3] } : null;
+  }
+
+  // "8 August 2026" for humans
+  eleventyConfig.addFilter("displayDate", (value) => {
+    const p = dateParts(value);
+    return p ? `${p.d} ${MONTHS[p.m - 1]} ${p.y}` : String(value || "");
+  });
+
+  // "2026-08-08" for sitemap lastmod
+  eleventyConfig.addFilter("isoDay", (value) => {
+    const p = dateParts(value);
+    return p ? `${p.y}-${String(p.m).padStart(2, "0")}-${String(p.d).padStart(2, "0")}` : null;
+  });
+
   return {
     dir: {
       input: "src",

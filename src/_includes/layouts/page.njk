@@ -6,7 +6,7 @@
       <p class="eyebrow dark">{{ eyebrow }}</p>
       <h1>{{ heading | default(title) }}</h1>
       {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
-      {% if updated %}<p class="updated">Last updated: {{ updated }}</p>{% endif %}
+      {% if updated %}<p class="updated">Last updated: {{ updated | displayDate }}</p>{% endif %}
     </div>
   </header>
 

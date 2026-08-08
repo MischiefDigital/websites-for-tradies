@@ -7,7 +7,10 @@ eleventyExcludeFromCollections: true
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 {%- for item in pages %}
 {%- if item.data.sitemapExclude !== true %}
-{%- set lastmod = item.inputPath | gitLastmod %}
+{#- Front-matter `updated` first: it is the only source that survives Vercel's
+    shallow clone, where per-file git history is unavailable. Falls back to the
+    git commit date locally, and omits <lastmod> entirely rather than guessing. -#}
+{%- set lastmod = (item.data.updated | isoDay) or (item.inputPath | gitLastmod) %}
   <url>
     <loc>{{ site.url }}{{ item.url }}</loc>
 {%- if lastmod %}
