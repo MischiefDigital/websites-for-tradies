@@ -80,7 +80,9 @@ Worth keeping visible — these were live and wrong.
 | Task | Status | Doc |
 |---|---|---|
 | **Google Business Profile** | ⬜ | `google-business-profile-setup.md` |
-| **Citations — tier 1** (Bing Places, LinkedIn, Facebook) | ⬜ | `citations-and-nap.md` |
+| Bing Places | ⏳ 8 Aug | Submitted, awaiting postcard verification |
+| **LinkedIn company page** | ⬜ | `citations-and-nap.md` — no postal verification, can finish today |
+| **Facebook business page** | ⬜ | `citations-and-nap.md` — same |
 | **Citations — tier 2** (Yellow, Localist, Finda, Neighbourly, NZS) | ⬜ | `citations-and-nap.md` |
 | Phone number decided and added to NAP | ✅ 8 Aug | `027 424 1214` — in site.js, schema, footer and contact section |
 | **Review requests to founding clients** | ⬜ | `review-requests.md` |
