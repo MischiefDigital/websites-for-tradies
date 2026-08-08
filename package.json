@@ -7,7 +7,8 @@
     "build": "npm run clean && eleventy",
     "serve": "eleventy --serve",
     "watch": "eleventy --watch",
-    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\""
+    "clean": "node -e \"require('fs').rmSync('_site',{recursive:true,force:true})\"",
+    "indexnow": "node tools/indexnow.js"
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.1.2",

@@ -64,6 +64,11 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/robots.txt": "robots.txt" });
   eleventyConfig.addPassthroughCopy({ "src/llms.txt": "llms.txt" });
   eleventyConfig.addPassthroughCopy({ "src/site.webmanifest": "site.webmanifest" });
+  // IndexNow ownership key — must be served verbatim at the site root.
+  // Filename and contents both equal the key; changing either breaks ownership.
+  eleventyConfig.addPassthroughCopy({
+    "src/2351f8bd239d5cc9326e7d9f6fadae4f.txt": "2351f8bd239d5cc9326e7d9f6fadae4f.txt",
+  });
 
   eleventyConfig.addWatchTarget("src/assets/");
 
