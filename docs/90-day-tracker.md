@@ -24,7 +24,7 @@ plus what's been done since.
 | 9 | **`generate_lead` marked as key event** | ⬜ **Blair** | Admin → Key events → New key event → type `generate_lead`. Can be created before it ever fires |
 | 9b | **Google Signals left OFF** | ⬜ **Blair** | Confirm it's off. The privacy policy states it is |
 | 10 | Google Business Profile submitted | ✅ 8 Aug | Awaiting postcard verification, 5–12 days |
-| 11 | **Uptime monitor** | ⬜ **Blair** | UptimeRobot free tier. A dead site during the founding push is unrecoverable |
+| 11 | Uptime monitor | ✅ 8 Aug | UptimeRobot. Keyword monitor on the homepage ("Websites That Get Jobs") rather than a plain ping — a failed Vercel build still returns 200 and serves the previous deploy, which a status check would miss. Plus an HTTP check on /pricing/ |
 | 12 | PageSpeed Insights run | ✅ 8 Aug | Mobile: Performance 99, Accessibility 98, Best Practices 100, SEO 100. LCP 1.4s, FCP 0.9s, SI 0.9s, TBT 90ms, CLS 0 |
 
 ---
@@ -127,6 +127,16 @@ Once WFT appears, screenshot it. That's a sales asset as much as a metric.
 - **Weekly from then** — the table above, 15 minutes.
 - **Monthly** — the AI presence check.
 - **After any content deploy** — `npm run indexnow`.
+
+### Two failure modes no monitor covers
+
+- **Domain expiry.** If the .nz registration lapses the site dies, and the
+  monitor tells you after the fact. Put a calendar reminder a month before
+  renewal — it is the most avoidable way to lose a website.
+- **Formspree outage.** The contact form posts to a third party. If it fails,
+  the site is perfectly up and enquiries silently vanish. Nothing technical is
+  broken, so nothing alerts. Submit the form yourself once a month and check it
+  arrives.
 
 ### What would be a red flag
 
