@@ -7,7 +7,17 @@
   <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
   {% block headExtra %}{% endblock %}
   <title>{{ title }}</title>
-  <link rel="stylesheet" href="/assets/css/site.css?v={{ '/assets/css/site.css' | assetHash }}" />
+  {# Above-fold styles inline so first paint needs no round trip #}
+  {% include "partials/critical-css.njk" %}
+  {# Full stylesheet loaded without blocking render. The media/onload swap is
+     the standard trick; noscript covers scripting being off. #}
+  {%- set cssHref = '/assets/css/site.css?v=' + ('/assets/css/site.css' | assetHash) %}
+  {# Deliberately no rel=preload here. Preloading would raise this to high
+     priority and make it compete with the hero image, which is the LCP
+     element. media=print leaves it low priority; the inline critical CSS
+     already covers everything above the fold. #}
+  <link rel="stylesheet" href="{{ cssHref }}" media="print" onload="this.media='all';this.onload=null" />
+  <noscript><link rel="stylesheet" href="{{ cssHref }}" /></noscript>
   {# Self-hosted Inter. Preloaded because it is discovered inside the stylesheet,
      which would otherwise delay it by a full round trip. #}
   <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/inter-latin.woff2" crossorigin />

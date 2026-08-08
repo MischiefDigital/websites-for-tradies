@@ -33,9 +33,16 @@
   --white: #FFFFFF;
   --charcoal: #1A1A1A;
   --slate: #2E2E2E;
-  --grey: #8A8A8A;
+  /* --grey and --amber-dark were both below WCAG AA on their usual
+     backgrounds (3.45:1 and 4.27:1, need 4.5:1). Darkened/lightened just
+     enough to pass with headroom — check with the contrast audit before
+     changing either. */
+  --grey: #9E9E9E;
+  /* --grey is tuned for dark backgrounds. On white it drops to 2.68:1, so
+     anything grey sitting on --white or --off needs this instead (5.3:1). */
+  --grey-on-light: #6B6B6B;
   --off: #F5F5F5;
-  --amber-dark: #C85A00;
+  --amber-dark: #B85100;
   --green: #2d7a2d;
   --red: #E05050;
   --line: #E0E0E0;
@@ -253,7 +260,7 @@ h1 span { color: var(--yellow); display: block; }
 .stat-number { display: block; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: var(--yellow); line-height: 1; letter-spacing: -.02em; }
 .stat-label { display: block; margin-top: 12px; color: var(--grey); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; line-height: 1.4; }
 .stats-source { margin-top: 18px; text-align: center; }
-.stats-source p { margin: 0; color: rgba(255,255,255,.35); font-size: 12px; }
+.stats-source p { margin: 0; color: rgba(255,255,255,.55); font-size: 12px; }
 .stats-source a { color: rgba(255,255,255,.55); text-decoration: underline; text-underline-offset: 2px; }
 .stats-source a:hover { color: var(--yellow); }
 
@@ -286,21 +293,21 @@ h1 span { color: var(--yellow); display: block; }
 .summary-box { margin-top: 24px; background: var(--white); border: 1px solid var(--line); border-radius: 10px; padding: 20px; }
 .summary-row { display: flex; justify-content: space-between; align-items: baseline; gap: 20px; padding: 8px 0; color: #555; font-size: 14px; }
 .summary-row strong { color: var(--black); font-size: 26px; font-weight: 900; }
-.summary-row .strike { color: var(--grey); text-decoration: line-through; }
+.summary-row .strike { color: var(--grey-on-light); text-decoration: line-through; }
 .summary-row .save { color: var(--green); font-weight: 800; }
 .price-card { position: sticky; top: 80px; background: var(--black); color: var(--white); border-radius: 12px; padding: 32px 28px; }
 .price-card .card-eyebrow { color: var(--yellow); font-size: 10px; font-weight: 800; text-transform: uppercase; letter-spacing: .1em; }
 .price-card h3 { margin: 12px 0 10px; font-size: 20px; font-weight: 900; line-height: 1.15; }
 .price-card p { color: rgba(255,255,255,.55); font-size: 13px; line-height: 1.65; margin: 0 0 16px; }
-.was { color: rgba(255,255,255,.3); font-size: 13px; text-decoration: line-through; }
+.was { color: rgba(255,255,255,.5); font-size: 13px; text-decoration: line-through; }
 .price { color: var(--yellow); font-size: 46px; font-weight: 900; letter-spacing: -.03em; line-height: 1; margin: 6px 0; }
-.sub { color: rgba(255,255,255,.4); font-size: 12px; margin-bottom: 16px; }
+.sub { color: rgba(255,255,255,.6); font-size: 12px; margin-bottom: 16px; }
 .checklist { list-style: none; padding: 0; margin: 18px 0; }
 .checklist li { border-bottom: 1px solid rgba(255,255,255,.07); padding: 10px 0; color: rgba(255,255,255,.75); font-size: 13px; }
 .checklist span { color: var(--yellow); font-weight: 900; margin-right: 8px; }
 .guarantee-box { background: rgba(245,194,0,.1); border: 1px solid rgba(245,194,0,.25); border-radius: 8px; padding: 14px; color: rgba(255,255,255,.65); font-size: 12px; line-height: 1.6; margin-bottom: 18px; }
 .guarantee-box strong { color: var(--yellow); }
-.founding-spots { color: rgba(255,255,255,.45); font-size: 12px; font-weight: 600; text-align: center; margin-top: 14px; line-height: 1.5; }
+.founding-spots { color: rgba(255,255,255,.6); font-size: 12px; font-weight: 600; text-align: center; margin-top: 14px; line-height: 1.5; }
 
 /* 11. Continuity / Get Found Plan */
 .continuity { background: var(--black); }
@@ -313,7 +320,7 @@ h1 span { color: var(--yellow); display: block; }
 .plan-features { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; list-style: none; padding: 0; margin: 0 0 28px; }
 .plan-features li { display: flex; align-items: flex-start; gap: 10px; font-size: 14px; color: rgba(255,255,255,.8); line-height: 1.5; }
 .plan-features li::before { content: "✓"; color: var(--yellow); font-weight: 900; flex-shrink: 0; }
-.plan-note { color: rgba(255,255,255,.45); font-size: 13px; line-height: 1.7; border-top: 1px solid var(--slate); padding-top: 20px; margin: 0; }
+.plan-note { color: rgba(255,255,255,.6); font-size: 13px; line-height: 1.7; border-top: 1px solid var(--slate); padding-top: 20px; margin: 0; }
 
 /* 12. Founding Tradie / Straight Up */
 .founding { background: var(--black); color: var(--white); }
@@ -345,7 +352,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .panel-eyebrow { color: var(--yellow); font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; margin-bottom: 20px; }
 .guarantee-block { border-left: 3px solid var(--yellow); padding-left: 16px; color: var(--white); font-size: 1.05rem; font-weight: 700; line-height: 1.65; }
 .guarantee-block + .guarantee-block { margin-top: 16px; }
-.conditions { color: rgba(255,255,255,.35); font-size: 12px; line-height: 1.7; margin-top: 16px; }
+.conditions { color: rgba(255,255,255,.55); font-size: 12px; line-height: 1.7; margin-top: 16px; }
 
 /* 15. FAQ */
 .faq-inner { max-width: 720px; margin: 0 auto; }
@@ -356,7 +363,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .accordion-item { border-bottom: 1px solid #E8E8E8; }
 .accordion-button { width: 100%; padding: 20px 0; display: flex; align-items: center; justify-content: space-between; gap: 20px; border: 0; background: transparent; color: var(--black); font-family: var(--font); font-size: 15px; font-weight: 700; text-align: left; cursor: pointer; }
 .accordion-button:hover { color: var(--amber-dark); }
-.accordion-button .arrow { color: var(--yellow); font-size: 18px; transition: transform .2s ease; }
+.accordion-button .arrow { color: var(--amber-dark); font-size: 18px; transition: transform .2s ease; }
 .accordion-item.open .arrow { transform: rotate(45deg); }
 .accordion-answer { display: none; color: #555; font-size: 14px; line-height: 1.75; padding: 0 0 20px; }
 .accordion-item.open .accordion-answer { display: block; }
@@ -365,11 +372,11 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .final-cta { background: var(--yellow); color: var(--black); text-align: center; padding: 100px 24px; }
 .final-cta::before { content: "7"; position: absolute; inset: 50% auto auto 50%; transform: translate(-50%, -50%); font-size: clamp(180px, 34vw, 380px); font-weight: 900; color: rgba(0,0,0,.06); pointer-events: none; line-height: 1; }
 .final-content { position: relative; z-index: 2; max-width: 820px; margin: 0 auto; }
-.final-cta .eyebrow { color: rgba(0,0,0,.5); margin-bottom: 20px; }
+.final-cta .eyebrow { color: rgba(0,0,0,.66); margin-bottom: 20px; }
 .final-cta h2 { margin: 0; font-size: clamp(2rem, 7vw, 4rem); line-height: 1; letter-spacing: -.03em; font-weight: 900; }
 .final-sub { max-width: 520px; margin: 22px auto 30px; color: rgba(0,0,0,.6); font-size: 1.1rem; line-height: 1.65; }
-.final-risk { margin-top: 18px; color: rgba(0,0,0,.4); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
-.ps { max-width: 540px; margin: 36px auto 0; color: rgba(0,0,0,.55); font-size: 14px; line-height: 1.7; }
+.final-risk { margin-top: 18px; color: rgba(0,0,0,.62); font-size: 12px; text-transform: uppercase; letter-spacing: .04em; }
+.ps { max-width: 540px; margin: 36px auto 0; color: rgba(0,0,0,.7); font-size: 14px; line-height: 1.7; }
 
 /* 17. Contact Form */
 .contact { background: var(--charcoal); color: var(--white); }
@@ -384,7 +391,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .contact-direct a { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 8px 16px; border: 1px solid var(--slate); border-radius: 8px; background: var(--charcoal); color: var(--yellow); font-size: 16px; font-weight: 800; text-decoration: none; letter-spacing: .01em; transition: border-color .15s ease; }
 .contact-direct a:hover { border-color: var(--yellow); }
 .contact-direct a::before { content: "📞"; font-size: 14px; }
-.contact-hours { color: rgba(255,255,255,.45); font-size: 13px; }
+.contact-hours { color: rgba(255,255,255,.6); font-size: 13px; }
 .lead-form { background: var(--black); border-radius: 12px; padding: 32px 28px; }
 .lead-form h3 { margin: 0 0 6px; font-size: 18px; font-weight: 900; }
 .lead-form .form-sub { color: rgba(255,255,255,.5); font-size: 13px; margin: 0 0 24px; }
@@ -394,7 +401,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .form-group input:focus, .form-group select:focus { border-color: var(--yellow); }
 .form-group select option { background: var(--charcoal); }
 .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-.form-privacy { color: rgba(255,255,255,.3); font-size: 11px; text-align: center; margin-top: 12px; line-height: 1.5; }
+.form-privacy { color: rgba(255,255,255,.5); font-size: 11px; text-align: center; margin-top: 12px; line-height: 1.5; }
 @media (max-width: 768px) { .contact-layout { grid-template-columns: 1fr; gap: 36px; } .form-row { grid-template-columns: 1fr; } }
 
 /* 18. Footer */
@@ -409,15 +416,15 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .footer-contact { display: flex; flex-wrap: wrap; gap: 4px 10px; align-items: center; margin: 0; }
 /* Padded to clear the 24px WCAG minimum tap target without looking like buttons */
 .footer-contact a { display: inline-flex; align-items: center; min-height: 32px; padding: 4px 0; color: var(--yellow); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
-.footer-sep { color: rgba(255,255,255,.25); font-size: 13px; }
-.footer-hours { margin: 4px 0 0; color: rgba(255,255,255,.35); font-size: 12px; }
+.footer-sep { color: rgba(255,255,255,.45); font-size: 13px; }
+.footer-hours { margin: 4px 0 0; color: rgba(255,255,255,.55); font-size: 12px; }
 .footer-heading { margin: 0 0 14px; font-size: 11px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--white); }
 .footer-col ul { list-style: none; margin: 0; padding: 0; }
 .footer-col li { margin-bottom: 10px; }
 .footer-col a { color: rgba(255,255,255,.5); font-size: 13px; transition: color .15s ease; }
 .footer-col a:hover { color: var(--yellow); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
-.footer-bottom p { margin: 0; color: rgba(255,255,255,.28); font-size: 12px; }
+.footer-bottom p { margin: 0; color: rgba(255,255,255,.5); font-size: 12px; }
 @media (max-width: 420px) {
   .footer-bottom { flex-direction: column; gap: 8px; }
 }
@@ -455,6 +462,12 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .prose strong { color: var(--black); font-weight: 700; }
 .prose a { color: var(--amber-dark); text-decoration: underline; text-underline-offset: 2px; }
 .prose a:hover { color: var(--black); }
+/* `.prose a` and `.btn` have equal specificity, and .prose a comes later — so
+   without this the CTA button on every prose page renders as underlined amber
+   text on yellow (2.99:1). Caught by the contrast audit, but it was a visible
+   design bug on 12 pages, not just a score. */
+.prose a.btn { color: var(--black); text-decoration: none; }
+.prose a.btn.black { color: var(--yellow); }
 .prose hr { border: 0; border-top: 1px solid var(--line); margin: 44px 0; }
 .prose code { background: var(--off); border: 1px solid var(--line); border-radius: 4px; padding: 2px 6px; font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace; font-size: .88em; }
 .prose .callout { background: var(--off); border-left: 3px solid var(--yellow); border-radius: 0 8px 8px 0; padding: 20px 22px; margin: 0 0 24px; }
