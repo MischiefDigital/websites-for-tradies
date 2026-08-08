@@ -1,0 +1,125 @@
+---
+pagination:
+  data: cities
+  size: 1
+  alias: c
+  # Without this Eleventy adds ONLY the first paginated page to collections,
+  # so the sitemap and llms.txt would list Auckland and omit the other five.
+  addAllPagesToCollections: true
+permalink: "/tradie-websites-{{ c.slug }}/"
+updated: 2026-08-08
+eleventyComputed:
+  title: "{{ c.title }}"
+  description: "{{ c.description }}"
+  eyebrow: "{{ c.city | upper }}"
+  heading: "{{ c.heading }}"
+  intro: "{{ c.intro }}"
+  breadcrumbName: "Tradie websites {{ c.city }}"
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Service",
+        "@id": "{{ site.url }}/tradie-websites-{{ c.slug }}/#service",
+        "name": "Tradie website design in {{ c.city }}",
+        "serviceType": "Website design for trade businesses in {{ c.city }}",
+        "provider": { "@id": "{{ site.url }}/#business" },
+        "description": {{ c.description | dump | safe }},
+        "areaServed": {
+          "@type": "City",
+          "name": "{{ c.city }}",
+          "containedInPlace": { "@type": "AdministrativeArea", "name": "{{ c.region }}, New Zealand" }
+        },
+        "audience": {
+          "@type": "BusinessAudience",
+          "name": "Trade businesses in {{ c.city }}"
+        },
+        "offers": {
+          "@type": "Offer",
+          "price": "{{ site.price }}",
+          "priceCurrency": "{{ site.currency }}",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ site.url }}/tradie-websites-{{ c.slug }}/",
+          "seller": { "@id": "{{ site.url }}/#organization" }
+        }
+      },
+      {
+        "@type": "FAQPage",
+        "@id": "{{ site.url }}/tradie-websites-{{ c.slug }}/#faq",
+        "mainEntity": [{% for item in c.faqs %}
+          {
+            "@type": "Question",
+            "name": {{ item.q | dump | safe }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>{{ site.priceDisplay }} flat, live in {{ site.buildDays }}.</strong> Copywriting, local SEO, .nz domain and Google Business Profile setup included — with the Jobs In {{ site.guaranteeDays }} Guarantee.</p>
+</div>
+
+<h2>What the {{ c.city }} market is actually like</h2>
+<p>{{ c.localMarket }}</p>
+
+<h2>How {{ c.city }} customers search</h2>
+<p>{{ c.searchBehaviour }}</p>
+
+<h2>What we build into a {{ c.city }} tradie's site</h2>
+{%- for f in c.localFactors %}
+<h3>{{ f.title }}</h3>
+<p>{{ f.body }}</p>
+{%- endfor %}
+
+<h2>Areas we'll target for you</h2>
+<p>Your build includes suburb and service-area targeting. For a {{ c.city }} business that usually means some combination of:</p>
+<ul class="suburb-list">
+  {%- for s in c.suburbs %}
+  <li>{{ s }}</li>
+  {%- endfor %}
+</ul>
+<p>We pick the ones you actually service on the kickoff call. Fewer real areas beats a long list of thin pages — Google spots padded location pages, and so do customers.</p>
+
+<h2>Questions from {{ c.city }} tradies</h2>
+{%- for item in c.faqs %}
+<h3>{{ item.q }}</h3>
+<p>{{ item.a }}</p>
+{%- endfor %}
+
+<hr />
+
+<h2>Built for your trade as well as your city</h2>
+<p>The local targeting above sits on top of a site written for what you actually do:</p>
+<ul class="trade-links">
+  {%- for t in trades %}
+  <li><a href="/websites-for-{{ t.slug }}/">Websites for {{ t.plural }}</a></li>
+  {%- endfor %}
+</ul>
+
+<h2>What it costs</h2>
+<p><strong>{{ site.priceDisplay }}</strong>, one time — build, copywriting, local SEO foundation, .nz domain, {{ site.hostingIncluded }} and Google Business Profile setup. First ten founding clients pay {{ site.foundingPriceDisplay }}. Full breakdown on the <a href="/pricing/">pricing page</a>.</p>
+
+<h2>Ready to get found in {{ c.city }}?</h2>
+<p>Book a kickoff call. Thirty minutes, and we'll tell you honestly whether we can move the needle for your trade in your part of {{ c.city }} — including if we can't.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+
+<hr />
+
+<h2>We also build for tradies in</h2>
+<ul class="trade-links">
+  {%- for other in cities %}{% if other.slug != c.slug %}
+  <li><a href="/tradie-websites-{{ other.slug }}/">{{ other.city }}</a></li>
+  {%- endif %}{% endfor %}
+</ul>
+<p>Somewhere else in New Zealand? We build nationwide — <a href="/#contact">tell us where you are</a>.</p>
+{% endblock %}

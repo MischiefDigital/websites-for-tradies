@@ -37,6 +37,17 @@ module.exports = {
       ],
     },
     {
+      heading: "By city",
+      links: [
+        { text: "Auckland", url: "/tradie-websites-auckland/" },
+        { text: "Wellington", url: "/tradie-websites-wellington/" },
+        { text: "Christchurch", url: "/tradie-websites-christchurch/" },
+        { text: "Hamilton", url: "/tradie-websites-hamilton/" },
+        { text: "Tauranga", url: "/tradie-websites-tauranga/" },
+        { text: "Dunedin", url: "/tradie-websites-dunedin/" },
+      ],
+    },
+    {
       heading: "Company",
       links: [
         { text: "About WFT", url: "/about/" },

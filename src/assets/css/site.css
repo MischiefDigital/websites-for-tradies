@@ -386,7 +386,9 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 
 /* 18. Footer */
 .footer { background: var(--black); border-top: 1px solid var(--slate); padding: 56px 0 32px; }
-.footer-top { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 40px; border-bottom: 1px solid var(--slate); }
+/* Brand block plus five link columns. Sized so adding a column doesn't spill
+   into a ragged second row — check this if the footer nav grows again. */
+.footer-top { display: grid; grid-template-columns: 1.5fr repeat(5, minmax(0, 1fr)); gap: 28px; padding-bottom: 40px; border-bottom: 1px solid var(--slate); }
 .footer-brand .wft-logo { margin-bottom: 18px; }
 .footer-pitch { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.7; margin: 0 0 14px; max-width: 340px; }
 .footer-contact a { color: var(--yellow); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -397,11 +399,14 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .footer-col a:hover { color: var(--yellow); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
 .footer-bottom p { margin: 0; color: rgba(255,255,255,.28); font-size: 12px; }
-@media (max-width: 900px) {
-  .footer-top { grid-template-columns: 1fr 1fr; gap: 32px; }
+@media (max-width: 1100px) {
+  .footer-top { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
   .footer-brand { grid-column: 1 / -1; }
 }
-@media (max-width: 480px) {
+@media (max-width: 700px) {
+  .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 420px) {
   .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 }
@@ -449,6 +454,9 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .prose .sample-copy { background: var(--black); border-radius: 10px; padding: 30px 28px; margin: 0 0 24px; }
 .prose .sample-copy .sample-headline { color: var(--white); font-size: clamp(1.25rem, 3vw, 1.7rem); font-weight: 900; line-height: 1.25; letter-spacing: -.02em; margin: 0 0 12px; }
 .prose .sample-copy .sample-sub { color: rgba(255,255,255,.6); font-size: .95rem; line-height: 1.7; margin: 0; }
+
+.prose .suburb-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
+.prose .suburb-list li { margin: 0; padding: 7px 13px; background: var(--off); border: 1px solid var(--line); border-radius: 20px; font-size: .85rem; font-weight: 600; color: #444; }
 
 .trade-links { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
 .trade-links li { margin: 0; }
