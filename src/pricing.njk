@@ -1,0 +1,129 @@
+---
+title: Tradie Website Cost NZ | What You Pay and What You Get — WFT
+description: "What a tradie website costs in New Zealand. WFT is NZ$1,997 flat — copywriting, local SEO, .nz domain and Google Business Profile included. No quotes, no scope creep."
+eyebrow: PRICING
+heading: What a tradie website costs in New Zealand
+intro: Most agencies make you book a call to find out the price. Here it is, in public, with the maths shown. If it's not for you, you've lost 30 seconds instead of 30 minutes.
+updated: 2026-08-08
+breadcrumbs:
+  - name: Pricing
+    url: /pricing/
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Product",
+        "@id": "{{ site.url }}/pricing/#product",
+        "name": "WFT Tradie Website Package",
+        "description": "A complete 5+ page website for a New Zealand trade business, including copywriting, local SEO foundation, .nz domain, hosting and SSL setup, and Google Business Profile setup. Live in {{ site.buildDays }}.",
+        "brand": { "@id": "{{ site.url }}/#organization" },
+        "offers": {
+          "@type": "Offer",
+          "price": "{{ site.price }}",
+          "priceCurrency": "{{ site.currency }}",
+          "availability": "https://schema.org/InStock",
+          "url": "{{ site.url }}/pricing/",
+          "seller": { "@id": "{{ site.url }}/#organization" }
+        }
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>The short answer: {{ site.priceDisplay }}, one time, everything included.</strong> The first 10 founding tradies pay {{ site.foundingPriceDisplay }}. After launch there's an optional {{ site.planPriceDisplay }} plan to keep you ranking — no lock-in, cancel any time.</p>
+</div>
+
+<h2>What the {{ site.priceDisplay }} covers</h2>
+<p>Everything needed to go from nothing to a live website that shows up on Google. There is no "starter tier" that quietly leaves out the parts that make it work.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Included</th><th>What it means</th><th>Bought separately</th></tr>
+    </thead>
+    <tbody>
+      <tr><td><strong>5+ page website</strong></td><td>Home, services, about, project gallery, contact. Mobile-first, fast, built to generate phone calls.</td><td>NZ$2,000</td></tr>
+      <tr><td><strong>All copywriting</strong></td><td>A 30-minute interview, then we write every word. You approve it.</td><td>NZ$800</td></tr>
+      <tr><td><strong>Local SEO foundation</strong></td><td>Suburb and service-area targeting, meta tags, structured data — set up before launch, not after.</td><td>NZ$600</td></tr>
+      <tr><td><strong>Google Business Profile</strong></td><td>Created or fully optimised so you appear in the local map pack.</td><td>NZ$400</td></tr>
+      <tr><td><strong>.nz domain + launch</strong></td><td>Domain registered in your name, hosting, SSL and security set up, site put live.</td><td>NZ$300</td></tr>
+      <tr><td><strong>"First Jobs" checklist</strong></td><td>The review-generation system that turns a live site into actual enquiries.</td><td>NZ$300</td></tr>
+      <tr class="wft-row"><td><strong>Total</strong></td><td>All of it, one invoice</td><td class="wft-val">NZ$4,400 → {{ site.priceDisplay }}</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>What it costs to do it another way</h2>
+<p>This is the honest version, including the option where you don't hire us. Prices are what NZ trade businesses typically report paying in 2026.</p>
+
+<div class="table-wrap">
+  <table>
+    <thead>
+      <tr><th>Option</th><th>Real cost</th><th>Your time</th><th>The catch</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>Do nothing</strong></td>
+        <td>NZ$0</td>
+        <td>None</td>
+        <td>81% of Kiwis research online before making contact. You're invisible to all of them.</td>
+      </tr>
+      <tr>
+        <td><strong>DIY (Wix, Squarespace)</strong></td>
+        <td>NZ$276–$780/yr, forever</td>
+        <td>10–40 hours</td>
+        <td>You write the copy, you do the SEO, you fix it when it breaks. Most tradies stall halfway and the site never goes live.</td>
+      </tr>
+      <tr>
+        <td><strong>Cheap freelancer</strong></td>
+        <td>NZ$500–$1,500</td>
+        <td>Ongoing chasing</td>
+        <td>Usually design only. Copy, SEO and Google setup are extra or absent. Support ends when they get a full-time job.</td>
+      </tr>
+      <tr>
+        <td><strong>Full agency</strong></td>
+        <td>NZ$3,000–$8,000+</td>
+        <td>4–8 weeks of meetings</td>
+        <td>Good work, real cost, long timeline. Copywriting and SEO usually quoted separately.</td>
+      </tr>
+      <tr class="wft-row">
+        <td><strong>WFT</strong></td>
+        <td class="wft-val">{{ site.priceDisplay }} flat</td>
+        <td class="wft-val">~30 minutes</td>
+        <td>We only build for tradies, so we're not starting from scratch each time. That's where the price comes from.</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<h2>Why we're cheaper than an agency</h2>
+<p>Not because we cut corners — because of focus. We build one type of website for one type of business. We're not relearning your industry on your invoice, and we don't have a CBD office to pay for. That efficiency is the entire discount.</p>
+<p>What we don't do: bespoke e-commerce, booking platforms, custom web apps. If you need those, a full agency is genuinely the right call and we'll say so on the call.</p>
+
+<h2>After launch: the Get Found Plan</h2>
+<p>A website gets you found once. Staying found is a different job — Google rewards profiles that stay active and demotes ones that go quiet.</p>
+<p>The Get Found Plan is <strong>{{ site.planPriceDisplay }}</strong> and covers hosting, SSL, backups and security, monthly Google Business Profile management, ongoing local SEO, the review-generation system, monthly reporting, and small site updates.</p>
+<p>Your first month is included in the build price and the plan starts from day 30. There's no lock-in — cancel any time. It is required to keep the Jobs In {{ site.guaranteeDays }} Guarantee active, for the reason set out on the <a href="/guarantee/">guarantee page</a>: a site nobody is managing can't be guaranteed to rank.</p>
+
+<h2>What you're not charged for</h2>
+<ul>
+  <li><strong>Scope creep.</strong> The quote is the price. Extra work is quoted separately and you can say no.</li>
+  <li><strong>Ransom fees.</strong> You own the site and the domain outright. Host it anywhere.</li>
+  <li><strong>Lock-in contracts.</strong> There aren't any.</li>
+  <li><strong>The rebuild, if we miss.</strong> No genuine job enquiry in {{ site.guaranteeDays }} days and we rebuild free.</li>
+</ul>
+
+<hr />
+
+<h2>Ready to see the number in context?</h2>
+<p>Book a kickoff call. Thirty minutes, no hard sell — we'll tell you honestly whether a website will move the needle for your trade and your area, including if the answer is no.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}

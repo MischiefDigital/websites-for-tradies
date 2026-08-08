@@ -1,8 +1,24 @@
 <nav class="nav" aria-label="Primary navigation">
   <div class="container nav-inner">
-    <a href="{{ navLogoHref | default('#top') }}" class="wft-logo" aria-label="WFT Websites for Tradies">
+    <a href="{{ navLogoHref | default('/') }}" class="wft-logo" aria-label="WFT Websites for Tradies — home">
       {% include "partials/logo.njk" %}
     </a>
-    <a class="btn nav-cta" href="{{ navCtaHref | default('#offer') }}">GET STARTED →</a>
+
+    <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="nav-menu" aria-label="Open menu">
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+      <span class="nav-toggle-bar"></span>
+    </button>
+
+    <div class="nav-menu" id="nav-menu">
+      <ul class="nav-links">
+        {%- for link in nav.primary %}
+        <li>
+          <a href="{{ link.url }}"{% if page.url == link.url %} aria-current="page"{% endif %}>{{ link.text }}</a>
+        </li>
+        {%- endfor %}
+      </ul>
+      <a class="btn nav-cta" href="{{ navCtaHref | default('/#contact') }}">GET STARTED →</a>
+    </div>
   </div>
 </nav>

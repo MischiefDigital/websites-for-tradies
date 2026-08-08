@@ -8,6 +8,26 @@ document.querySelectorAll('.accordion-button').forEach((button) => {
   });
 });
 
+// Mobile navigation
+const navToggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-menu');
+if (navToggle && navMenu) {
+  navToggle.addEventListener('click', () => {
+    const open = navMenu.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', String(open));
+    navToggle.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
+  });
+  // Escape closes it, and focus goes back to the button rather than nowhere
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && navMenu.classList.contains('open')) {
+      navMenu.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+      navToggle.setAttribute('aria-label', 'Open menu');
+      navToggle.focus();
+    }
+  });
+}
+
 // Kickoff-call form: record the conversion before the browser navigates to
 // Formspree. beacon transport is what makes the event survive that unload.
 // No field values are sent — only the fact that a submission happened.

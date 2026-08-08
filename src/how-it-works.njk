@@ -1,0 +1,87 @@
+---
+title: How It Works | Your Tradie Website in 7 Days — WFT
+description: "A done-for-you tradie website in 7 working days. One 30-minute call, some photos, and we handle the rest. Here's exactly what happens on each day of the build."
+eyebrow: THE PROCESS
+heading: How your website gets built in seven days
+intro: Your entire job is a 30-minute call and a folder of photos. Everything else is ours. Here's the day-by-day, so you know exactly what's happening and when we'll need you.
+updated: 2026-08-08
+breadcrumbs:
+  - name: How it works
+    url: /how-it-works/
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "HowTo",
+        "@id": "{{ site.url }}/how-it-works/#howto",
+        "name": "How WFT builds a tradie website in 7 working days",
+        "description": "The day-by-day process for building and launching a website for a New Zealand trade business.",
+        "totalTime": "P7D",
+        "step": [
+          { "@type": "HowToStep", "position": 1, "name": "Kickoff call", "text": "A 30-minute call covering your trade, your service area, the jobs you want more of, and what makes customers pick you." },
+          { "@type": "HowToStep", "position": 2, "name": "You send photos", "text": "Photos of your work, plus any logo or branding you already have. This is the whole of your homework." },
+          { "@type": "HowToStep", "position": 3, "name": "We write and design", "text": "We write every word of copy and design the site around your trade and service area." },
+          { "@type": "HowToStep", "position": 4, "name": "You approve the preview", "text": "You get a private preview link and give us changes within 5 working days." },
+          { "@type": "HowToStep", "position": 5, "name": "Launch", "text": "Domain, hosting, SSL and Google Business Profile go live, and you get the First Jobs checklist." }
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<h2>Day 1 — The kickoff call</h2>
+<p>Thirty minutes, on the phone, at a time that suits you. We ask about your trade, the suburbs you actually want work in, the jobs you'd like more of and the ones you'd rather stop getting, and what makes customers choose you over the next bloke.</p>
+<p>That last question is the one that matters. It's where your copy comes from, and it's why we interview you instead of sending a form.</p>
+<p><strong>What we need from you afterwards:</strong> photos of your work. Ten to twenty good ones beats a hundred blurry ones. Phone photos are completely fine — real work beats stock photography every time, and customers can tell the difference instantly.</p>
+
+<h2>Days 2–3 — We write your copy</h2>
+<p>We write every word: headlines, service descriptions, your about page, the calls to action. Written the way your customers actually search and speak, not in web-agency language.</p>
+<p>This is the part most tradies dread and most cheap website deals skip. It's also the part that decides whether a visitor calls you or bounces.</p>
+
+<h2>Days 3–5 — We design and build</h2>
+<p>Mobile first, because that's where your customers are — most people looking for a tradie are on a phone, often standing in the room with the problem. Fast-loading, because a slow site loses people before it says anything.</p>
+<p>While the build happens we also set up the parts that make Google notice you:</p>
+<ul>
+  <li>Your .nz domain, registered in your business's name</li>
+  <li>Hosting, SSL and security</li>
+  <li>Suburb and service-area targeting</li>
+  <li>Meta tags and structured data so Google understands your trade and territory</li>
+  <li>Your Google Business Profile, created or optimised</li>
+</ul>
+
+<h2>Day 6 — You approve it</h2>
+<p>You get a private preview link. Look at it on your phone, show it to your partner, show it to a customer if you like. Tell us what to change.</p>
+<p>We need your feedback <strong>within 5 working days</strong>. That's not us being difficult — it's the condition that makes both guarantees possible. The clock pauses while we're waiting on you, so a slow approval doesn't count against our seven days, but it does delay your launch.</p>
+
+<h2>Day 7 — You go live</h2>
+<p>The site goes live on your domain. Your Google Business Profile is connected. We hand you the <strong>"First Jobs" launch checklist</strong> — the specific steps to take in your first 30 days to turn a live website into ringing phone.</p>
+<p>Most of that checklist is about reviews, because reviews are the biggest lever in local search and the one most tradies never pull.</p>
+
+<hr />
+
+<h2>What happens after day 7</h2>
+<p>Launching is the start, not the finish. Google rewards sites and profiles that stay active, and quietly demotes the ones that don't. That's where most tradie websites die — built, then forgotten.</p>
+<p>The <a href="/pricing/">Get Found Plan</a> at {{ site.planPriceDisplay }} keeps the profile managed, the local SEO moving and the reviews coming. Your first month is included; it starts from day 30; there's no lock-in.</p>
+<p>And the <a href="/guarantee/">Jobs In {{ site.guaranteeDays }} Guarantee</a> runs for the first {{ site.guaranteeDays }} days: no genuine job enquiry in that window and we rebuild free.</p>
+
+<h2>What we need from you, in total</h2>
+<ol>
+  <li>A 30-minute call</li>
+  <li>Photos of your work</li>
+  <li>Feedback on the preview within 5 working days</li>
+  <li>Ask three past customers for a Google review after launch</li>
+</ol>
+<p>That's the entire list. If it were longer, seven days wouldn't be possible.</p>
+
+<hr />
+
+<h2>Ready to start the clock?</h2>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}

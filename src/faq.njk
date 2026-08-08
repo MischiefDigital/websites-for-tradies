@@ -1,0 +1,76 @@
+---
+title: Tradie Website FAQ | Common Questions Answered — WFT
+description: "Straight answers about tradie websites in NZ: what it costs, how long it takes, what happens if it doesn't work, and whether you really need one."
+eyebrow: COMMON QUESTIONS
+heading: Questions tradies actually ask
+intro: No waffle and no dodging. If your question isn't here, email us and we'll answer it properly — and probably add it to this page.
+updated: 2026-08-08
+breadcrumbs:
+  - name: FAQ
+    url: /faq/
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "FAQPage",
+        "@id": "{{ site.url }}/faq/#faq",
+        "mainEntity": [{% for item in faq %}
+          {
+            "@type": "Question",
+            "name": {{ item.q | dump | safe }},
+            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>WFT builds websites for New Zealand tradies for a flat {{ site.priceDisplay }}, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee.</strong> You own the site and the domain outright and there's no lock-in contract.</p>
+</div>
+
+{%- for item in faq %}
+<h2>{{ item.q }}</h2>
+<p>{{ item.a }}</p>
+{%- endfor %}
+
+<h2>How much does a tradie website cost in NZ?</h2>
+<p>WFT is {{ site.priceDisplay }} flat, one time. Across the wider New Zealand market you'll typically see NZ$500–$1,500 from a freelancer (usually design only), NZ$3,000–$8,000+ from a full agency, and NZ$276–$780 a year forever if you build it yourself on Wix or Squarespace. The full breakdown, including what each option leaves out, is on the <a href="/pricing/">pricing page</a>.</p>
+
+<h2>How long does it take?</h2>
+<p>Seven working days from your kickoff call, guaranteed. The clock excludes weekends and public holidays, and it pauses while we're waiting on your photos or your approval. The <a href="/how-it-works/">day-by-day process</a> shows exactly what happens when.</p>
+
+<h2>What if it doesn't bring in any work?</h2>
+<p>Then we rebuild it free and keep going until it does. That's the Jobs In {{ site.guaranteeDays }} Guarantee, and the <a href="/guarantee/">conditions are published in full</a> rather than hidden in a contract.</p>
+
+<h2>Do I really need a website? All my work is word of mouth.</h2>
+<p>Word of mouth is the best lead source there is — right up until it dries up. A mate retires, a good customer moves, or you want to grow and realise you've no way to reach anyone who hasn't already heard of you.</p>
+<p>The number worth knowing: 81% of Kiwis research a business online before making contact. When someone recommends you, the next thing that person does is Google you. If nothing comes up, the recommendation loses most of its force. A website doesn't replace word of mouth — it stops word of mouth leaking.</p>
+
+<h2>Isn't a Facebook page enough?</h2>
+<p>No, and it's getting less enough every year. You don't control it, you can't rank on Google with it, it shows your competitors' ads alongside your work, and if the account is disabled you lose the lot with no recourse. A Facebook page is a good addition to a website and a poor substitute for one.</p>
+
+<h2>Do you build for trades outside New Zealand?</h2>
+<p>No. New Zealand only, trade businesses only. That focus is exactly why we can quote a flat price and a seven-day build.</p>
+<p>Worth noting: there's a separate Australian company with a similar name at websitesfortradies.net.au. No relation to us — we're the New Zealand one.</p>
+
+<h2>What if I already have a website?</h2>
+<p>We rebuild it completely. Same price, same timeline, same guarantee. If your current site isn't producing enquiries, isn't mobile-friendly or looks a decade old, starting fresh is usually faster and cheaper than repairing it.</p>
+
+<h2>Who actually builds it?</h2>
+<p>A small team that only does this. No offshore subcontracting, no handing your job to whoever's free. More about who's behind WFT on the <a href="/about/">about page</a>.</p>
+
+<hr />
+
+<h2>Still got a question?</h2>
+<p>Email <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or book a kickoff call and ask it live. No hard sell — if a website won't help your situation we'll tell you.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}

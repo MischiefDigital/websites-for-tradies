@@ -1,0 +1,53 @@
+---
+title: About WFT | Who Builds Your Tradie Website — WFT
+description: "WFT is a New Zealand web design service built by an operator, not an agency. Who's behind it, why it only builds for tradies, and why the guarantee exists."
+eyebrow: ABOUT
+heading: Who's actually behind WFT
+intro: You're about to hand your business's front door to someone you found on the internet. Fair enough to want to know who that is.
+updated: 2026-08-08
+breadcrumbs:
+  - name: About
+    url: /about/
+---
+{% extends "layouts/page.njk" %}
+
+{% block prose %}
+<h2>The short version</h2>
+<p>WFT is run by Blair Wilson, an operator rather than a web designer. The background is multi-site retail and hospitality operations — McDonald's, Mitre 10, Z Energy — and founding and running Wilson Barbecue.</p>
+<p>That matters more than it sounds. Those are all businesses that live or die on one thing: whether the person standing in front of you decides to buy. Not on design awards. Not on brand decks. On whether the offer is clear, the trust is there, and the next step is obvious.</p>
+<p>That's the same problem a tradie's website has to solve, which is why WFT is built the way it is.</p>
+
+<h2>Why only tradies</h2>
+<p>Most web agencies will build anything for anyone. A café this week, a law firm the next, a plumber after that. Every project starts from scratch, which is why they take six weeks and cost five grand.</p>
+<p>We only build for trades. That means we already know what a sparkie's customer types into Google at 8pm with no power, why a builder's enquiry form needs different fields to a drainlayer's, and which suburb pages actually pull work rather than just existing.</p>
+<p>Narrow is what makes fast and cheap possible without cutting corners. It's also what makes the guarantee possible — you can only underwrite a risk you can calculate.</p>
+
+<h2>Why there's a guarantee no one else offers</h2>
+<p>Because a promise that costs nothing to make is worth nothing.</p>
+<p>Every agency in the country says they'll get you results. None of them put anything behind it. We'll rebuild your site free if it doesn't produce a genuine job enquiry in {{ site.guaranteeDays }} days, and we'll credit you NZ$200 if we miss the {{ site.buildDays }} deadline. Both sets of <a href="/guarantee/">conditions are published in full</a>, because a guarantee with hidden fine print is marketing, not a guarantee.</p>
+
+<h2>We're new, and we're not going to pretend otherwise</h2>
+<p>WFT launched recently. There are no five-star testimonials on this site because we haven't earned them yet, and inventing them would insult the intelligence of exactly the people we want to work with — tradies have seen every kind of dodgy operator and can smell one at range.</p>
+<p>So instead of fake proof, we're stacking the deal in favour of the first ten clients: {{ site.foundingDiscountDisplay }} off, full attention, both guarantees in writing. In return, once the site is live and bringing in work, you give us an honest review. If it doesn't work, you say that instead.</p>
+<p>That's the trade. It's a better deal for you than it is for us, and it's how a new business earns a track record without lying about having one.</p>
+
+<h2>How we think about your website</h2>
+<p>A website is not a brochure and it's not a piece of art. It's a salesperson that works while you're under a house. It has one job: turn someone who's never heard of you into someone who calls you.</p>
+<p>Which means the things that matter are the unglamorous ones — does it load fast on a phone with two bars, does it say what you do and where, does it look like a real business, is the phone number impossible to miss, does Google know you exist. That's what {{ site.priceDisplay }} buys. Not a redesign of your logo.</p>
+
+<h2>What we won't do</h2>
+<ul>
+  <li><strong>Lock you in.</strong> You own the site and the domain outright. Leave whenever you like and we'll hand over the files.</li>
+  <li><strong>Take work we're wrong for.</strong> Need e-commerce, a booking platform or a custom web app? A full agency is genuinely the right call, and we'll tell you that on the call rather than take your money.</li>
+  <li><strong>Promise a #1 ranking.</strong> Nobody can guarantee that. Anyone who does is either lying or about to redefine "#1" for you.</li>
+</ul>
+
+<hr />
+
+<h2>Based in Wellington, working across New Zealand</h2>
+<p>WFT operates out of {{ site.addressLocality }} and builds for trade businesses anywhere in Aotearoa — {{ site.areasServed | join(", ") }} and everywhere in between. The work is done remotely, which is why a sparkie in Invercargill gets the same seven days as one in Thorndon.</p>
+
+<h2>Get in touch</h2>
+<p>Email <a href="mailto:{{ site.email }}">{{ site.email }}</a>, or book a kickoff call and judge for yourself.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}

@@ -35,21 +35,16 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
           "url": "{{ site.url }}/#offer",
           "seller": { "@id": "{{ site.url }}/#organization" }
         }
-      },
-      {
-        "@type": "FAQPage",
-        "@id": "{{ site.url }}/#faq",
-        "mainEntity": [{% for item in faq %}
-          {
-            "@type": "Question",
-            "name": {{ item.q | dump | safe }},
-            "acceptedAnswer": { "@type": "Answer", "text": {{ item.a | dump | safe }} }
-          }{% if not loop.last %},{% endif %}{% endfor %}
-        ]
       }
     ]
   }
   </script>
+{#
+  No FAQPage node here on purpose. The accordion below is a conversion asset
+  and stays visible, but /faq/ owns the FAQPage markup — emitting identical
+  FAQ structured data on two indexed URLs invites Google to treat one as a
+  duplicate of the other.
+#}
 {% endblock %}
 
 {% block content %}
@@ -253,7 +248,7 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
     <div class="container faq-inner">
       <p class="eyebrow light">COMMON QUESTIONS</p>
       <h2 class="section-title dark-text">Common questions about tradie websites. <span class="accent-light">No waffle.</span></h2>
-      <p class="faq-summary">In one sentence: <strong>WFT builds websites for New Zealand tradies for a flat {{ site.priceDisplay }}, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee.</strong> You own the site and the domain outright, there is no lock-in contract, and if the site doesn't bring in a genuine job enquiry within {{ site.guaranteeDays }} days we rebuild it free.</p>
+      <p class="faq-summary">In one sentence: <strong>WFT builds websites for New Zealand tradies for a flat {{ site.priceDisplay }}, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee.</strong> You own the site and the domain outright, there is no lock-in contract, and if the site doesn't bring in a genuine job enquiry within {{ site.guaranteeDays }} days we rebuild it free. <a href="/faq/">See all questions →</a></p>
       <div class="accordion">
         {%- for item in faq %}
         <div class="accordion-item"><button class="accordion-button">{{ item.q }}<span class="arrow">+</span></button><div class="accordion-answer">{{ item.a }}</div></div>
