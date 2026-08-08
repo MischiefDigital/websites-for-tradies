@@ -54,9 +54,15 @@ module.exports = {
   // Leave empty rather than guessing — a wrong sameAs is worse than none.
   sameAs: [],
 
-  // TODO (Blair): business phone. Once set it must match the Google Business
-  // Profile and every directory citation byte for byte.
-  telephone: null,
+  // Business phone. Confirmed 8 Aug 2026.
+  // This must match the Google Business Profile and every directory citation
+  // byte for byte — see docs/citations-and-nap.md. Change it in one place only.
+  //   telephone        E.164, for schema — what Google expects
+  //   telephoneDisplay NZ local format, for humans
+  //   telephoneLink    for tel: hrefs, no spaces
+  telephone: "+64 27 424 1214",
+  telephoneDisplay: "027 424 1214",
+  telephoneLink: "+64274241214",
 
   // Bing Webmaster Tools verification code (the value from the msvalidate.01
   // meta tag). Bing's "Import from Google Search Console" cannot see Domain

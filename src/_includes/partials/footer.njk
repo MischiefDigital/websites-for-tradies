@@ -6,7 +6,11 @@
           {% include "partials/logo.njk" %}
         </a>
         <p class="footer-pitch">Done-for-you websites for New Zealand tradies. {{ site.priceDisplay }} flat, live in {{ site.buildDays }}, backed by the Jobs In {{ site.guaranteeDays }} guarantee.</p>
-        <p class="footer-contact"><a href="mailto:{{ site.email }}">{{ site.email }}</a></p>
+        <p class="footer-contact">
+          <a href="tel:{{ site.telephoneLink }}">{{ site.telephoneDisplay }}</a>
+          <span class="footer-sep">·</span>
+          <a href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </p>
       </div>
 
       {%- for col in nav.footer %}

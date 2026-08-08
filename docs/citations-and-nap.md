@@ -17,20 +17,23 @@ in another is a mismatch. So is "021 123 4567" versus "0211234567".
 
 ## The NAP block — copy this, never retype it
 
-> ⚠️ **Blocked:** WFT has no published phone number yet. `site.js` has
-> `telephone: null`. Pick a number, put it here, and use *only* this format
-> everywhere from that point on. Retyping it from memory later is exactly how
-> inconsistency creeps in.
+Confirmed 8 August 2026. **Copy and paste it. Do not retype it from memory** —
+that is exactly how "027 424 1214" becomes "0274241214" on one directory and
+breaks the consistency Google is checking for.
 
 ```
 Name:     WFT - Websites for Tradies
 Address:  Wellington, New Zealand
           (service-area business — no street address published)
-Phone:    [TO BE CONFIRMED — see above]
+Phone:    027 424 1214
 Email:    info@websitesfortradies.co.nz
 Website:  https://www.websitesfortradies.co.nz
 Category: Website designer
 ```
+
+**Phone formatting:** use `027 424 1214` — spaced, with the leading zero —
+everywhere a directory shows it to humans. If a form demands international
+format, use `+64 27 424 1214`. Never mix the two within a single listing.
 
 **Short description** (for directories with a tight limit):
 

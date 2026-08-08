@@ -13,14 +13,12 @@ outside `src/`, so nothing here is copied into the build or the sitemap.
 
 ## What's blocking what
 
-Two things gate a lot of the off-site work:
+**The Google Business Profile** is now the main blocker. It gates reviews,
+which gate case studies, which gate the PR pitch. It isn't a big job and it's
+top of the critical path.
 
-1. **The phone number.** Undecided. Every citation must match it byte-for-byte,
-   so listing anywhere before it's settled means redoing them.
-2. **The Google Business Profile.** Gates reviews, which gate case studies,
-   which gate the PR pitch.
-
-Neither is a big job. Both are on the critical path.
+Phone number is settled: **027 424 1214**. Every citation must match that
+formatting byte-for-byte.
 
 ## Related config
 

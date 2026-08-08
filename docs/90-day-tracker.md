@@ -78,7 +78,7 @@ Worth keeping visible — these were live and wrong.
 | **Google Business Profile** | ⬜ | `google-business-profile-setup.md` |
 | **Citations — tier 1** (Bing Places, LinkedIn, Facebook) | ⬜ | `citations-and-nap.md` |
 | **Citations — tier 2** (Yellow, Localist, Finda, Neighbourly, NZS) | ⬜ | `citations-and-nap.md` |
-| **Phone number decided and added to NAP** | ⬜ | Blocks all citation work — everything must match it |
+| Phone number decided and added to NAP | ✅ 8 Aug | `027 424 1214` — in site.js, schema, footer and contact section |
 | **Review requests to founding clients** | ⬜ | `review-requests.md` |
 | **Association outreach** | ⬜ | `outreach-and-links.md` — after 3–4 case studies |
 | **PR pitch** | ⬜ | `outreach-and-links.md` — after 3–4 case studies |
