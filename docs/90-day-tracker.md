@@ -1,0 +1,145 @@
+# WFT 90-day tracker
+
+Single source of truth for the organic growth plan. Audit roadmap items 1–25,
+plus what's been done since.
+
+**Started:** 8 August 2026
+**Day 90:** 6 November 2026
+
+---
+
+## Account setup
+
+| # | Task | Status | Notes |
+|---|---|---|---|
+| 1 | Google Search Console verified | ✅ Done | DNS domain property. Verified before this work started |
+| 2 | GSC sitemap submitted | ✅ 8 Aug | 8 URLs discovered at the time, 23 now |
+| 3 | GSC indexing requested | ✅ 8 Aug | 6 URLs: /, /pricing, /faq, /guarantee, /how-it-works, /about |
+| 4 | Bing Webmaster Tools verified | ✅ 8 Aug | Meta tag. GSC import doesn't work for Domain properties |
+| 5 | Bing sitemap submitted | ✅ 8 Aug | |
+| 6 | IndexNow configured | ✅ 8 Aug | `npm run indexnow` after any content deploy |
+| 7 | **GA4 property created** | ⬜ **Blair** | Then paste the Measurement ID into `src/_data/site.js` → `ga4Id` |
+| 8 | **GA4 linked to Search Console** | ⬜ **Blair** | GA4 Admin → Product links |
+| 9 | **`generate_lead` marked as key event** | ⬜ **Blair** | GA4 Admin → Events. The code already fires it |
+| 10 | **Google Business Profile created** | ⬜ **Blair** | See `google-business-profile-setup.md` — highest priority open item |
+| 11 | **Uptime monitor** | ⬜ **Blair** | UptimeRobot free tier. A dead site during the founding push is unrecoverable |
+| 12 | **PageSpeed Insights run** | ⬜ **Blair** | pagespeed.web.dev — couldn't run locally, Google's API is rate-limited |
+
+---
+
+## Site build
+
+| Task | Status |
+|---|---|
+| Eleventy migration, shared layout | ✅ |
+| NZ geo qualifier in title and H1 | ✅ |
+| `/privacy` and `/terms` | ✅ |
+| OG tags, Twitter cards, favicons, share image | ✅ |
+| Structured data (Organization, LocalBusiness, breadcrumbs, Service, FAQ, HowTo, Article) | ✅ |
+| Auto-generating sitemap | ✅ |
+| robots.txt with explicit AI crawler allows | ✅ |
+| Branded 404 | ✅ |
+| Self-hosted fonts, responsive hero — 111KB mobile, CLS 0 | ✅ |
+| llms.txt, auto-generated from page data | ✅ |
+| Real multi-page navigation | ✅ |
+| `/pricing`, `/how-it-works`, `/guarantee`, `/faq`, `/about` | ✅ |
+| 4 trade pages | ✅ |
+| 6 city pages | ✅ |
+| Statistics page, 4 guides | ✅ |
+| **5 remaining trade pages** | ⬜ roofer, drainlayer, gasfitter, tiler, landscaper |
+| **`/examples` proof engine** | ⬜ Needs first founding build to launch |
+| **"Wix vs done-for-you" page** | ⬜ Argument exists in the cost guide, not its own URL |
+
+**23 URLs live**, up from 1.
+
+---
+
+## Corrections made
+
+Worth keeping visible — these were live and wrong.
+
+| What | Was | Now |
+|---|---|---|
+| .nz trust statistic | "74% of Kiwi **consumers**" attributed to InternetNZ | 74% of NZ **businesses** — InternetNZ 2025. Consumer figure is 67% (2022) |
+| "81% research online before contact" | Live on 3 pages | Removed — untraceable to any NZ source |
+| "2× faster growth with a website" | Live on homepage | Removed — same reason |
+| Ahoy Studio price | NZ$1,500+ | NZ$3,395 + GST (their published price) |
+| Ahoy Studio SEO | ✕ not included | ✓ included |
+| Trades Online copywriting | ✕ not included | ✓ included |
+| Trades Online SEO | ✕ not included | ✓ included |
+| Hosting period | 12 months in schema, 1 month in copy | First month, then Get Found Plan — consistent everywhere |
+
+---
+
+## Off-site work
+
+| Task | Status | Doc |
+|---|---|---|
+| **Google Business Profile** | ⬜ | `google-business-profile-setup.md` |
+| **Citations — tier 1** (Bing Places, LinkedIn, Facebook) | ⬜ | `citations-and-nap.md` |
+| **Citations — tier 2** (Yellow, Localist, Finda, Neighbourly, NZS) | ⬜ | `citations-and-nap.md` |
+| **Phone number decided and added to NAP** | ⬜ | Blocks all citation work — everything must match it |
+| **Review requests to founding clients** | ⬜ | `review-requests.md` |
+| **Association outreach** | ⬜ | `outreach-and-links.md` — after 3–4 case studies |
+| **PR pitch** | ⬜ | `outreach-and-links.md` — after 3–4 case studies |
+
+---
+
+## Weekly check — 15 minutes
+
+| Metric | Where | 90-day target | 12-month target | Current |
+|---|---|---|---|---|
+| Indexed pages | GSC → Pages | 20+ | 40+ | — |
+| Impressions on money keywords | GSC → Performance | Appearing for core + trade terms | Page 1 for "websites for tradies NZ" | — |
+| Organic clicks | GSC / GA4 | First consistent weekly clicks | 300+ visits/mo | — |
+| Kickoff-call form submits (organic) | GA4 `generate_lead` | 2–4/month | 10–15/month | — |
+| Google reviews | GBP | 5–10 | 30+, 4.9 avg | 0 |
+| GBP actions (calls, clicks) | GBP Insights | Profile live + first actions | Top-3 map pack, "website designer" Wellington | — |
+| Referring domains | GSC → Links | 10+ | 40+ relevant NZ domains | — |
+| AI answer presence | Manual, monthly | Named by 1+ engine | Named by default for the category | — |
+
+### The monthly AI check
+
+Ask each of these, log whether WFT is named:
+
+> "Who builds websites for tradies in New Zealand?"
+
+| Month | ChatGPT | Claude | Perplexity | Google AI |
+|---|---|---|---|---|
+| Sep 2026 | ☐ | ☐ | ☐ | ☐ |
+| Oct 2026 | ☐ | ☐ | ☐ | ☐ |
+| Nov 2026 | ☐ | ☐ | ☐ | ☐ |
+
+Once WFT appears, screenshot it. That's a sales asset as much as a metric.
+
+---
+
+## Scheduled checks
+
+- **15 Aug 2026** — first indexing check. GSC → Pages, Bing → URL Inspection on
+  2–3 URLs. Don't check before this; indexing takes days and earlier data is noise.
+- **Weekly from then** — the table above, 15 minutes.
+- **Monthly** — the AI presence check.
+- **After any content deploy** — `npm run indexnow`.
+
+### What would be a red flag
+
+- URLs excluded as *"Duplicate, Google chose different canonical"* → canonical problem
+- *"Blocked by robots.txt"* → something changed robots.txt
+- *"Discovered — currently not indexed"* persisting past ~3 weeks → authority
+  problem, which is what the reviews and citations work addresses
+
+---
+
+## The honest caveat
+
+Straight from the audit, worth re-reading when month two feels slow:
+
+> A new domain with zero authority takes 3–6 months to move meaningfully,
+> whatever any agency promises. The plan front-loads everything controllable.
+> The compounding assets — reviews, client backlinks, case studies, citable
+> stats — are what carry months 4–12.
+
+The site work is largely done. **What moves the needle from here is the Google
+Business Profile, reviews from the founding cohort, and case studies with real
+numbers.** Those are all off-site, and all of them are Blair's.

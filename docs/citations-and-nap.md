@@ -1,0 +1,125 @@
+# Citations and NAP consistency
+
+Audit roadmap item 12. Three hours of dull work that Google uses to decide
+whether WFT is a real business.
+
+**What a citation is:** any listing of your business name, address and phone
+number on another website. Search engines cross-reference them. Consistent
+citations across many sites say "real, established business". Inconsistent ones
+say "possibly defunct, possibly two different companies", and that ambiguity
+suppresses local ranking.
+
+**The rule that matters more than which directories you pick:** the details
+must be **byte-for-byte identical everywhere**. "Ltd" in one place and "Limited"
+in another is a mismatch. So is "021 123 4567" versus "0211234567".
+
+---
+
+## The NAP block — copy this, never retype it
+
+> ⚠️ **Blocked:** WFT has no published phone number yet. `site.js` has
+> `telephone: null`. Pick a number, put it here, and use *only* this format
+> everywhere from that point on. Retyping it from memory later is exactly how
+> inconsistency creeps in.
+
+```
+Name:     WFT - Websites for Tradies
+Address:  Wellington, New Zealand
+          (service-area business — no street address published)
+Phone:    [TO BE CONFIRMED — see above]
+Email:    info@websitesfortradies.co.nz
+Website:  https://www.websitesfortradies.co.nz
+Category: Website designer
+```
+
+**Short description** (for directories with a tight limit):
+
+```
+WFT builds websites for New Zealand tradies. NZ$1,997 flat, live in 7 working days, with a 90-day job enquiry guarantee. Copywriting, local SEO and Google Business Profile setup included.
+```
+
+**Long description** (250 words, for directories with room):
+
+```
+WFT builds websites exclusively for New Zealand trade businesses — electricians, plumbers, builders, painters, roofers, drainlayers, gasfitters, tilers and landscapers.
+
+One flat price of NZ$1,997 covers everything: a 5+ page mobile-first website, all copywriting, local SEO setup, your .nz domain, hosting and SSL, and Google Business Profile optimisation. Live in 7 working days from your kickoff call.
+
+Most web agencies build anything for anyone, which is why they take six weeks and quote four figures before they've started. We only build for trades. That focus is what makes a flat price and a 7-day build possible without cutting corners.
+
+Every build is backed by two guarantees, both published in full on our website. The 7-Day Launch Pledge: if we miss the deadline without 48 hours' notice, you get NZ$200 credited off your invoice. The Jobs In 90 Guarantee: if your site doesn't generate at least one genuine job enquiry within 90 days of going live, we rebuild it free and keep working until it does.
+
+You own your website and your domain outright. There are no lock-in contracts and you can host it anywhere.
+
+WFT is based in Wellington and builds for trade businesses across Aotearoa New Zealand.
+```
+
+---
+
+## Where to list — in this order
+
+Work down. The first four are worth more than the rest combined.
+
+### Tier 1 — do these first
+
+| Directory | URL | Notes |
+|---|---|---|
+| **Google Business Profile** | business.google.com | See `google-business-profile-setup.md`. Nothing else comes close in value. |
+| **Bing Places** | bingplaces.com | Bing feeds ChatGPT search and Copilot. Already verified in Webmaster Tools, so this is quick. |
+| **LinkedIn company page** | linkedin.com/company/setup/new | Also strengthens the entity graph via Blair's personal profile. |
+| **Facebook business page** | facebook.com/pages/create | Even if barely used — it's a citation and people check. |
+
+### Tier 2 — NZ directories
+
+| Directory | URL | Notes |
+|---|---|---|
+| Yellow NZ | yellow.co.nz | Free basic listing. Ignore the upsell calls. |
+| Localist | localist.co.nz | NZ-owned, decent domain authority. |
+| Finda | finda.co.nz | Free listing. |
+| Neighbourly | neighbourly.co.nz | Community-focused, genuinely used in NZ. |
+| NZ Business Directory | nzs.com | Long-standing NZ directory. |
+
+### Tier 3 — worth it once the above are done
+
+- Yelp NZ
+- Trustpilot — the audit flags that the **Australian** namesake owns Trustpilot
+  results for this brand name. A WFT NZ profile helps reclaim the brand SERP
+- Crunchbase (if you want the startup-press angle later)
+
+---
+
+## What NOT to do
+
+- **Don't pay for bulk citation services.** They generate hundreds of listings
+  on worthless directories, frequently with mangled details, and cleaning up
+  inconsistent citations is harder than creating good ones.
+- **Don't vary the description to "avoid duplicate content".** Directory
+  listings aren't judged that way, and varying the NAP details is actively
+  harmful.
+- **Don't list a fake street address** to look more established. Google
+  cross-references, and a mismatch between a claimed address and an SAB profile
+  is a suspension risk.
+
+---
+
+## Tracking
+
+Log each one as you go, so the next person to touch this knows what exists.
+
+| Directory | Listed | URL | Details match NAP block |
+|---|---|---|---|
+| Google Business Profile | ☐ | | ☐ |
+| Bing Places | ☐ | | ☐ |
+| LinkedIn | ☐ | | ☐ |
+| Facebook | ☐ | | ☐ |
+| Yellow NZ | ☐ | | ☐ |
+| Localist | ☐ | | ☐ |
+| Finda | ☐ | | ☐ |
+| Neighbourly | ☐ | | ☐ |
+| NZ Business Directory | ☐ | | ☐ |
+
+**When Google, LinkedIn and Facebook are live**, add all three URLs to
+`sameAs` in `src/_data/site.js`. That array is deliberately empty right now —
+it's how the site tells Google and AI engines that these profiles are the same
+entity as the website. A wrong URL there is worse than none, which is why it's
+waiting for real ones.
