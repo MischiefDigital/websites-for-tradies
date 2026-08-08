@@ -1,5 +1,27 @@
 # Build tools
 
+## Cache policy
+
+`vercel.json` sets Cache-Control per path. **vercel.json is strict JSON — it
+accepts no comments and no unknown keys.** Adding a `comment` field to a
+headers rule fails the build silently (Vercel keeps serving the last good
+deploy, so the site stays up and you won't notice unless you check). The
+reasoning therefore lives here instead.
+
+| Path | Policy | Why it's safe |
+|---|---|---|
+| `/assets/css/*`, `/assets/js/*` | 1 year, immutable | URLs carry `?v=<content hash>` from `assetHash` in `eleventy.config.js`, so a deploy produces a new URL rather than a stale cache |
+| `/assets/fonts/*`, `/assets/icons/*`, `/Images/*` | 1 year, immutable | Versioned by filename — changing one means renaming it, as with `hero-tradie-900.webp` |
+| `og-image.png`, `favicon.svg` | 1 week | Fetched by social platforms and browsers that ignore query strings, so a shorter window keeps a bad share card recoverable |
+| `.html`, `.xml`, `.txt`, `.webmanifest` | must-revalidate | Content. Search engines should see changes immediately |
+
+Without these, Vercel defaults everything to `max-age=0, must-revalidate` and
+every asset is revalidated on every page navigation.
+
+**If you add a new asset type, add a rule.** Anything unmatched falls back to
+the default and quietly costs a round trip per page.
+
+
 One-off generators. Nothing here runs during `npm run build` — the outputs are
 committed, so the site builds without them.
 
