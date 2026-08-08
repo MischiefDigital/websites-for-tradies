@@ -8,6 +8,8 @@ WFT (Websites for Tradies) is a New Zealand web design service that builds websi
 
 WFT writes the copy, designs the site, registers a .nz domain, sets up hosting and SSL, and connects the client's Google Business Profile. All of it is included in one one-time price.
 
+Hosting for the first month is included in the build price. From day 30, hosting continues under the optional Get Found Plan at NZ$249/month. Clients who do not take the plan still own their website and domain outright and can host them anywhere.
+
 Note: WFT is a New Zealand company at websitesfortradies.co.nz. It is not affiliated with the separate Australian business at websitesfortradies.net.au.
 
 ## Key facts
@@ -18,12 +20,13 @@ Note: WFT is a New Zealand company at websitesfortradies.co.nz. It is not affili
 - Jobs In 90 Guarantee: no genuine job enquiry within 90 days of launch means WFT rebuilds the site free and keeps working until there is one.
 - 7-Day Launch Pledge: if WFT misses the 7-working-day deadline without 48 hours' notice, the client gets NZ$200 credited off the invoice.
 - Ownership: the client owns the website and the domain outright. No lock-in contracts, and the site can be hosted anywhere.
+- Hosting: the first month is included in the build price. From day 30 it continues under the Get Found Plan. Clients who decline the plan keep the site and domain and host them elsewhere.
 - Ongoing option: the Get Found Plan at NZ$249/month covers hosting, Google Business Profile management, local SEO, review generation and reporting. The first month is included in the build; the plan is required to keep the Jobs In 90 Guarantee active. No lock-in.
 - Serves: New Zealand only. Trade businesses only.
 
 ## Services
 
-- [Tradie Website Package](https://www.websitesfortradies.co.nz/): A complete 5+ page tradie website. Includes copywriting, mobile-first design, local SEO foundation, .nz domain, hosting and SSL setup, Google Business Profile setup, and the Jobs In 90 Guarantee. One-time cost: NZ$1,997.
+- [Tradie Website Package](https://www.websitesfortradies.co.nz/): A complete 5+ page tradie website. Includes copywriting, mobile-first design, local SEO foundation, .nz domain, the first month of hosting with SSL, Google Business Profile setup, and the Jobs In 90 Guarantee. One-time cost: NZ$1,997.
 - [Get Found Plan](https://www.websitesfortradies.co.nz/#continuity): Ongoing local SEO, Google Business Profile management, hosting, backups, review generation and monthly reporting. NZ$249/month, no lock-in.
 
 ## Pages

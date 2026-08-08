@@ -20,7 +20,7 @@ breadcrumbs:
         "@type": "Product",
         "@id": "{{ site.url }}/pricing/#product",
         "name": "WFT Tradie Website Package",
-        "description": "A complete 5+ page website for a New Zealand trade business, including copywriting, local SEO foundation, .nz domain, hosting and SSL setup, and Google Business Profile setup. Live in {{ site.buildDays }}.",
+        "description": "A complete 5+ page website for a New Zealand trade business, including copywriting, local SEO foundation, .nz domain, {{ site.hostingIncluded }} with SSL, and Google Business Profile setup. Live in {{ site.buildDays }}. Ongoing hosting and local SEO continue under the Get Found Plan at {{ site.planPriceDisplay }} from day {{ site.planStartsDay }}, with no lock-in.",
         "brand": { "@id": "{{ site.url }}/#organization" },
         "offers": {
           "@type": "Offer",
@@ -54,7 +54,7 @@ breadcrumbs:
       <tr><td><strong>All copywriting</strong></td><td>A 30-minute interview, then we write every word. You approve it.</td><td>NZ$800</td></tr>
       <tr><td><strong>Local SEO foundation</strong></td><td>Suburb and service-area targeting, meta tags, structured data — set up before launch, not after.</td><td>NZ$600</td></tr>
       <tr><td><strong>Google Business Profile</strong></td><td>Created or fully optimised so you appear in the local map pack.</td><td>NZ$400</td></tr>
-      <tr><td><strong>.nz domain + launch</strong></td><td>Domain registered in your name, hosting, SSL and security set up, site put live.</td><td>NZ$300</td></tr>
+      <tr><td><strong>.nz domain + launch</strong></td><td>Domain registered in your name, {{ site.hostingIncluded }} with SSL and security, site put live.</td><td>NZ$300</td></tr>
       <tr><td><strong>"First Jobs" checklist</strong></td><td>The review-generation system that turns a live site into actual enquiries.</td><td>NZ$300</td></tr>
       <tr class="wft-row"><td><strong>Total</strong></td><td>All of it, one invoice</td><td class="wft-val">NZ$4,400 → {{ site.priceDisplay }}</td></tr>
     </tbody>
@@ -111,7 +111,10 @@ breadcrumbs:
 <h2>After launch: the Get Found Plan</h2>
 <p>A website gets you found once. Staying found is a different job — Google rewards profiles that stay active and demotes ones that go quiet.</p>
 <p>The Get Found Plan is <strong>{{ site.planPriceDisplay }}</strong> and covers hosting, SSL, backups and security, monthly Google Business Profile management, ongoing local SEO, the review-generation system, monthly reporting, and small site updates.</p>
-<p>Your first month is included in the build price and the plan starts from day 30. There's no lock-in — cancel any time. It is required to keep the Jobs In {{ site.guaranteeDays }} Guarantee active, for the reason set out on the <a href="/guarantee/">guarantee page</a>: a site nobody is managing can't be guaranteed to rank.</p>
+<p>Your first month is included in the build price and the plan starts from day {{ site.planStartsDay }}. There's no lock-in — cancel any time. It is required to keep the Jobs In {{ site.guaranteeDays }} Guarantee active, for the reason set out on the <a href="/guarantee/">guarantee page</a>: a site nobody is managing can't be guaranteed to rank.</p>
+<div class="callout">
+  <p><strong>To be completely clear about hosting:</strong> {{ site.hostingIncluded }} is included in the {{ site.priceDisplay }}. From day {{ site.planStartsDay }} it continues under the Get Found Plan. If you'd rather not take the plan, you own the site and the domain outright and can host them anywhere — we'll hand over the files. You'd lose the guarantee and the ongoing SEO work, not your website.</p>
+</div>
 
 <h2>What you're not charged for</h2>
 <ul>

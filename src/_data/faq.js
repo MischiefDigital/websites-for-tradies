@@ -32,6 +32,10 @@ module.exports = [
     a: "InternetNZ research shows 74% of Kiwi consumers trust .nz domains more than .com. It's a small thing that makes a real difference to whether someone picks up the phone. It's included in your price.",
   },
   {
+    q: "What happens with hosting after the first month?",
+    a: "The first month of hosting is included in your build price. From day 30 it continues under the Get Found Plan at NZ$249/month, which also covers your Google Business Profile management, ongoing local SEO, review generation and reporting. If you'd rather not take the plan, that's fine — you own the website and the domain outright, so you can host them anywhere and we'll hand over the files. You'd be giving up the guarantee and the ongoing SEO work, not your website.",
+  },
+  {
     q: "Do I have to take the monthly plan?",
     a: "Your site is yours outright — you can host it anywhere. But the Get Found Plan is what keeps you ranking, managed and reviewed, and it's required to keep your Jobs In 90 Guarantee active. Most founding tradies stay on it because that's where the jobs actually come from. No lock-in — cancel any time.",
   },

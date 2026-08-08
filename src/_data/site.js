@@ -18,6 +18,13 @@ module.exports = {
   guaranteeDays: "90",
   planPriceDisplay: "NZ$249/month",
 
+  // Hosting included in the build price, then the Get Found Plan takes over
+  // from day 30. Confirmed by Blair 8 Aug 2026 — the site previously claimed
+  // 12 months in schema/llms.txt and one month in the sales copy. State this
+  // the same way everywhere; do not reintroduce a second version.
+  hostingIncluded: "the first month of hosting",
+  planStartsDay: "30",
+
   formEndpoint: "https://formspree.io/f/xbdwbgog",
 
   // Brand assets, used by OG tags and schema
