@@ -58,6 +58,13 @@ module.exports = {
   // Profile and every directory citation byte for byte.
   telephone: null,
 
+  // Bing Webmaster Tools verification code (the value from the msvalidate.01
+  // meta tag). Bing's "Import from Google Search Console" cannot see Domain
+  // properties — only URL-prefix ones — so this site verifies manually.
+  // Bing's index is what ChatGPT search and Copilot query, so this is a GEO
+  // move as much as an SEO one. Renders nothing while null.
+  bingVerification: "A744F55148D70B55B9E3E1097785071A",
+
   // TODO (Blair): paste the GA4 Measurement ID ("G-XXXXXXXXXX") here after
   // creating the property and linking it to Search Console. Until it is set,
   // no analytics script loads and no events fire — the site stays clean.
