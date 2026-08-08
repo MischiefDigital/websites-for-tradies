@@ -29,7 +29,7 @@ module.exports = [
   },
   {
     q: "Why does the .nz domain matter?",
-    a: "InternetNZ research shows 74% of Kiwi consumers trust .nz domains more than .com. It's a small thing that makes a real difference to whether someone picks up the phone. It's included in your price.",
+    a: "InternetNZ's 2025 research found 74% of New Zealand businesses agree a .nz domain is more trustworthy than the alternatives — up from 58% in 2020 — and around 70% of NZ businesses with a website now use one. It signals you're a local operator rather than someone who might be anywhere. It's a small thing that makes a real difference to whether someone picks up the phone, and it's included in your price.",
   },
   {
     q: "What happens with hosting after the first month?",

@@ -252,6 +252,10 @@ h1 span { color: var(--yellow); display: block; }
 .stat:last-child { border-radius: 0 10px 10px 0; }
 .stat-number { display: block; font-size: clamp(2rem, 4vw, 3.2rem); font-weight: 900; color: var(--yellow); line-height: 1; letter-spacing: -.02em; }
 .stat-label { display: block; margin-top: 12px; color: var(--grey); font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: .08em; line-height: 1.4; }
+.stats-source { margin-top: 18px; text-align: center; }
+.stats-source p { margin: 0; color: rgba(255,255,255,.35); font-size: 12px; }
+.stats-source a { color: rgba(255,255,255,.55); text-decoration: underline; text-underline-offset: 2px; }
+.stats-source a:hover { color: var(--yellow); }
 
 /* 8. Benefits */
 .benefits, .faq { background: var(--white); color: var(--black); }

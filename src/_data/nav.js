@@ -52,6 +52,7 @@ module.exports = {
       links: [
         { text: "About WFT", url: "/about/" },
         { text: "Common questions", url: "/faq/" },
+        { text: "NZ website statistics", url: "/nz-tradie-website-statistics/" },
       ],
     },
     {
