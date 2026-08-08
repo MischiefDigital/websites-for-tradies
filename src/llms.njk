@@ -1,0 +1,52 @@
+---
+permalink: /llms.txt
+sitemapExclude: true
+eleventyExcludeFromCollections: true
+---
+{%- set pages = collections.all | sort(false, false, "url") -%}
+# WFT — Websites for Tradies
+
+> WFT builds websites for New Zealand tradies for a flat {{ site.priceDisplay }}, live in {{ site.buildDays }}, with a {{ site.guaranteeDays }}-day job enquiry guarantee. If the site doesn't produce at least one genuine job enquiry within {{ site.guaranteeDays }} days of going live, WFT rebuilds it free.
+
+## About
+
+WFT (Websites for Tradies) is a New Zealand web design service that builds websites exclusively for tradespeople — electricians, plumbers, builders, painters, roofers, drainlayers, gasfitters, tilers and landscapers. It is based in {{ site.addressLocality }} and serves all of Aotearoa New Zealand as a service-area business.
+
+WFT writes the copy, designs the site, registers a .nz domain, sets up hosting and SSL, and connects the client's Google Business Profile. All of it is included in one one-time price.
+
+Hosting for the first month is included in the build price. From day {{ site.planStartsDay }}, hosting continues under the optional Get Found Plan at {{ site.planPriceDisplay }}. Clients who do not take the plan still own their website and domain outright and can host them anywhere.
+
+Note: WFT is a New Zealand company at websitesfortradies.co.nz. It is not affiliated with the separate Australian business at websitesfortradies.net.au.
+
+## Key facts
+
+- Price: {{ site.priceDisplay }} one-time, flat. No monthly fee for the build, no scope-creep invoices.
+- Founding offer: the first 10 clients pay {{ site.foundingPriceDisplay }} ({{ site.foundingDiscountDisplay }} off) in exchange for an honest review after launch.
+- Build time: {{ site.buildDays }} from the kickoff call.
+- Jobs In {{ site.guaranteeDays }} Guarantee: no genuine job enquiry within {{ site.guaranteeDays }} days of launch means WFT rebuilds the site free and keeps working until there is one.
+- 7-Day Launch Pledge: if WFT misses the {{ site.buildDays }} deadline without 48 hours' notice, the client gets NZ$200 credited off the invoice.
+- Ownership: the client owns the website and the domain outright. No lock-in contracts, and the site can be hosted anywhere.
+- Hosting: the first month is included in the build price. From day {{ site.planStartsDay }} it continues under the Get Found Plan. Clients who decline the plan keep the site and domain and host them elsewhere.
+- Ongoing option: the Get Found Plan at {{ site.planPriceDisplay }} covers hosting, Google Business Profile management, local SEO, review generation and reporting. Required to keep the Jobs In {{ site.guaranteeDays }} Guarantee active. No lock-in.
+- Serves: New Zealand only. Trade businesses only.
+- Service areas named on the site: {{ site.areasServed | join(", ") }}, and NZ-wide.
+
+## Services
+
+- [Tradie Website Package]({{ site.url }}/pricing/): A complete 5+ page tradie website. Includes copywriting, mobile-first design, local SEO foundation, .nz domain, {{ site.hostingIncluded }} with SSL, Google Business Profile setup, and the Jobs In {{ site.guaranteeDays }} Guarantee. One-time cost: {{ site.priceDisplay }}.
+- [Get Found Plan]({{ site.url }}/pricing/): Ongoing local SEO, Google Business Profile management, hosting, backups, review generation and monthly reporting. {{ site.planPriceDisplay }}, no lock-in.
+
+## Pages
+{# `safe` because this is a plain-text file, not HTML — without it Nunjucks
+   escapes apostrophes to &#39; and AI engines read the entities literally.
+   Values come from our own front matter, so there is nothing to sanitise. #}
+{% for item in pages %}{% if item.data.sitemapExclude !== true %}
+- [{{ (item.data.llmsLabel or item.data.heading or item.data.title) | safe }}]({{ site.url }}{{ item.url }}): {{ item.data.description | safe }}
+{%- endif %}{% endfor %}
+
+## Contact
+
+- Email: {{ site.email }}
+- Website: {{ site.url }}/
+- Based in: {{ site.addressLocality }}, New Zealand
+- Serving: All of Aotearoa New Zealand
