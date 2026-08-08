@@ -6,7 +6,12 @@
       <p class="eyebrow dark">{{ eyebrow }}</p>
       <h1>{{ heading | default(title) }}</h1>
       {% if intro %}<p class="page-intro">{{ intro }}</p>{% endif %}
-      {% if updated %}<p class="updated">Last updated: {{ updated | displayDate }}</p>{% endif %}
+      {# Opt-in, not automatic. Every page carries `updated` because the sitemap's
+         <lastmod> reads it (see sitemap.njk), but only pages where recency IS the
+         credibility should show it: the guides, the sourced statistics, and the
+         legal pages. On a sales page a date that quietly drifts stale is worse
+         than no date — it advertises neglect on a site selling current websites. #}
+      {% if updated and showUpdated %}<p class="updated">Last updated: {{ updated | displayDate }}</p>{% endif %}
     </div>
   </header>
 

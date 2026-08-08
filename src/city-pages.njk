@@ -8,13 +8,18 @@ pagination:
   addAllPagesToCollections: true
 permalink: "/tradie-websites-{{ c.slug }}/"
 updated: 2026-08-08
+# `| safe` on every passthrough is load-bearing, not decoration. These strings
+# are rendered here and then rendered AGAIN by whatever outputs them (the layout,
+# the meta tags, the schema). Without `safe` an apostrophe is escaped to `&#39;`
+# on this pass and the `&` is escaped to `&amp;` on the next, so the page shows
+# a literal "website&#39;s". Escaping belongs at the point of output, once.
 eleventyComputed:
-  title: "{{ c.title }}"
-  description: "{{ c.description }}"
-  eyebrow: "{{ c.city | upper }}"
-  heading: "{{ c.heading }}"
-  intro: "{{ c.intro }}"
-  breadcrumbName: "Tradie websites {{ c.city }}"
+  title: "{{ c.title | safe }}"
+  description: "{{ c.description | safe }}"
+  eyebrow: "{{ c.city | upper | safe }}"
+  heading: "{{ c.heading | safe }}"
+  intro: "{{ c.intro | safe }}"
+  breadcrumbName: "Tradie websites {{ c.city | safe }}"
 ---
 {% extends "layouts/page.njk" %}
 
