@@ -6,9 +6,12 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
 {% extends "layouts/base.njk" %}
 
 {% block headExtra %}
-  {# Preload matches the CSS breakpoint so phones never fetch the 262KB art #}
-  <link rel="preload" as="image" href="/Images/hero-tradie-900.webp" type="image/webp" media="(max-width: 768px)" />
-  <link rel="preload" as="image" href="/Images/hero-tradie.webp" type="image/webp" media="(min-width: 769px)" />
+  {# Preload matches the CSS breakpoint so phones never fetch the 262KB art.
+     fetchpriority="high" because this is the LCP element — Lighthouse flags
+     its absence explicitly. Without it the preload is discovered but queued
+     behind other requests, which is what left LCP at 3.4s. #}
+  <link rel="preload" as="image" href="/Images/hero-tradie-900.webp" type="image/webp" fetchpriority="high" media="(max-width: 768px)" />
+  <link rel="preload" as="image" href="/Images/hero-tradie.webp" type="image/webp" fetchpriority="high" media="(min-width: 769px)" />
 {% endblock %}
 
 {% block schema %}
