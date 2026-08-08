@@ -155,9 +155,37 @@ Google weights profiles with real photos, and empty profiles look abandoned.
 
 - [ ] Logo (square, the WFT mark — `src/assets/icons/icon-512.png` works)
 - [ ] Cover photo (landscape — `src/assets/og-image.png` is 1200×630 and on-brand)
+- [ ] The five brand cards in `tools/gbp-cards/` (see below)
 - [ ] A real photo of Blair. The audit is specific that real faces beat stock
       for E-E-A-T, and this is also still missing from `/about`
+- [ ] Screenshots of your own site — mobile ones especially, since that's what
+      tradies view on. Your product is websites and you've built one
 - [ ] Screenshots of each founding build as it launches
+
+### The brand cards
+
+`tools/gbp-cards/` holds five 1200×1200 PNGs, brand-matched to the site:
+
+| File | Says |
+|---|---|
+| `offer-price.png` | One flat price, NZ$1,997 |
+| `seven-days.png` | Live in 7 working days |
+| `guarantee.png` | No enquiry in 90 days, we rebuild free |
+| `whats-included.png` | The six inclusions |
+| `tradies-only.png` | We only build for tradies |
+
+Upload all five under **Photos → By owner**. They also work as **GBP post**
+images, which covers the weekly posting cadence the audit asks for — one card
+a week gets you through the first five weeks without having to make anything.
+
+Regenerate after any offer change:
+
+```bash
+node tools/generate-gbp-cards.js
+```
+
+Text renders with system fonts rather than Inter, so **look at the output**
+after editing. The estimator catches gross overflow but not everything.
 
 **Don't** use stock photos of generic tradies. The audience is tradies. They
 can tell, and it undercuts the "no fake reviews" positioning the whole site
