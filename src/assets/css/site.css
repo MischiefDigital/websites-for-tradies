@@ -334,6 +334,8 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .cross { color: #cc3333; font-weight: 900; }
 .wft-val { color: var(--amber-dark); font-weight: 800; }
 .guarantee-hero { background: rgba(245,194,0,.18) !important; color: var(--amber-dark) !important; font-weight: 900 !important; }
+.comparison-note { max-width: 780px; margin: 20px 0 0; color: #666; font-size: 13px; line-height: 1.7; }
+.comparison-note a { color: var(--amber-dark); text-decoration: underline; text-underline-offset: 2px; }
 
 /* 14. Guarantee */
 .guarantee { background: var(--black); color: var(--white); }
@@ -390,9 +392,11 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 
 /* 18. Footer */
 .footer { background: var(--black); border-top: 1px solid var(--slate); padding: 56px 0 32px; }
-/* Brand block plus five link columns. Sized so adding a column doesn't spill
-   into a ragged second row — check this if the footer nav grows again. */
-.footer-top { display: grid; grid-template-columns: 1.5fr repeat(5, minmax(0, 1fr)); gap: 28px; padding-bottom: 40px; border-bottom: 1px solid var(--slate); }
+/* Auto-fitting columns with the brand spanning the top row. Deliberately not a
+   fixed column count — that had to be re-tuned every time a nav section was
+   added, and broke silently in between. This absorbs any number of columns. */
+.footer-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 30px 24px; padding-bottom: 40px; border-bottom: 1px solid var(--slate); }
+.footer-brand { grid-column: 1 / -1; }
 .footer-brand .wft-logo { margin-bottom: 18px; }
 .footer-pitch { color: rgba(255,255,255,.5); font-size: 13px; line-height: 1.7; margin: 0 0 14px; max-width: 340px; }
 .footer-contact a { color: var(--yellow); font-size: 13px; font-weight: 600; text-decoration: underline; text-underline-offset: 3px; }
@@ -403,15 +407,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 .footer-col a:hover { color: var(--yellow); }
 .footer-bottom { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 24px; }
 .footer-bottom p { margin: 0; color: rgba(255,255,255,.28); font-size: 12px; }
-@media (max-width: 1100px) {
-  .footer-top { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px; }
-  .footer-brand { grid-column: 1 / -1; }
-}
-@media (max-width: 700px) {
-  .footer-top { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-}
 @media (max-width: 420px) {
-  .footer-top { grid-template-columns: 1fr; }
   .footer-bottom { flex-direction: column; gap: 8px; }
 }
 

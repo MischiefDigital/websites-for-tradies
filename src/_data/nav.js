@@ -56,6 +56,15 @@ module.exports = {
       ],
     },
     {
+      heading: "Guides",
+      links: [
+        { text: "What it costs in NZ", url: "/guides/tradie-website-cost-nz/" },
+        { text: "Do tradies need a website?", url: "/guides/do-tradies-need-a-website/" },
+        { text: "Facebook page vs website", url: "/guides/facebook-page-vs-website-for-tradies/" },
+        { text: "NZ companies compared", url: "/guides/best-tradie-website-companies-nz/" },
+      ],
+    },
+    {
       heading: "Legal",
       links: [
         { text: "Privacy Policy", url: "/privacy/" },
