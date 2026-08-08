@@ -327,6 +327,18 @@ h1 span { color: var(--yellow); display: block; }
 .founding-body { max-width: 720px; color: rgba(255,255,255,.75); font-size: 1.05rem; line-height: 1.85; margin: 0 0 36px; }
 .results-bar { margin-top: 56px; }
 
+/* 12b. Trade + location directory (homepage) */
+.directory { background: var(--white); color: var(--black); }
+.directory-intro { max-width: 720px; margin: -20px 0 40px; color: #555; font-size: 1.05rem; line-height: 1.8; }
+.directory-cols { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; }
+.directory-heading { margin: 0 0 16px; font-size: 12px; font-weight: 800; text-transform: uppercase; letter-spacing: .12em; color: var(--amber-dark); }
+.directory-list { list-style: none; margin: 0 0 16px; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 2px 16px; }
+.directory-list li { margin: 0; }
+.directory-list a { display: block; padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--black); font-size: .95rem; font-weight: 600; transition: color .15s ease; }
+.directory-list a:hover { color: var(--amber-dark); }
+.directory-more a { color: var(--amber-dark); font-size: .9rem; font-weight: 700; text-decoration: underline; text-underline-offset: 3px; }
+@media (max-width: 768px) { .directory-cols { grid-template-columns: 1fr; gap: 36px; } }
+
 /* 13. Comparison */
 .comparison { background: var(--off); color: var(--black); }
 .table-wrap { overflow-x: auto; border-radius: 10px; }
@@ -482,6 +494,13 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 
 .prose .suburb-list { list-style: none; padding: 0; display: flex; flex-wrap: wrap; gap: 8px; margin: 0 0 18px; }
 .prose .suburb-list li { margin: 0; padding: 7px 13px; background: var(--off); border: 1px solid var(--line); border-radius: 20px; font-size: .85rem; font-weight: 600; color: #444; }
+
+/* Hub page grids — /trades/ and /locations/ */
+.prose .hub-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; margin: 0 0 28px; }
+.prose .hub-card { display: block; padding: 20px 22px; background: var(--off); border: 1px solid var(--line); border-left: 3px solid var(--yellow); border-radius: 0 10px 10px 0; text-decoration: none; transition: background .15s ease, transform .15s ease; }
+.prose .hub-card:hover { background: #ececec; transform: translateY(-2px); color: inherit; }
+.prose .hub-card strong { display: block; margin-bottom: 6px; font-size: 1.05rem; font-weight: 800; color: var(--black); }
+.prose .hub-card span { display: block; color: #555; font-size: .88rem; line-height: 1.55; }
 
 .trade-links { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 10px; }
 .trade-links li { margin: 0; }

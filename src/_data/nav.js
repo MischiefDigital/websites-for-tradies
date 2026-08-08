@@ -5,14 +5,21 @@
  * The audit's core finding was that anchor-only navigation (#offer, #how,
  * #contact) meant Google could only ever rank this domain for one keyword
  * cluster. These are real URLs.
+ *
+ * The trade and city pages are reached through /trades/ and /locations/ hubs
+ * rather than being listed individually in the header. Fifteen items in a nav
+ * bar is unusable, and hub pages concentrate internal link equity better than
+ * a flat list — but every page still has a real navigation path, which is what
+ * separates a legitimate landing page from a doorway page.
  */
 module.exports = {
   // Header menu, left to right
   primary: [
     { text: "Pricing", url: "/pricing/" },
+    { text: "Trades", url: "/trades/" },
+    { text: "Locations", url: "/locations/" },
     { text: "How it works", url: "/how-it-works/" },
     { text: "Guarantee", url: "/guarantee/" },
-    { text: "FAQ", url: "/faq/" },
     { text: "About", url: "/about/" },
   ],
 
@@ -30,15 +37,22 @@ module.exports = {
     {
       heading: "By trade",
       links: [
+        { text: "All trades", url: "/trades/" },
         { text: "Electricians", url: "/websites-for-electricians/" },
         { text: "Plumbers", url: "/websites-for-plumbers/" },
         { text: "Builders", url: "/websites-for-builders/" },
         { text: "Painters", url: "/websites-for-painters/" },
+        { text: "Roofers", url: "/websites-for-roofers/" },
+        { text: "Drainlayers", url: "/websites-for-drainlayers/" },
+        { text: "Gasfitters", url: "/websites-for-gasfitters/" },
+        { text: "Tilers", url: "/websites-for-tilers/" },
+        { text: "Landscapers", url: "/websites-for-landscapers/" },
       ],
     },
     {
       heading: "By city",
       links: [
+        { text: "All locations", url: "/locations/" },
         { text: "Auckland", url: "/tradie-websites-auckland/" },
         { text: "Wellington", url: "/tradie-websites-wellington/" },
         { text: "Christchurch", url: "/tradie-websites-christchurch/" },

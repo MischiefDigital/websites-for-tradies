@@ -220,6 +220,36 @@ description: "Done-for-you websites for NZ tradies. Flat NZ$1,997, live in 7 wor
     </div>
   </section>
 
+  <!-- 12b. TRADE + LOCATION DIRECTORY -->
+  <section class="directory">
+    <div class="container">
+      <p class="eyebrow light">BUILT FOR YOUR TRADE, IN YOUR AREA</p>
+      <h2 class="section-title dark-text">We write it for what you actually do. <span class="accent-light">And where you do it.</span></h2>
+      <p class="directory-intro">A sparkie's customer is standing in the dark. A builder's customer has been researching for three months. Same price, completely different website — and the local SEO targets your suburbs, not the whole country.</p>
+
+      <div class="directory-cols">
+        <div>
+          <h3 class="directory-heading">By trade</h3>
+          <ul class="directory-list">
+            {%- for t in trades %}
+            <li><a href="/websites-for-{{ t.slug }}/">{{ t.trade }}s</a></li>
+            {%- endfor %}
+          </ul>
+          <p class="directory-more"><a href="/trades/">Every trade we build for →</a></p>
+        </div>
+        <div>
+          <h3 class="directory-heading">By location</h3>
+          <ul class="directory-list">
+            {%- for c in cities %}
+            <li><a href="/tradie-websites-{{ c.slug }}/">{{ c.city }}</a></li>
+            {%- endfor %}
+          </ul>
+          <p class="directory-more"><a href="/locations/">Everywhere else in NZ →</a></p>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- 13. COMPETITOR COMPARISON TABLE -->
   <section class="comparison">
     <div class="container">

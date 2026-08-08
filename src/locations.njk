@@ -1,0 +1,77 @@
+---
+title: Tradie Website Design by Location NZ | 6 Main Centres — WFT
+description: "Tradie websites built for your city — Auckland, Wellington, Christchurch, Hamilton, Tauranga and Dunedin. Suburb-level local SEO included. NZ$1,997 flat."
+eyebrow: BY LOCATION
+heading: Local matters more than national
+intro: Nobody searches for a tradie without a place attached. These pages cover the six main centres, but the local SEO in every build targets the suburbs you actually service — wherever in Aotearoa that is.
+updated: 2026-08-08
+llmsLabel: Location index — the six main centres
+breadcrumbs:
+  - name: By location
+    url: /locations/
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "{{ site.url }}/locations/#collection",
+        "name": "Tradie website design by location",
+        "description": {{ description | dump | safe }},
+        "inLanguage": "en-NZ",
+        "isPartOf": { "@id": "{{ site.url }}/#website" },
+        "publisher": { "@id": "{{ site.url }}/#organization" },
+        "hasPart": [{% for c in cities %}
+          {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}/tradie-websites-{{ c.slug }}/",
+            "name": {{ c.heading | dump | safe }},
+            "url": "{{ site.url }}/tradie-websites-{{ c.slug }}/"
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>We build for trade businesses anywhere in New Zealand.</strong> These six have their own pages because they're where most of the searching happens — but the suburb targeting in your build is based on where <em>you</em> work, not on this list.</p>
+</div>
+
+<h2>Pick your city</h2>
+<div class="hub-grid">
+  {%- for c in cities %}
+  <a class="hub-card" href="/tradie-websites-{{ c.slug }}/">
+    <strong>{{ c.city }}</strong>
+    <span>{{ c.intro | truncate(105) }}</span>
+  </a>
+  {%- endfor %}
+</div>
+
+<h2>Why the city page isn't the point</h2>
+<p>Ranking for "tradie Auckland" is close to worthless even if you manage it. Half that traffic is the wrong side of a city nobody crosses, and the terms are held by operators with budgets you're not going to outspend.</p>
+<p>The searches that produce work have a suburb in them. "Electrician Papakura." "Plumber Karori." "Builder Rolleston." They're cheaper to win, they convert far better because the person is nearby, and your competitors are mostly ignoring them.</p>
+<p>So every build includes suburb and service-area targeting for the areas you genuinely cover. We work out that list on the kickoff call — five or six real areas beats twenty thin pages, which Google spots and customers find unconvincing.</p>
+
+<h2>Outside the main centres?</h2>
+<p>Good. Less competition, and a well-built site in a smaller market can realistically own its category rather than fight for a suburb of one.</p>
+<p>Whangārei, Palmerston North, Napier, New Plymouth, Nelson, Invercargill, Queenstown, or a town of four thousand people — same price, same seven days, same guarantee. <a href="/#contact">Tell us where you are.</a></p>
+
+<hr />
+
+<h2>Also worth a look</h2>
+<ul class="trade-links">
+  <li><a href="/trades/">Websites by trade</a></li>
+  <li><a href="/pricing/">What it costs</a></li>
+  <li><a href="/nz-tradie-website-statistics/">Sourced NZ statistics</a></li>
+</ul>
+
+<h2>Ready to go?</h2>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}

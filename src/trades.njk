@@ -1,0 +1,77 @@
+---
+title: Tradie Websites by Trade | 9 Trades Covered — WFT
+description: "Websites built for your specific trade — electricians, plumbers, builders, painters, roofers, drainlayers, gasfitters, tilers and landscapers. NZ$1,997 flat."
+eyebrow: BY TRADE
+heading: We build for one trade at a time
+intro: Every trade sells differently. A sparkie's customer is panicking in the dark; a builder's customer has been researching for three months. These pages are written for each of those separately, because a generic tradie website serves neither.
+updated: 2026-08-08
+llmsLabel: Trade index — all nine trades we build for
+breadcrumbs:
+  - name: By trade
+    url: /trades/
+---
+{% extends "layouts/page.njk" %}
+
+{% block schema %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "CollectionPage",
+        "@id": "{{ site.url }}/trades/#collection",
+        "name": "Tradie websites by trade",
+        "description": {{ description | dump | safe }},
+        "inLanguage": "en-NZ",
+        "isPartOf": { "@id": "{{ site.url }}/#website" },
+        "publisher": { "@id": "{{ site.url }}/#organization" },
+        "hasPart": [{% for t in trades %}
+          {
+            "@type": "WebPage",
+            "@id": "{{ site.url }}/websites-for-{{ t.slug }}/",
+            "name": {{ t.heading | dump | safe }},
+            "url": "{{ site.url }}/websites-for-{{ t.slug }}/"
+          }{% if not loop.last %},{% endif %}{% endfor %}
+        ]
+      }
+    ]
+  }
+  </script>
+{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>{{ site.priceDisplay }} flat, live in {{ site.buildDays }}</strong>, whichever trade you're in. Copywriting, local SEO, .nz domain and Google Business Profile setup included, with the Jobs In {{ site.guaranteeDays }} Guarantee.</p>
+</div>
+
+<h2>Pick your trade</h2>
+<div class="hub-grid">
+  {%- for t in trades %}
+  <a class="hub-card" href="/websites-for-{{ t.slug }}/">
+    <strong>{{ t.trade }}s</strong>
+    <span>{{ t.intro | truncate(105) }}</span>
+  </a>
+  {%- endfor %}
+</div>
+
+<h2>Why we build by trade rather than by template</h2>
+<p>Most web companies will build for anyone, which sounds like flexibility and works like a tax. Every job starts from scratch, so it takes six weeks and costs four figures before anyone has written a word.</p>
+<p>We only build for trades. That means we already know an electrician's emergency traffic behaves nothing like a builder's renovation research, that a plumber publishing their callout fee converts better than one who won't, and that a painter has no licence to point at so the whole page has to work harder. None of that gets rediscovered on your invoice.</p>
+<p>It also has a limit worth stating: if you need e-commerce, a booking platform or a custom integration, we're the wrong outfit and we'll say so on the call.</p>
+
+<h2>Not on the list?</h2>
+<p>We build for every trade — the nine above are just the ones with pages so far. Concreters, glaziers, plasterers, fencers, scaffolders, arborists, HVAC: same price, same timeline, same guarantee.</p>
+<p><a href="/#contact">Tell us your trade</a> and we'll write it around what you actually do.</p>
+
+<hr />
+
+<h2>Also worth a look</h2>
+<ul class="trade-links">
+  <li><a href="/locations/">Websites by location</a></li>
+  <li><a href="/pricing/">What it costs</a></li>
+  <li><a href="/guarantee/">The guarantees in full</a></li>
+</ul>
+
+<h2>Ready to go?</h2>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}
