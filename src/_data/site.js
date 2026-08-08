@@ -47,12 +47,15 @@ module.exports = {
     "Dunedin",
   ],
 
-  // TODO (Blair): add the real profile URLs once they exist. These feed
-  // schema sameAs, which is how Google and AI engines confirm WFT is a real
-  // entity rather than a lone domain. Google Business Profile, LinkedIn
-  // company page and Facebook page all belong here.
-  // Leave empty rather than guessing — a wrong sameAs is worse than none.
-  sameAs: [],
+  // Profile URLs, emitted as schema sameAs. This is how Google and AI engines
+  // confirm the website and the profiles are one entity rather than several
+  // unconnected things.
+  // Only add a URL once it has been confirmed to resolve — a wrong sameAs is
+  // worse than a missing one.
+  // Still to add: Google Business Profile and Facebook, both pending.
+  sameAs: [
+    "https://www.linkedin.com/company/wft-websites-for-tradies/",
+  ],
 
   // Business phone. Confirmed 8 Aug 2026.
   // This must match the Google Business Profile and every directory citation
