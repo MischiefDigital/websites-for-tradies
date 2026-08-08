@@ -25,7 +25,7 @@ plus what's been done since.
 | 9b | **Google Signals left OFF** | ⬜ **Blair** | Confirm it's off. The privacy policy states it is |
 | 10 | Google Business Profile submitted | ✅ 8 Aug | Awaiting postcard verification, 5–12 days |
 | 11 | **Uptime monitor** | ⬜ **Blair** | UptimeRobot free tier. A dead site during the founding push is unrecoverable |
-| 12 | **PageSpeed Insights run** | ⬜ **Blair** | pagespeed.web.dev — couldn't run locally, Google's API is rate-limited |
+| 12 | PageSpeed Insights run | ✅ 8 Aug | Mobile: Performance 99, Accessibility 98, Best Practices 100, SEO 100. LCP 1.4s, FCP 0.9s, SI 0.9s, TBT 90ms, CLS 0 |
 
 ---
 
@@ -42,6 +42,8 @@ plus what's been done since.
 | robots.txt with explicit AI crawler allows | ✅ |
 | Branded 404 | ✅ |
 | Self-hosted fonts, responsive hero — 111KB mobile, CLS 0 | ✅ |
+| Core Web Vitals: inline critical CSS, cache headers, asset hashing, fetchpriority, deferred gtag | ✅ Perf 99, LCP 1.4s |
+| WCAG AA contrast — 22 failures fixed | ✅ Accessibility 98 |
 | llms.txt, auto-generated from page data | ✅ |
 | Real multi-page navigation | ✅ |
 | `/pricing`, `/how-it-works`, `/guarantee`, `/faq`, `/about` | ✅ |
