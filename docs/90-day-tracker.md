@@ -14,7 +14,7 @@ plus what's been done since.
 |---|---|---|---|
 | 1 | Google Search Console verified | ✅ Done | DNS domain property. Verified before this work started |
 | 2 | GSC sitemap submitted | ✅ 8 Aug | Resubmitted 8 Aug after the URL inspection showed the trade pages as "unknown to Google": Google had only ever read the sitemap at 8 URLs and had not returned since the trade and city pages shipped. Resubmitting forced a re-read — **discovered pages went 8 → 30 immediately**. Resubmit again after any batch of new pages rather than waiting. Note a stale **non-www** sitemap index submitted Jan 2016 (pre-dates our ownership of the domain), last read Dec 2016, permanently "Couldn't fetch" — harmless, left in place |
-| 3 | GSC indexing requested | ✅ 8 Aug | 7 URLs: /, /pricing, /faq, /guarantee, /how-it-works, /about, /websites-for-plumbers/. Plumbers inspected as "URL is unknown to Google" — never crawled, no referring sitemap detected. See row 2 |
+| 3 | GSC indexing requested | ⚠️ 8 Aug | **11 requests used, daily quota hit.** Earlier: /, /pricing, /faq, /guarantee, /how-it-works, /about. Then: plumbers, builders, drainlayers, electricians, gasfitters. **Landscapers rejected "Quota Exceeded" — still owed, along with painters, roofers, tilers.** Do those 4 on 9 Aug. Quota looks like ~11/property/day |
 | 4 | Bing Webmaster Tools verified | ✅ 8 Aug | Meta tag. GSC import doesn't work for Domain properties |
 | 5 | Bing sitemap submitted | ✅ 8 Aug | |
 | 6 | IndexNow configured | ✅ 8 Aug | `npm run indexnow` after any content deploy |
