@@ -1,4 +1,28 @@
 const { execSync } = require("node:child_process");
+const crypto = require("node:crypto");
+const fs = require("node:fs");
+const path = require("node:path");
+
+/**
+ * Short content hash for a static asset, used as a ?v= cache buster.
+ *
+ * This is what makes a one-year immutable Cache-Control header safe on CSS and
+ * JS: the URL changes whenever the file does, so a long cache can never serve
+ * stale styles after a deploy. Without it, Vercel's default of
+ * "max-age=0, must-revalidate" means every asset is revalidated on every page
+ * navigation — a wasted round trip per asset per page.
+ *
+ * Deliberately not cached in a Map: these files are small, and stale hashes
+ * during `--serve` would be more annoying than the microseconds saved.
+ */
+function assetHash(urlPath) {
+  const full = path.join(__dirname, "src", urlPath);
+  try {
+    return crypto.createHash("sha256").update(fs.readFileSync(full)).digest("hex").slice(0, 8);
+  } catch {
+    return "";
+  }
+}
 
 /**
  * Last-modified date for a template, from git rather than the filesystem.
@@ -78,6 +102,7 @@ module.exports = function (eleventyConfig) {
   });
 
   eleventyConfig.addFilter("gitLastmod", gitLastModified);
+  eleventyConfig.addFilter("assetHash", assetHash);
 
   return {
     dir: {

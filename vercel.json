@@ -8,5 +8,27 @@
       "destination": "https://www.websitesfortradies.co.nz/$1",
       "permanent": true
     }
+  ],
+  "headers": [
+    {
+      "comment": "CSS and JS carry a ?v=<content hash> so the URL changes whenever the file does. That is what makes an immutable year-long cache safe here — a deploy produces a new URL rather than a stale cache. See assetHash in eleventy.config.js.",
+      "source": "/assets/(css|js)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "comment": "Fonts, images and icons are versioned by filename — hero-tradie-900.webp, inter-latin.woff2. Changing one means a new name, so these are safe to cache hard.",
+      "source": "/(assets/fonts|assets/icons|Images)/(.*)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=31536000, immutable" }]
+    },
+    {
+      "comment": "og-image and favicon are fetched by social platforms and browsers that ignore query strings. A week is long enough to matter, short enough to recover from a bad share card.",
+      "source": "/assets/(og-image.png|favicon.svg)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=604800" }]
+    },
+    {
+      "comment": "HTML, sitemap, robots and llms.txt must stay revalidated — content changes and search engines should see it immediately. Vercel's default is already correct for these; stated explicitly so nobody widens the rule above by accident.",
+      "source": "/(.*).(html|xml|txt|webmanifest)",
+      "headers": [{ "key": "Cache-Control", "value": "public, max-age=0, must-revalidate" }]
+    }
   ]
 }
