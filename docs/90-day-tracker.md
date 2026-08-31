@@ -94,7 +94,7 @@ Worth keeping visible — these were live and wrong.
 | Bing Places | ⏳ 8 Aug | Submitted, awaiting postcard verification |
 | LinkedIn company page | ✅ | Live and in schema `sameAs` (site.js). GBP and Facebook still pending there |
 | **Facebook business page** | ⬜ | `citations-and-nap.md` — same |
-| **Citations — tier 2** (Yellow, Localist, Finda, Neighbourly, NZS) | ⬜ | `citations-and-nap.md` |
+| Citations — tier 2 | ✅ 31 Aug — as far as free goes | `citations-and-nap.md` — Yellow submitted (await confirmation email at info@); nzs.com defunct; Finda and Neighbourly now paid, skipped; Localist needs a registered entity — parked on the sole-trader NZBN decision |
 | Phone number decided and added to NAP | ✅ 8 Aug | `027 424 1214` — in site.js, schema, footer and contact section |
 | **Review requests to founding clients** | ⬜ | `review-requests.md` |
 | **Association outreach** | ⬜ | `outreach-and-links.md` — after 3–4 case studies |
