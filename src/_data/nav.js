@@ -75,6 +75,7 @@ module.exports = {
       heading: "Guides",
       links: [
         { text: "What it costs in NZ", url: "/guides/tradie-website-cost-nz/" },
+        { text: "Wix vs done-for-you", url: "/guides/wix-vs-done-for-you-tradie-website/" },
         { text: "Do tradies need a website?", url: "/guides/do-tradies-need-a-website/" },
         { text: "Facebook page vs website", url: "/guides/facebook-page-vs-website-for-tradies/" },
         { text: "NZ companies compared", url: "/guides/best-tradie-website-companies-nz/" },
