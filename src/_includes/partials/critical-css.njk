@@ -8,7 +8,7 @@
   target on the first PageSpeed run.
 
   This block covers only what is visible before scrolling: tokens, topbar, nav,
-  ticker, hero and buttons. The full stylesheet still loads, asynchronously,
+  hero and buttons. The full stylesheet still loads, asynchronously,
   for everything below the fold.
 
   KEEP IT SMALL. Every byte here is repeated on all 24 pages and never cached.
@@ -41,11 +41,6 @@ a{color:inherit;text-decoration:none}
 .nav-links a{font-size:13px;font-weight:600;color:rgba(255,255,255,.72);white-space:nowrap}
 .nav-toggle{display:none;width:42px;height:38px;flex-direction:column;justify-content:center;gap:5px;padding:0 9px;border:1px solid var(--slate);border-radius:7px;background:transparent;cursor:pointer}
 .nav-toggle-bar{display:block;height:2px;width:100%;background:var(--white);border-radius:2px}
-.ticker{background:var(--charcoal);border-bottom:1px solid var(--slate);padding:10px 0;overflow:hidden}
-.ticker-track{display:flex;width:max-content;animation:ticker 32s linear infinite}
-.ticker-item{margin-right:42px;font-size:12px;font-weight:600;text-transform:uppercase;letter-spacing:.1em;color:var(--grey);white-space:nowrap}
-.ticker-item span{color:var(--yellow);font-weight:900}
-@keyframes ticker{from{transform:translateX(0)}to{transform:translateX(-50%)}}
 .hero{position:relative;min-height:100vh;background:var(--black) url(/Images/hero-tradie-900.webp) center center/cover no-repeat;display:flex;align-items:center;text-align:center;padding:96px 0;overflow:hidden}
 @media(min-width:769px){.hero{background-image:url(/Images/hero-tradie.webp)}}
 .hero::before{content:"WFT";position:absolute;inset:50% auto auto 50%;transform:translate(-50%,-50%);font-size:clamp(130px,24vw,300px);font-weight:900;letter-spacing:-.06em;color:rgba(255,255,255,.02);pointer-events:none;line-height:1}
