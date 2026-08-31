@@ -37,6 +37,6 @@ module.exports = [
   },
   {
     q: "Do I have to take the monthly plan?",
-    a: "Your site is yours outright — you can host it anywhere. But the Get Found Plan is what keeps you ranking, managed and reviewed, and it's required to keep your Jobs In 90 Guarantee active. Most founding tradies stay on it because that's where the jobs actually come from. No lock-in — cancel any time.",
+    a: "Your site is yours outright — you can host it anywhere. But the Get Found Plan is what keeps you ranking, managed and reviewed, and it's required to keep your Jobs In 90 Guarantee active. No lock-in — cancel any time.",
   },
 ];

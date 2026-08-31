@@ -11,8 +11,6 @@ module.exports = {
   // so a price change never leaves a stale number somewhere on the site.
   price: "1997",
   priceDisplay: "NZ$1,997",
-  foundingPriceDisplay: "NZ$1,697",
-  foundingDiscountDisplay: "NZ$300",
   currency: "NZD",
   buildDays: "7 working days",
   guaranteeDays: "90",
