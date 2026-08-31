@@ -1,0 +1,61 @@
+---
+title: Example Builds | What a WFT Website Looks Like — WFT
+description: "Two full demonstration builds showing exactly what a WFT tradie website looks like — one emergency trade, one considered trade. Clearly labelled demos, not client work."
+eyebrow: EXAMPLE BUILDS
+heading: See exactly what you'd get
+intro: These are demonstration builds for fictional businesses — not client work, and never passed off as any. Same structure, same copy standard, same speed as a real build. As real client sites go live, they take this page over.
+breadcrumbName: Example builds
+# Kept out of the sitemap until the demo builds exist. Remove this line (and the
+# noindex block below) when the page goes live.
+sitemapExclude: true
+---
+{% extends "layouts/page.njk" %}
+
+{# NOT LIVE YET — scaffolded ahead of the demo builds, deliberately unlinked.
+   The demos must exist before this page is worth a visitor's click.
+
+   Launch checklist, in order:
+     1. Build the two demo sites (fictional names — check the Companies Register
+        and Google that no real tradie trades under them; non-functional phone
+        numbers; forms disabled; a visible DEMO banner on every demo page;
+        noindex on the demos themselves).
+     2. Fill in the two "VIEW THE DEMO" links below.
+     3. Delete the headExtra noindex block below and sitemapExclude above.
+     4. Link this page from the homepage and nav.
+     5. As real client sites launch, replace demos with real work — the page
+        title and intro already allow for that. #}
+{% block headExtra %}<meta name="robots" content="noindex" />{% endblock %}
+
+{% block prose %}
+<div class="callout">
+  <p><strong>Straight up: these are demos, not client work.</strong> The businesses below are fictional, the phone numbers don't ring, and nothing here is presented as a past client — we're new, and pretending otherwise would insult your intelligence. What's real is the build itself: the structure, the copy, the speed, the way it works on a phone. Judge the work, then picture your name on it.</p>
+</div>
+
+<h2>Demo 1 — the emergency trade</h2>
+<p>Built the way a plumber's site has to be built: for someone standing in water at 11pm who will call whoever they trust first. Tappable phone number inside the first second, PGDB registration where people actually look, emergency and after-hours terms stated plainly instead of buried.</p>
+<ul>
+  <li><strong>What to look at:</strong> how fast the number is reachable on a phone, and what the site tells a panicking visitor in the first five seconds.</li>
+  <li>The service pages are written around symptoms people actually search — blocked drain, no hot water — not trade jargon.</li>
+  <li>Trust signals (registration, insurance, guarantees) sit in the header and above the fold, not the footer.</li>
+</ul>
+{# TODO: link the emergency-trade demo when built:
+<p><a href="/demos/DEMO-SLUG/" class="btn large">VIEW THE DEMO →</a></p> #}
+<p><em>Demo build in progress.</em></p>
+
+<h2>Demo 2 — the considered trade</h2>
+<p>The opposite job: a builder's customer researches for weeks, asks three mates, and checks whether you're the sort of outfit that still exists in five years. This build is structured for that — LBP status explained, a project gallery that shows process rather than just glamour shots, and copy that answers the questions people are embarrassed to ask.</p>
+<ul>
+  <li><strong>What to look at:</strong> how the site earns trust across a longer visit — credentials, process, and proof laid out in the order a cautious customer actually wants them.</li>
+  <li>The enquiry form asks builder-specific questions, because a renovation enquiry and a drainlaying enquiry are different conversations.</li>
+  <li>Every page still works on a phone with two bars, because that's where half the research happens.</li>
+</ul>
+{# TODO: link the considered-trade demo when built:
+<p><a href="/demos/DEMO-SLUG/" class="btn large">VIEW THE DEMO →</a></p> #}
+<p><em>Demo build in progress.</em></p>
+
+<hr />
+
+<h2>Want yours to be the real thing on this page?</h2>
+<p>Every demo here gets replaced by a real client site as they go live. Book a kickoff call — thirty minutes, and we'll tell you honestly whether a website will move the needle for your trade and your area, including if the answer is no.</p>
+<p><a href="/#contact" class="btn large">BOOK MY KICKOFF CALL →</a></p>
+{% endblock %}
