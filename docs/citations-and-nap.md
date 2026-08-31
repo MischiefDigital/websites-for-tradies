@@ -123,7 +123,7 @@ Log each one as you go, so the next person to touch this knows what exists.
 | Bing Places | ☐ | | ☐ |
 | LinkedIn | ☑ | https://www.linkedin.com/company/wft-websites-for-tradies/ | ☐ verify against NAP block |
 | Facebook | ☐ | | ☐ |
-| Yellow NZ | ⏳ form pre-filled 31 Aug | | ☐ |
+| Yellow NZ | ☑ submitted 31 Aug 2026 | listing URL pending — Yellow emails once processed (info@) | ☐ verify once live |
 | Localist | ☐ | | ☐ |
 | Finda | ☐ | | ☐ |
 | Neighbourly | ☐ | | ☐ |
