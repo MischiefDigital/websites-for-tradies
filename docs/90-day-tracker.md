@@ -20,10 +20,10 @@ plus what's been done since.
 | 5 | Bing sitemap submitted | ✅ 8 Aug | |
 | 6 | IndexNow configured | ✅ 8 Aug | `npm run indexnow` after any content deploy |
 | 7 | GA4 property created and live | ✅ 8 Aug | `G-XW4H1LWMYX`. Verified firing, cookies `_ga` + `_ga_XW4H1LWMYX` |
-| 7b | **Data retention set to 14 months** | ⬜ **Blair** | Admin → Data Settings. Defaults to 2 months and discards older data permanently |
-| 8 | **GA4 linked to Search Console** | ⬜ **Blair** | Admin → Product links. May need a URL-prefix GSC property — the linker often won't offer Domain properties |
-| 9 | **`generate_lead` marked as key event** | ⬜ **Blair** | Admin → Key events → New key event → type `generate_lead`. Can be created before it ever fires |
-| 9b | **Google Signals left OFF** | ⬜ **Blair** | Confirm it's off. The privacy policy states it is |
+| 7b | Data retention set to 14 months | ✅ verified 31 Aug | Was already set — both event data and user data at 14 months, reset-on-activity on |
+| 8 | GA4 linked to Search Console | ✅ verified 31 Aug | Link already existed, and the Domain property linked fine after all |
+| 9 | **`generate_lead` marked as key event** | ⚠️ **blocked on first fire** | GA4 removed create-by-name — an event must fire once before it can be starred. Fix: submit a clearly-labelled test through the contact form (which is also the monthly Formspree delivery check), then star `generate_lead` in Admin → Events |
+| 9b | Google Signals left OFF | ✅ verified 31 Aug | Confirmed off (GA4 offers "Turn on"), matching the privacy policy |
 | 10 | Google Business Profile submitted | ✅ 8 Aug | Awaiting postcard verification, 5–12 days |
 | 11 | Uptime monitor | ✅ 8 Aug | UptimeRobot. Keyword monitor on the homepage ("Websites That Get Jobs") rather than a plain ping — a failed Vercel build still returns 200 and serves the previous deploy, which a status check would miss. Plus an HTTP check on /pricing/ |
 | 12 | PageSpeed Insights run | ✅ 8 Aug | Mobile: Performance 99, Accessibility 98, Best Practices 100, SEO 100. LCP 1.4s, FCP 0.9s, SI 0.9s, TBT 90ms, CLS 0 |
@@ -123,11 +123,33 @@ Ask each of these, log whether WFT is named:
 
 | Month | ChatGPT | Claude | Perplexity | Google AI |
 |---|---|---|---|---|
-| Sep 2026 | ☐ | ☐ | ☐ | ☐ |
+| Sep 2026 (run 31 Aug) | ✅ **named + cited** | ✗ see note | — login wall | — no AI Overview served |
 | Oct 2026 | ☐ | ☐ | ☐ | ☐ |
 | Nov 2026 | ☐ | ☐ | ☐ | ☐ |
 
 Once WFT appears, screenshot it. That's a sales asset as much as a metric.
+
+**Sep 2026 notes:**
+
+- **ChatGPT (logged out) named WFT**: "Websites for Tradies (WFT) — dedicated
+  NZ tradie offering at around $1,997, including copywriting, local SEO and a
+  7-working-day target", with a citation chip to the site. Grab a screenshot by
+  asking the question in a logged-out chatgpt.com — it's the sales asset the
+  line above describes. Others named: Buildify, Jelly Digital, Onsite Design,
+  TradeReach, Groundwork Digital, Kiweb.
+- **Claude** only mentioned WFT because it was signed in as Blair (memory
+  recall) — doesn't count. Its live web searches did **not** surface
+  websitesfortradies.co.nz for "tradie website design New Zealand" or
+  "websites for tradies NZ".
+- **Perplexity** now requires login for queries; do it by hand next month.
+- **Google**: no AI Overview for the query, and WFT absent from organic page 1
+  (Buildify, Tradie Design, King Tide, Ahoy, Elevare, Vander, Horton Taylor,
+  Groundwork own it).
+- ⚠️ **Elevare is ranking for the literal brand phrase** — their title tag is
+  "Websites For Tradies NZ | Tradie Website Design NZ | Elevare" and they top
+  both queries. A competitor holding the brand-name SERP is the sharpest
+  finding of this check; reviews + citations + indexing time are the
+  counterweights already in this plan.
 
 ---
 
