@@ -78,7 +78,7 @@ Work down. The first four are worth more than the rest combined.
 |---|---|---|
 | Yellow NZ | yellow.co.nz | Free basic listing via yellow.co.nz/list-your-business — public form, no pre-existing account needed. Ignore the upsell calls. |
 | Localist | localist.co.nz | NZ-owned, decent domain authority. Listing requires creating an account ("Get Started") **and a registered business — blocked for now**: WFT is a trading name of Mischief Digital (sole trader), not a registered entity. Unblock by getting a free sole-trader NZBN (nzbn.govt.nz) with WFT recorded as a trading name, or skip. **Never list as "Mischief Digital"** — a citation under a different name is worse than no citation. |
-| Finda | finda.co.nz | Free listing. Requires creating an account (REGISTER, top right). |
+| Finda | finda.co.nz | ~~Free listing~~ — **no longer free** (checked 31 Aug 2026, Blair). Skipped: a paid tier-2 citation isn't worth it. Revisit only if it ever matters for a keyword Finda actually ranks for. |
 | Neighbourly | neighbourly.co.nz | Community-focused, genuinely used in NZ. Hard sign-in wall — needs a personal account first, then a business page. |
 | ~~NZ Business Directory~~ | ~~nzs.com~~ | **Defunct — checked 31 Aug 2026.** The domain no longer serves the NZ directory (it now shows a Chinese domain-services page, and HTTPS is broken). Do not list here. |
 
@@ -125,7 +125,7 @@ Log each one as you go, so the next person to touch this knows what exists.
 | Facebook | ☐ | | ☐ |
 | Yellow NZ | ☑ submitted 31 Aug 2026 | listing URL pending — Yellow emails once processed (info@) | ☐ verify once live |
 | Localist | ☐ | | ☐ |
-| Finda | ☐ | | ☐ |
+| Finda | — skipped (paid) | | |
 | Neighbourly | ☐ | | ☐ |
 | ~~NZ Business Directory~~ | defunct | | |
 
