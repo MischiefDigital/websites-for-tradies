@@ -76,11 +76,19 @@ Work down. The first four are worth more than the rest combined.
 
 | Directory | URL | Notes |
 |---|---|---|
-| Yellow NZ | yellow.co.nz | Free basic listing. Ignore the upsell calls. |
-| Localist | localist.co.nz | NZ-owned, decent domain authority. |
-| Finda | finda.co.nz | Free listing. |
-| Neighbourly | neighbourly.co.nz | Community-focused, genuinely used in NZ. |
-| NZ Business Directory | nzs.com | Long-standing NZ directory. |
+| Yellow NZ | yellow.co.nz | Free basic listing via yellow.co.nz/list-your-business — public form, no pre-existing account needed. Ignore the upsell calls. |
+| Localist | localist.co.nz | NZ-owned, decent domain authority. Listing requires creating an account ("Get Started"). |
+| Finda | finda.co.nz | Free listing. Requires creating an account (REGISTER, top right). |
+| Neighbourly | neighbourly.co.nz | Community-focused, genuinely used in NZ. Hard sign-in wall — needs a personal account first, then a business page. |
+| ~~NZ Business Directory~~ | ~~nzs.com~~ | **Defunct — checked 31 Aug 2026.** The domain no longer serves the NZ directory (it now shows a Chinese domain-services page, and HTTPS is broken). Do not list here. |
+
+**Recon notes, 31 Aug 2026:** Yellow's listing form was pre-filled with the NAP
+block (name, phone, email, website, category "Web Site Development" — their
+closest to "Website designer" — and location display set to "Do not display",
+correct for an SAB). Still needed to submit: the real street address (required
+by the form but hidden from the public listing), the terms tick, the reCAPTCHA
+and the Create Listing click. The other three all gate listings behind account
+signup, so they need the same person-with-the-password each time.
 
 ### Tier 3 — worth it once the above are done
 
@@ -113,13 +121,13 @@ Log each one as you go, so the next person to touch this knows what exists.
 |---|---|---|---|
 | Google Business Profile | ☐ | | ☐ |
 | Bing Places | ☐ | | ☐ |
-| LinkedIn | ☐ | | ☐ |
+| LinkedIn | ☑ | https://www.linkedin.com/company/wft-websites-for-tradies/ | ☐ verify against NAP block |
 | Facebook | ☐ | | ☐ |
-| Yellow NZ | ☐ | | ☐ |
+| Yellow NZ | ⏳ form pre-filled 31 Aug | | ☐ |
 | Localist | ☐ | | ☐ |
 | Finda | ☐ | | ☐ |
 | Neighbourly | ☐ | | ☐ |
-| NZ Business Directory | ☐ | | ☐ |
+| ~~NZ Business Directory~~ | defunct | | |
 
 **When Google, LinkedIn and Facebook are live**, add all three URLs to
 `sameAs` in `src/_data/site.js`. That array is deliberately empty right now —
