@@ -1,7 +1,10 @@
 module.exports = {
   name: "WFT — Websites for Tradies",
   shortName: "WFT",
-  legalName: "WFT — Websites for Tradies",
+  // No legalName here on purpose: WFT is a trading name of Mischief Digital
+  // (sole trader), not a registered entity, and Blair has decided against an
+  // NZBN (31 Aug 2026). Schema claiming a legal name that doesn't exist is
+  // worse than omitting the property.
   tagline: "WEBSITES THAT GET JOBS",
   url: "https://www.websitesfortradies.co.nz",
   email: "info@websitesfortradies.co.nz",

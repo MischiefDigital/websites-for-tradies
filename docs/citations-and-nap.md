@@ -77,7 +77,7 @@ Work down. The first four are worth more than the rest combined.
 | Directory | URL | Notes |
 |---|---|---|
 | Yellow NZ | yellow.co.nz | Free basic listing via yellow.co.nz/list-your-business — public form, no pre-existing account needed. Ignore the upsell calls. |
-| Localist | localist.co.nz | NZ-owned, decent domain authority. Listing requires creating an account ("Get Started") **and a registered business — blocked for now**: WFT is a trading name of Mischief Digital (sole trader), not a registered entity. Unblock by getting a free sole-trader NZBN (nzbn.govt.nz) with WFT recorded as a trading name, or skip. **Never list as "Mischief Digital"** — a citation under a different name is worse than no citation. |
+| Localist | localist.co.nz | NZ-owned, decent domain authority. Listing requires an account **and a registered business — skipped permanently** (Blair, 31 Aug 2026): WFT is a trading name of Mischief Digital (sole trader) and Blair has decided against getting an NZBN. **Never list as "Mischief Digital"** — a citation under a different name is worse than no citation. |
 | Finda | finda.co.nz | ~~Free listing~~ — **no longer free** (checked 31 Aug 2026, Blair). Skipped: a paid tier-2 citation isn't worth it. Revisit only if it ever matters for a keyword Finda actually ranks for. |
 | Neighbourly | neighbourly.co.nz | Community-focused, genuinely used in NZ. Hard sign-in wall — and **business pages aren't free either** (checked 31 Aug 2026, Blair). Skipped for the same reason as Finda. |
 | ~~NZ Business Directory~~ | ~~nzs.com~~ | **Defunct — checked 31 Aug 2026.** The domain no longer serves the NZ directory (it now shows a Chinese domain-services page, and HTTPS is broken). Do not list here. |
@@ -123,8 +123,8 @@ Log each one as you go, so the next person to touch this knows what exists.
 | Bing Places | ☐ | | ☐ |
 | LinkedIn | ☑ | https://www.linkedin.com/company/wft-websites-for-tradies/ | ☐ verify against NAP block |
 | Facebook | ☐ | | ☐ |
-| Yellow NZ | ☑ submitted 31 Aug 2026 | listing URL pending — Yellow emails once processed (info@) | ☐ verify once live |
-| Localist | ☐ | | ☐ |
+| Yellow NZ | ☑ submitted 31 Aug 2026 | confirmation received; listing can take **up to 8 days** to show — check ~8 Sep and log the URL | ☐ verify once live |
+| Localist | — skipped (needs registered entity, no NZBN planned) | | |
 | Finda | — skipped (paid) | | |
 | Neighbourly | — skipped (paid) | | |
 | ~~NZ Business Directory~~ | defunct | | |
