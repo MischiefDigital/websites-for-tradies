@@ -153,7 +153,7 @@ Google weights profiles with real photos, and empty profiles look abandoned.
 
 **Minimum before you consider this done:**
 
-- [ ] Logo (square, the WFT mark — `src/assets/icons/icon-512.png` works)
+- [ ] Logo (square, the WFT mark — `src/assets/icons/wft-icon-512.png` works)
 - [ ] Cover photo (landscape — `src/assets/og-image.png` is 1200×630 and on-brand)
 - [ ] The five brand cards in `tools/gbp-cards/` (see below)
 - [ ] A real photo of Blair. The audit is specific that real faces beat stock

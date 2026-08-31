@@ -4,11 +4,11 @@
   "description": "Done-for-you websites for New Zealand tradies. Live in 7 working days.",
   "start_url": "/",
   "display": "standalone",
-  "background_color": "#0D0D0D",
-  "theme_color": "#0D0D0D",
+  "background_color": "#000000",
+  "theme_color": "#000000",
   "icons": [
-    { "src": "/assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
-    { "src": "/assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/assets/icons/wft-icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/assets/icons/wft-icon-512.png", "sizes": "512x512", "type": "image/png" },
     { "src": "/assets/favicon.svg", "sizes": "any", "type": "image/svg+xml" }
   ]
 }

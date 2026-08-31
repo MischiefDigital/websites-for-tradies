@@ -27,8 +27,9 @@ module.exports = {
 
   formEndpoint: "https://formspree.io/f/xbdwbgog",
 
-  // Brand assets, used by OG tags and schema
-  logo: "/assets/icons/icon-512.png",
+  // Brand assets, used by OG tags and schema.
+  // Generated from the masters in tools/brand/ — see docs/brand-guidelines.md.
+  logo: "/assets/icons/wft-icon-512.png",
   ogImage: "/assets/og-image.png",
 
   // Service-area business: based in Wellington, serving NZ-wide.

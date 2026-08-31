@@ -27,26 +27,35 @@ committed, so the site builds without them.
 
 ## `generate-images.js`
 
-Rasterises the brand SVGs into the PNGs that social platforms and legacy
-browsers need (neither accepts SVG).
+Derives every web-served brand asset from the master artwork in `tools/brand/`
+(the brand system is documented in `docs/brand-guidelines.md`). The masters
+live here, not under `src/`, for the same reason as the hero source image —
+anything in `src/assets/` ships to every deploy.
 
 ```bash
 node tools/generate-images.js
 ```
 
-Reads `tools/og-image.svg` and `src/assets/favicon.svg`. Writes:
+Reads the masters in `tools/brand/` and `tools/og-image.svg`. Writes:
 
 | Output | Size | Used by |
 |---|---|---|
 | `src/assets/og-image.png` | 1200×630 | `og:image`, `twitter:image` |
-| `src/assets/icons/apple-touch-icon.png` | 180×180 | iOS home screen |
-| `src/assets/icons/icon-192.png` | 192×192 | `site.webmanifest` |
-| `src/assets/icons/icon-512.png` | 512×512 | manifest + schema `logo` |
-| `src/assets/icons/favicon-32.png` | 32×32 | browser tab fallback |
+| `src/assets/favicon.svg` | any | browser tab (128px raster embedded) |
+| `src/assets/icons/wft-mark.png` | 96px tall | header/footer logo (`partials/logo.njk`) |
+| `src/assets/icons/wft-apple-touch-icon.png` | 180×180 | iOS home screen |
+| `src/assets/icons/wft-icon-192.png` | 192×192 | `site.webmanifest` |
+| `src/assets/icons/wft-icon-512.png` | 512×512 | manifest + schema `logo` |
+| `src/assets/icons/wft-favicon-32.png` | 32×32 | browser tab fallback |
 
-Re-run after editing either SVG. **Check the result visually** — text in the OG
-card is rendered with system fonts and can overflow its container if the copy
-gets longer.
+The icon PNGs sit under the 1-year immutable cache rule, so if the artwork
+changes again, **rename them** (see the header comment in the script) rather
+than overwriting. `og-image.png` and `favicon.svg` cache for a week and keep
+their names — social platforms and schema point at those URLs.
+
+Re-run after replacing a master or editing the OG SVG. **Check the result
+visually** — text in the OG card is rendered with system fonts and can
+overflow its container if the copy gets longer.
 
 ## Hero image variants
 

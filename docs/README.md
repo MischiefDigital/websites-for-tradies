@@ -6,6 +6,7 @@ outside `src/`, so nothing here is copied into the build or the sitemap.
 | File | What it's for |
 |---|---|
 | [`90-day-tracker.md`](90-day-tracker.md) | **Start here.** Status of every task, the weekly metrics check, and what's blocked on whom |
+| [`brand-guidelines.md`](brand-guidelines.md) | The WFT brand system: logo usage, colours, type — and where each asset is generated from |
 | [`google-business-profile-setup.md`](google-business-profile-setup.md) | Paste-ready GBP setup: name, categories, service area, description, services, seeded Q&A |
 | [`citations-and-nap.md`](citations-and-nap.md) | The canonical NAP block and the directory list, in priority order |
 | [`review-requests.md`](review-requests.md) | Templates for launch-day, follow-up, 90-day check-in and case-study asks, plus how to reply |
