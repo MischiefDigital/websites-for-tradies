@@ -1,0 +1,113 @@
+{#
+  Demo build 2 — "Framewright Builders", a fictional renovation/new-build
+  company for the considered buyer. Same demo rules as Redwrench: noindex,
+  DEMO banner, dead 555 phone number, disabled forms. Fictional-name checks
+  done 31 Aug 2026 (Companies Register + web search). Deliberately a different
+  design language — serif, warm, unhurried — because the point of the pair is
+  that an emergency trade and a considered trade need different websites.
+#}
+<!DOCTYPE html>
+<html lang="en-NZ">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="robots" content="noindex" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <style>
+    :root{--paper:#F7F4EE;--card:#FFFFFF;--ink:#23261F;--soft:#6B6A5E;--green:#3D5238;--green-2:#2C3D29;--brass:#A07C3B;--line:#E4DFD3}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Georgia,'Times New Roman',serif;background:var(--paper);color:var(--ink);line-height:1.75;font-size:17px}
+    a{color:inherit;text-decoration:none}
+    img{max-width:100%;display:block}
+    .wrap{width:min(1040px,calc(100% - 40px));margin:0 auto}
+    .demo-banner{background:#FFD84D;color:#1a1a1a;font-family:Arial,sans-serif;font-size:13px;font-weight:600;text-align:center;padding:9px 16px}
+    .demo-banner a{text-decoration:underline;font-weight:800}
+    .fw-head{border-bottom:1px solid var(--line);background:var(--paper)}
+    .fw-nav{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0}
+    .fw-logo{font-size:23px;letter-spacing:.01em}
+    .fw-logo b{font-weight:700}
+    .fw-logo small{display:block;font-family:Arial,sans-serif;font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--soft)}
+    .fw-links{display:flex;gap:26px;font-family:Arial,sans-serif;font-size:13.5px;letter-spacing:.04em}
+    .fw-links a{color:var(--soft);padding:4px 0}
+    .fw-links a[aria-current]{color:var(--ink);box-shadow:0 2px 0 var(--brass)}
+    .fw-phone{font-family:Arial,sans-serif;font-size:14px;font-weight:700;color:var(--green);white-space:nowrap}
+    .fw-hero{position:relative;color:#fff;background:var(--green-2)}
+    .fw-hero-img{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.55}
+    .fw-hero-grad{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,18,.35),rgba(20,28,18,.78))}
+    .fw-hero-inner{position:relative;padding:110px 0 96px;max-width:660px}
+    .fw-hero h1{margin:0 0 20px;font-size:clamp(2.1rem,5.2vw,3.5rem);line-height:1.12;font-weight:400}
+    .fw-hero h1 i{color:#D8B97C;font-style:italic}
+    .fw-hero p{font-size:1.12rem;color:rgba(255,255,255,.88);margin:0 0 30px;max-width:520px}
+    .btn{display:inline-block;font-family:Arial,sans-serif;font-weight:700;font-size:14px;letter-spacing:.05em;background:var(--brass);color:#fff;padding:15px 28px;border-radius:3px}
+    .btn:hover{background:#8A6A30}
+    .btn.line{background:transparent;border:1px solid rgba(255,255,255,.5)}
+    .btn.green{background:var(--green)}
+    section{padding:76px 0}
+    .kicker{font-family:Arial,sans-serif;font-size:11.5px;font-weight:800;letter-spacing:.2em;text-transform:uppercase;color:var(--brass);margin:0 0 14px}
+    h2{margin:0 0 18px;font-size:clamp(1.6rem,3.4vw,2.3rem);font-weight:400;line-height:1.2}
+    .lead{color:var(--soft);max-width:620px;margin:0 0 40px}
+    .cred-row{display:flex;gap:14px;flex-wrap:wrap;font-family:Arial,sans-serif;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
+    .cred{border:1px solid var(--line);background:var(--card);border-radius:3px;padding:10px 16px;color:var(--soft)}
+    .projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:26px}
+    .project{background:var(--card);border:1px solid var(--line);border-radius:4px;overflow:hidden}
+    .project img{aspect-ratio:4/3;object-fit:cover;width:100%}
+    .project figcaption{padding:20px 22px}
+    .project h3{margin:0 0 6px;font-size:1.12rem;font-weight:700}
+    .project p{margin:0;font-family:Arial,sans-serif;font-size:.88rem;color:var(--soft);line-height:1.6}
+    .split{display:grid;grid-template-columns:1fr 1fr;gap:52px;align-items:center}
+    .split img{border-radius:4px;border:1px solid var(--line)}
+    .steps{display:grid;gap:0;max-width:720px}
+    .fw-step{display:grid;grid-template-columns:64px 1fr;gap:22px;padding:26px 0;border-bottom:1px solid var(--line)}
+    .fw-step:last-child{border-bottom:0}
+    .fw-num{font-size:2rem;color:var(--brass);font-style:italic;line-height:1}
+    .fw-step h3{margin:0 0 6px;font-size:1.15rem;font-weight:700}
+    .fw-step p{margin:0;color:var(--soft);font-size:.98rem}
+    .sec-card{background:var(--card);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+    .prose-block p{max-width:660px;color:#41443A}
+    .prose-block h3{margin:34px 0 10px;font-size:1.2rem;font-weight:700}
+    .checklist{list-style:none;margin:0 0 26px;padding:0;max-width:620px}
+    .checklist li{padding-left:30px;position:relative;margin-bottom:12px;color:#41443A}
+    .checklist li::before{content:"—";position:absolute;left:0;color:var(--brass);font-weight:700}
+    .cta-band{background:var(--green-2);color:#fff;text-align:center}
+    .cta-band h2{color:#fff}
+    .cta-band p{color:rgba(255,255,255,.8);max-width:520px;margin:0 auto 30px}
+    .fw-footer{border-top:1px solid var(--line);padding:44px 0;font-family:Arial,sans-serif;font-size:13.5px;color:var(--soft)}
+    .fw-footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+    .fw-footer strong{color:var(--ink)}
+    .fw-footer a{text-decoration:underline}
+    @media(max-width:880px){.split{grid-template-columns:1fr}.fw-links{display:none}.fw-hero-inner{padding:76px 0 70px}}
+  </style>
+</head>
+<body>
+  <div class="demo-banner">DEMONSTRATION BUILD — Framewright Builders is a fictional business. Phone numbers don't connect and forms are disabled. <a href="/example-builds/">See why this demo exists →</a></div>
+
+  <header class="fw-head">
+    <nav class="wrap fw-nav" aria-label="Framewright navigation">
+      <a class="fw-logo" href="/demos/framewright-builders/"><b>Framewright</b> Builders<small>Renovations &amp; New Builds · Christchurch</small></a>
+      <div class="fw-links">
+        <a href="/demos/framewright-builders/projects/"{% if page.url == "/demos/framewright-builders/projects/" %} aria-current="page"{% endif %}>Projects</a>
+        <a href="/demos/framewright-builders/process/"{% if page.url == "/demos/framewright-builders/process/" %} aria-current="page"{% endif %}>Our process</a>
+        <a href="/demos/framewright-builders/about/"{% if page.url == "/demos/framewright-builders/about/" %} aria-current="page"{% endif %}>About</a>
+        <a href="/demos/framewright-builders/contact/"{% if page.url == "/demos/framewright-builders/contact/" %} aria-current="page"{% endif %}>Contact</a>
+      </div>
+      <a class="fw-phone" href="tel:+6435550142">03 555 0142</a>
+    </nav>
+  </header>
+
+  {% block content %}{% endblock %}
+
+  <footer class="fw-footer">
+    <div class="wrap">
+      <div>
+        <strong>Framewright Builders</strong> · Christchurch &amp; Selwyn<br />
+        Licensed Building Practitioner · Site Safe member · Fully insured
+      </div>
+      <div>
+        A fictional demonstration business.<br />
+        Website by <a href="https://www.websitesfortradies.co.nz/">WFT — Websites for Tradies</a>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

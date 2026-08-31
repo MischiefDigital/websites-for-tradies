@@ -508,7 +508,7 @@ tbody tr:nth-child(even) { background: rgba(0,0,0,.02); }
 
 /* Between the 900px menu collapse and roomy desktop the full lockup crowds
    the nav links — the monogram carries the brand alone. */
-@media (min-width: 901px) and (max-width: 1080px) {
+@media (min-width: 901px) and (max-width: 1200px) {
   .brand-stack { display: none; }
 }
 

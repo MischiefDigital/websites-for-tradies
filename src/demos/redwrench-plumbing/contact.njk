@@ -1,0 +1,41 @@
+---
+title: "Contact Redwrench Plumbing — Wellington, Hutt Valley, Porirua"
+description: "Call Redwrench Plumbing 24/7 on 04 555 0199 for emergencies, or book non-urgent work for Wellington, Hutt Valley and Porirua."
+---
+{% extends "layouts/demo-redwrench.njk" %}
+
+{% block content %}
+<header class="rw-hero">
+  <div class="rw-hero-grad"></div>
+  <div class="wrap rw-hero-inner">
+    <h1>Emergencies: <em>phone, always.</em><br />Everything else: below.</h1>
+    <p>The phone is answered 24/7 by the plumber on call. The form is for quotes and non-urgent bookings — we reply the same business day.</p>
+    <a class="call-btn big" href="tel:+6445550199">☎ CALL 04 555 0199</a>
+  </div>
+</header>
+
+<section>
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Book non-urgent work</p>
+      <h2>Tell us what's going on</h2>
+      <form aria-label="Booking form (disabled on this demonstration site)">
+        <p style="margin:0 0 14px"><label>Name<br /><input type="text" disabled placeholder="Your name" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--paper)" /></label></p>
+        <p style="margin:0 0 14px"><label>Phone<br /><input type="tel" disabled placeholder="Best number to call back" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--paper)" /></label></p>
+        <p style="margin:0 0 14px"><label>Suburb<br /><input type="text" disabled placeholder="e.g. Naenae, Karori, Titahi Bay" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--paper)" /></label></p>
+        <p style="margin:0 0 18px"><label>What's the job?<br /><textarea disabled rows="4" placeholder="e.g. relief valve dripping, want a quote for a new cylinder" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:8px;background:var(--paper)"></textarea></label></p>
+        <button type="button" disabled style="background:#9aa7b5;color:#fff;font-weight:800;border:0;border-radius:8px;padding:14px 26px;cursor:not-allowed">FORM DISABLED ON DEMO</button>
+        <p class="note">On a real WFT build this form emails the plumber and texts them for after-hours enquiries.</p>
+      </form>
+    </div>
+    <div class="prose-block">
+      <p class="kicker">The details</p>
+      <h2>Where and when</h2>
+      <p><strong>Phone:</strong> <a href="tel:+6445550199" style="color:var(--red);font-weight:800">04 555 0199</a> — 24 hours, 7 days</p>
+      <p><strong>Service area:</strong> Wellington city, Hutt Valley, Porirua and the Kāpiti motorway corridor. Outside that? Call anyway — if we can't come, we'll name someone good who can.</p>
+      <p><strong>Non-urgent bookings:</strong> weekdays 7:30am–5pm.</p>
+      <p><strong>Credentials:</strong> Certifying Plumber, registered with the Plumbers, Gasfitters and Drainlayers Board. Public liability insured. Documentation shown on request — you should ask every tradie for it.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}

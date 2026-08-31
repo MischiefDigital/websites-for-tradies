@@ -19,6 +19,7 @@ module.exports = {
     { text: "Trades", url: "/trades/" },
     { text: "Locations", url: "/locations/" },
     { text: "How it works", url: "/how-it-works/" },
+    { text: "Examples", url: "/example-builds/" },
     { text: "Guarantee", url: "/guarantee/" },
     { text: "About", url: "/about/" },
   ],
@@ -65,6 +66,7 @@ module.exports = {
       heading: "Company",
       links: [
         { text: "About WFT", url: "/about/" },
+        { text: "Example builds", url: "/example-builds/" },
         { text: "Common questions", url: "/faq/" },
         { text: "NZ website statistics", url: "/nz-tradie-website-statistics/" },
       ],

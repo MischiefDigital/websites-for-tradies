@@ -1,0 +1,53 @@
+---
+title: "Contact — Framewright Builders, Christchurch"
+description: "Start a project conversation with Framewright Builders: renovations, extensions and new builds across Christchurch and Selwyn."
+---
+{% extends "layouts/demo-framewright.njk" %}
+
+{% block content %}
+<section>
+  <div class="wrap split">
+    <div>
+      <p class="kicker">Start the conversation</p>
+      <h2>Tell us about the project</h2>
+      <p class="lead">A renovation enquiry is a different conversation from a new build — so we ask different questions. Fill in what you know; "no idea yet" is a perfectly good answer.</p>
+      <form aria-label="Project enquiry form (disabled on this demonstration site)">
+        <p style="margin:0 0 14px"><label>Name<br /><input type="text" disabled placeholder="Your name" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit" /></label></p>
+        <p style="margin:0 0 14px"><label>Phone or email<br /><input type="text" disabled placeholder="However you'd like to be reached" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit" /></label></p>
+        <p style="margin:0 0 14px"><label>What kind of project?<br />
+          <select disabled style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit">
+            <option>Renovation / alteration</option>
+            <option>Extension</option>
+            <option>New build</option>
+            <option>Not sure yet</option>
+          </select></label></p>
+        <p style="margin:0 0 14px"><label>Rough budget range<br />
+          <select disabled style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit">
+            <option>Under $100k</option>
+            <option>$100k–$300k</option>
+            <option>$300k–$700k</option>
+            <option>$700k+</option>
+            <option>Honestly, no idea — that's why I'm asking</option>
+          </select></label></p>
+        <p style="margin:0 0 14px"><label>When would you want to start?<br />
+          <select disabled style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit">
+            <option>As soon as possible</option>
+            <option>3–6 months</option>
+            <option>6–12 months</option>
+            <option>Just planning ahead</option>
+          </select></label></p>
+        <p style="margin:0 0 18px"><label>Tell us about it<br /><textarea disabled rows="4" placeholder="The house, the idea, the problem you're solving" style="width:100%;padding:12px;border:1px solid var(--line);border-radius:3px;background:#FBF9F5;font-family:inherit"></textarea></label></p>
+        <button type="button" disabled style="background:#B9B4A6;color:#fff;font-family:Arial,sans-serif;font-weight:700;letter-spacing:.05em;border:0;border-radius:3px;padding:15px 28px;cursor:not-allowed">FORM DISABLED ON DEMO</button>
+        <p style="font-family:Arial,sans-serif;font-size:12.5px;color:var(--soft);margin-top:12px">On a real WFT build this form reaches the builder directly, with the answers structured so the first phone call is already useful.</p>
+      </form>
+    </div>
+    <div class="prose-block">
+      <p class="kicker">The details</p>
+      <h2>Reach us directly</h2>
+      <p><strong>Phone:</strong> <a href="tel:+6435550142" style="color:var(--green);font-weight:700">03 555 0142</a><br />Weekdays 7am–5:30pm. On site we don't always pick up — leave a message and we return calls at smoko and end of day.</p>
+      <p><strong>Service area:</strong> Christchurch city and Selwyn district. Banks Peninsula by conversation.</p>
+      <p><strong>Timeline honesty:</strong> we're typically booked two to four months out. If your project is urgent, say so — sometimes the schedule has a gap, and if it doesn't we'll say that plainly instead of stringing you along.</p>
+    </div>
+  </div>
+</section>
+{% endblock %}
