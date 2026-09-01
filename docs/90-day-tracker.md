@@ -52,7 +52,7 @@ plus what's been done since.
 | 6 city pages | ✅ |
 | Statistics page, 4 guides | ✅ |
 | `/example-builds/` proof engine | ✅ 31 Aug — launched with two full demo builds instead of waiting for the first client site (see below) |
-| **"Wix vs done-for-you" page** | ⬜ Argument exists in the cost guide, not its own URL |
+| "Wix vs done-for-you" page | ✅ 1 Sep — `/guides/wix-vs-done-for-you-tradie-website/`, linked from footer + cost guide, IndexNow'd. GSC indexing request still worth doing (quota permitting) |
 
 **31 URLs in the sitemap**, up from 1 — plus 10 deliberately noindexed demo pages.
 
